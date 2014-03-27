@@ -1,0 +1,23 @@
+.registerSmallF {width: 136px}
+.registerBigF {width: 296px}
+
+#nav ul {
+	top: 20px;
+}
+input[name="tenantFirstName"], input[name="tenantLastName"] {
+	width: 123px;
+}
+input[name="tenantEmail"], input[name="tenantPhone"] {
+	width: 266px;
+}
+input[name="address"] {
+	width: 586px;
+}
+
+/*-- MY PROFILE MODAL --*/
+#profile input[name="firstName"], #profile input[name="lastName"], #paymentSettings input[name="firstName"], #paymentSettings input[name="lastName"] {
+	width: 281px;
+}
+#profile input[name="email"], #paymentSettings input[name="dbaName"], #paymentSettings input[name="ssn"], #paymentSettings input[name="ssn"], #paymentSettings input[name="dob"], #paymentSettings input[name="address"], #paymentSettings input[name="bankName"], #paymentSettings input[name="routing"], #paymentSettings input[name="account"] {
+	width: 585px;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:locationBusinessRequest xmlns:ns2="http://www.intuit.com/psd/activation/services/location">
+    <ns2:transactionId></ns2:transactionId>
+    <ns2:submitter></ns2:submitter>
+    <ns2:channel></ns2:channel>
+    <ns2:headers/>
+    <ns2:zipcode></ns2:zipcode>
+    <ns2:city></ns2:city>
+    <ns2:state></ns2:state>
+    <ns2:latitude></ns2:latitude>
+    <ns2:longitude></ns2:longitude>
+</ns2:locationBusinessRequest>

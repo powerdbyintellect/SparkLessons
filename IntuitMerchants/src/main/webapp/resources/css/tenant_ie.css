@@ -1,0 +1,16 @@
+.placeholder { color: #666; }
+.placeholderFocus { color: #000; }
+
+#check input[type="text"] {
+   margin: 0;
+   line-height: 35px;
+   vertical-align: center;
+}
+
+#check input.firstNameI {
+	margin: 7px 0 0 0;
+}
+
+#check input.routingI, #check input.accNumberI {
+	margin: 3px 0 12px 2px;
+}

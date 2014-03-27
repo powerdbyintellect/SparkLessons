@@ -1,0 +1,199 @@
+/* app css stylesheet */
+body {
+	padding-top: 40px;
+}
+
+.header1 {
+	width: 910px;
+	height: 105px;
+	padding: 15px;
+}
+
+.left-navigation {
+	list-style: none;
+}
+
+.properties {
+	list-style: none;
+}
+
+.thumb-link {
+	float: left;
+	margin: .5em 1em .5em .5em;
+}
+
+img.fbphoto {
+	float: left; #
+	max-height: 128px;
+	padding: 12px;
+}
+
+img.thumb {
+	height: 120px;
+	width: 120px;
+}
+
+.property-list-item {
+	clear: both;
+	margin-bottom: 1.5em;
+	margin-left: -2em;
+	min-height: 132px;
+	background-color: #FAFAFA;
+}
+
+/** Detail View **/
+.property-detail {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+img.properties {
+	margin-left: auto;
+	margin-right: auto; #
+	border: 1px solid black; #
+	margin-right: 3em;
+	margin-bottom: 2em;
+	background-color: white;
+	padding: 1em;
+	height: 400px;
+	width: 400px;
+}
+
+ul.properties-thumbs {
+	clear: both;
+	float: right;
+	margin: 0;
+	list-style: none;
+}
+
+ul.properties-thumbs li {
+	border: 1px solid black;
+	display: inline-block;
+	margin-left: 1em;
+	margin-top: 1em;
+	background-color: white;
+}
+
+ul.properties-thumbs img {
+	height: 100px;
+	width: 100px;
+	padding: 1em;
+}
+
+ul.properties-thumbs img:hover {
+	cursor: pointer;
+}
+
+ul.specs { #
+	clear: both;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.specs>li {
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
+}
+
+ul.specs>li>span {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+ul.specs dt {
+	font-weight: bold;
+}
+
+h1 {
+	border-bottom: 1px solid gray;
+}
+
+header { #
+	border-bottom: 1px solid gray;
+}
+
+.clear {
+	padding-bottom: 20px;
+}
+
+p.overdue {
+	color: #FF0000;
+	font-weight: bold;
+}
+
+p.vacant {
+	color: #FF0000;
+	font-weight: bold;
+}
+
+a.logo {
+	text-decoration: none;
+	color: #000000;
+}
+
+#auth {
+	top: 0px;
+	z-index: 2;
+	margin: 0;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 30%;
+	margin-bottom: 40%;
+	padding-top: 10px;
+	width: 40%;
+	#height: 220px;
+	position: absolute;
+	visibility: hidden;
+	background-color: #f5f5f5;
+	border: 1px solid #eee;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#paying {
+	margin: 0;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 100px;
+	margin-bottom: 40%;
+	padding-top: 10px;
+	width: 40%;
+	#height: 220px;
+	position: absolute;
+	z-index: 11;
+	visibility: hidden;
+	background-color: #f5f5f5;
+	border: 1px solid #eee;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+#dim {
+	z-index: 1;
+	filter: alpha(opacity = 67); /*older IE*/
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=67); /* IE */
+	-moz-opacity: .67; /*older Mozilla*/
+	-khtml-opacity: 0.67; /*older Safari*/
+	opacity: 0.67; /*supported by current Mozilla, Safari, and Opera*/
+	background-color: #000000;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+	visibility: hidden;
+}

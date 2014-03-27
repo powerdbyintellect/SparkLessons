@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:incentiveRequest xmlns:ns2="http://www.intuit.com/psd/activation/services/location">
+    <ns2:transactionId></ns2:transactionId>
+    <ns2:submitter></ns2:submitter>
+    <ns2:channel></ns2:channel>
+    <ns2:headers/>
+    <ns2:merchantname></ns2:merchantname>
+    <ns2:merchantaccount></ns2:merchantaccount>
+    <ns2:mintransactionamount></ns2:mintransactionamount>
+    <ns2:expirationdate></ns2:expirationdate>
+    <ns2:startdate></ns2:startdate>
+    <ns2:couponcount></ns2:couponcount>
+    <ns2:discountpercent></ns2:discountpercent>
+</ns2:incentiveRequest>

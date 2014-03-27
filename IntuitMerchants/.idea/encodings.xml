@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/LocationBusinessRequest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/LocationBusinessResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/springapp/mvc/LocationResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/ErrorList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/InterfaceConstants.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationBusinessInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationBusinessRequest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationBusinessResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationErrorResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationPingRequest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationPingResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationRequest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/LocationResponse.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/location/package-info.java" charset="UTF-8" />
+  </component>
+</project>
+
