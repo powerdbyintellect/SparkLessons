@@ -1,0 +1,348 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    height:100%;
+    font-size:11px;
+
+}
+
+.black {background-color: #000;}
+.grey {background-color: #444;}
+.blue {    
+	background: #3b90d6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3b90d6 0%, #0075d6 38%, #0075d6 54%, #2989d8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3b90d6), color-stop(38%,#0075d6), color-stop(54%,#0075d6), color-stop(100%,#2989d8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3b90d6 0%,#0075d6 38%,#0075d6 54%,#2989d8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3b90d6 0%,#0075d6 38%,#0075d6 54%,#2989d8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3b90d6 0%,#0075d6 38%,#0075d6 54%,#2989d8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3b90d6 0%,#0075d6 38%,#0075d6 54%,#2989d8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b90d6', endColorstr='#2989d8',GradientType=0 ); /* IE6-9 */
+}
+.green {
+		background: #61c419; /* Old browsers */
+		background: -moz-linear-gradient(top,  #61c419 0%, #128e37 50%, #61c419 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#61c419), color-stop(50%,#128e37), color-stop(100%,#61c419)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #61c419 0%,#128e37 50%,#61c419 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #61c419 0%,#128e37 50%,#61c419 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #61c419 0%,#128e37 50%,#61c419 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #61c419 0%,#128e37 50%,#61c419 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#61c419', endColorstr='#61c419',GradientType=0 ); /* IE6-9 */
+}
+
+.container {
+	width: 940px;
+	margin: 0px auto;	
+}
+
+.header {
+	width: 100%;
+	height: 80px;
+	float: left;
+	margin-top: 10px;
+	/* border: 1px solid #000; */
+}
+
+.navBar {
+	width: 100%;
+	float: left;
+	padding-top: 8px;
+	min-height: 47px;
+	border: 1px solid #000;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+}
+
+.content {
+	width: 100%;
+	min-height: 400px;
+	position: relative;
+	float: left;
+	margin-top: 10px;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+}
+
+.footer {
+	height: 80px;
+	float: left;
+	margin-top: 10px;
+	padding: 0 5px 5px 10px;
+	color: #fff;
+	font-size: 13px;
+	border: 1px solid #000;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+}
+
+/* Boxes */
+
+.menuBox {
+	width: auto;
+	float: left;
+	padding: 4px 10px 0 10px;
+	color: #FFF;
+}
+
+.signinBox {
+	width: 505px;
+	float: right;
+	padding-right: 10px;
+	text-align: right;
+}
+
+.PageBox {
+	width: 480px;
+	float: left;
+	padding: 0 0 0 20px;;
+	font-size: 15px;
+	text-align: justify;
+	border: 0px solid #000;
+}
+
+.signupBox {
+	width: 400px;
+	height: 100%;
+	float: right;
+	background-color: #ddd;
+	border: 1px solid #000;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+}
+
+.propertiesListBox {
+	width: 670px;
+	min-height: 500px;
+	float: left;
+	font-size: 15px;
+	text-align: justify;
+	border: 1px solid #bbb;
+}
+
+.widgetRightContainer {
+	width: 255px;
+	height: 100%;
+	float: right;
+	border: 0px solid #000;
+	border-radius: 5px;
+}
+
+.widgetBox {
+  margin-bottom: 13px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.widgetBoxTitle, #controls {
+	height: 20px;
+	padding: 10px;
+	font-size: 17px;
+	font-weight: bold;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(219,219,219,1) 47%, rgba(186,186,186,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(219,219,219,1)), color-stop(100%,rgba(186,186,186,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(219,219,219,1) 47%,rgba(186,186,186,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(219,219,219,1) 47%,rgba(186,186,186,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(219,219,219,1) 47%,rgba(186,186,186,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(219,219,219,1) 47%,rgba(186,186,186,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bababa',GradientType=0 ); /* IE6-9 */
+}
+
+.notification {
+	padding: 10px;
+	font-size: 15px;
+}
+
+/* Global HTML */
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number] {
+	width: 255px;
+	height: 35px;
+	color:#333333;
+	border:1px solid #000;
+    font-size:15px;
+    vertical-align: middle;
+    Border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+
+input[type=submit] {
+	width: 70px;
+	height: 36px;
+	color:#333333;
+	border:1px solid #000;
+    font-size:15px;
+    font-weight: bold;
+    vertical-align: middle;
+    Border-radius: 4px;
+    padding: 0 5px 0 5px;
+}
+
+input.small {
+	width: 120px;
+}
+
+button {
+	height: 36px;
+	color:#333333;
+	border:1px solid #000;
+    font-size:15px;
+    font-weight: bold;
+    vertical-align: middle;
+    padding: 0 5px 0 5px;	
+}
+
+button.addUnit {
+	width: 100%;
+	height: 50px;
+	color:#FFF;
+	border:1px solid #000;
+    font-size:19px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    padding: 0 5px 0 5px;	
+}
+
+button.removeAct {
+	width: 80px;
+	height: 30px;
+	border:1px solid #000;
+    font-size:13px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin: 10px 0;
+    padding: 0 5px 0 5px;	
+}
+
+select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 34px;
+}
+
+label {
+	font-size: 14px;
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+a:link {font-size: 20px; color: #FFF; text-decoration: none}
+a:visited {font-size: 20px; color: #FFF;  text-decoration: none}
+a:active {font-size: 20px; text-decoration: none}
+a:hover {font-size: 20px; text-decoration: none; color: #f5911d;}
+
+/* Others */
+
+.horz-align input, 
+.horz-align label {
+	float: right;
+	margin-right: 10px;
+}
+
+.menuItem {
+	width: 100px;
+	padding: 3px 0 0 10px;
+	display: block;
+	float: left;
+	text-align: center;
+}
+
+#signUpForm td {
+	padding: 8px 0 8px 0;
+}
+
+#signUpForm a:link, 
+#signUpForm a:visited,
+#signUpForm a:active {text-decoration: underline; font-size: 13px; color: #000;}
+#signUpForm a:hover {font-size: 13px; color: #f5911d;}
+
+.propertyDetails {
+	width: 900px;
+	padding: 15px;
+	font-size: 20px;
+}
+
+.propertyDetails td {
+	padding: 10px 0 10px 0;
+}
+
+.propertyDetails th {
+	font-size: 13px;
+}
+
+.propertyDetails label {
+	font-size: 20px;
+	font-weight: bold;
+	padding-right: 20px;
+}
+
+.tenantDetails {
+	width: 800px;
+	padding: 50px;
+}
+
+.addAccount {
+	width: 100%;
+	padding: 0 20px;
+}
+
+.addAccount td {
+	padding: 10px;
+}
+
+.myAccount {
+	width: 600px;
+	margin-left: 30px;
+	border-radius: 5px;
+}
+
+.myAccount td {
+	font-size: 13px;
+}
+
+.border1px {border: 1px solid #ddd; border-radius: 5px}
+
+/* JQuery view List-icon */
+
+/* Styling for the view mode switcher control */
+
+#controls .active { font-weight: bold; }
+
+/* General styling of items */
+
+#container { 
+	width: 700px; 
+	margin: 0; 
+	padding: 0 10px 0 15px; 
+}
+
+#container li { float: left; display: inline; list-style: none; margin: 20px 0 0 0; padding: 10px; border: 1px solid #ccc; }
+#container li div a.overlay { display: block; position: absolute; margin: 0; }
+
+/* Styling for list view mode */ 
+
+#container.list li { width: 620px; margin: 20px 0 0 0; }
+#container.list li div { height: 150px; overflow: hidden; }
+
+/* Styling for icon view mode */
+
+#container.icon li { width: 180px; margin: 10px 10px 0 0; }
+#container.icon li div { height: 200px; overflow: hidden; }
+
+#container a:link, #controls a:link, .propertyDetails a:link, .widgetRightContainer a:link {font-size: 15px; color: #000; text-decoration: none}
+#container a:visited, #controls a:visited, .propertyDetails a:visited, .widgetRightContainer a:visited {font-size: 15px; color: #000;  text-decoration: none}
+#container a:active, #controls a:active, .propertyDetails a:active, .widgetRightContainer a:active {font-size: 15px; text-decoration: none}
+#container a:hover, #controls a:hover, .propertyDetails a:hover, .widgetRightContainer a:hover {font-size: 15px; text-decoration: none; color: #f5911d;}

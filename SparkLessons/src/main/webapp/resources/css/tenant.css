@@ -1,0 +1,340 @@
+/* -------- CLEARFIX -------- */
+.clearfix:after { content: "."; 	display: block; 	height: 0; 	clear: both;	visibility: hidden;	}
+* html>body .clearfix {	display: inline-block; 	width: 100%; }
+* html .clearfix {	/* Hide from IE-mac \*	height: 1px;	/* End hide from IE-mac */	}
+.clearfix { zoom: 1; }
+
+html {
+    min-height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+	color: #333333;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	background: rgb(219,219,219); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(219,219,219,1) 1%, rgba(238,238,238,1) 63%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(219,219,219,1)), color-stop(63%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(219,219,219,1) 1%,rgba(238,238,238,1) 63%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(219,219,219,1) 1%,rgba(238,238,238,1) 63%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(219,219,219,1) 1%,rgba(238,238,238,1) 63%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(219,219,219,1) 1%,rgba(238,238,238,1) 63%); /* W3C */
+	/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#eeeeee',GradientType=0 );*/ /* IE6-9 */ /* REMOVED BECAUSE IT CAUSED TEXT TO BE ALIASED IN IE8 AND UNDER */
+}
+
+
+a {
+	color: #333333;
+}
+
+/* PAY PAGE *****************************************/
+
+#container {	
+	margin: 0 auto;
+	width: 947px;	
+}
+
+#head {
+	margin-left:7px;
+	padding-top: 20px;
+	height: 90px;
+	border: 0px solid #bbb;
+}
+
+#navBar {
+	height: 52px;
+	background-repeat:no-repeat;
+	border: 0px solid #bbb;
+}
+
+#content {
+	margin-left:7px;
+	padding: 20px;
+	height: auto;
+	background-color: #FFF;
+	border: 0px solid #bbb;
+}
+
+#footer {
+	height: 50px;
+	padding: 20px 0 0 20px;
+	background: #ddd;
+	margin-left:7px;
+	font-size: 12px;
+	border: 0px solid #bbb;	
+}
+
+#status {		
+	color: #FFF;
+	font-size: 19px;
+	text-shadow: 1px 1px 0px #666;
+	float: left;
+	border: 0px solid #bbb;
+	line-height: 52px;
+	vertical-align: center;
+	padding-left: 14px;
+}
+
+/*
+#status div:first-child {
+	float: left;
+	width: 250px;
+	border: 0px solid #bbb;
+	
+}
+
+#status div:last-child {
+	float: right;
+	width: 70px;
+	margin-top: 10px;
+	padding: 0 0 0 8px;
+	border: 0px solid #bbb;
+}
+*/
+
+#status button{ 
+	width: 80px;
+	height: 30px;
+  	cursor:pointer;
+  	font-size: 13px;  	
+  	border: 1px solid #666;
+  	border-radius: 5px; 
+  	color: #FFF;
+  	text-shadow:1px 1px 0px #999;
+  	background: rgb(249,153,42); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(249,153,42,1) 0%, rgba(211,114,2,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,153,42,1)), color-stop(100%,rgba(211,114,2,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(249,153,42,1) 0%,rgba(211,114,2,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(249,153,42,1) 0%,rgba(211,114,2,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(249,153,42,1) 0%,rgba(211,114,2,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(249,153,42,1) 0%,rgba(211,114,2,1) 100%); /* W3C */
+	/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9992a', endColorstr='#d37202',GradientType=0 ); */ /* REMOVED BECAUSE IT CAUSED TEXT TO BE ALIASED IN IE8 AND UNDER */
+}
+
+#address {
+	margin-top: 18px;
+	padding-right: 17px;
+	color: #888;
+	float: right;
+	border: 0px solid #bbb;
+}
+
+.greyRuban {background-image: url('../images/tenant/rubanGrey.png')}
+.orangeRuban {background-image: url('../images/tenant/ruban.png')}
+.greenRuban {background-image: url('../images/tenant/rubanGreen.png')}
+
+/* PAY PAGE *****************************************/
+
+#summaryTable {
+	margin: 0 auto;	
+	border: 0px solid #bbb;
+	max-width: 550px;
+}
+
+.topTd {height: 20px;font-size: 25px;border-bottom: 1px solid #ccc; padding-bottom: 5px;}
+.miniTd {height: 20px;font-size: 15px; padding-top: 8px; font-weight: bold;}
+.legendTd {height: 20px;font-size: 13px; padding-top: 8px; font-weight: normal; color: #555;}
+.bottomTd {font-size: 25px;color: #005695;}
+
+#checkContainer {
+	width: 100%;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding-bottom: 4px;
+	background: #f3f3f3; /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(232,231,231,1) 0%, rgba(254,254,254,1) 9%, rgba(254,254,254,1) 15%, rgba(255,255,255,1) 59%, rgba(254,254,254,1) 90%, rgba(232,231,231,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,231,231,1)), color-stop(9%,rgba(254,254,254,1)), color-stop(15%,rgba(254,254,254,1)), color-stop(59%,rgba(255,255,255,1)), color-stop(90%,rgba(254,254,254,1)), color-stop(100%,rgba(232,231,231,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(232,231,231,1) 0%,rgba(254,254,254,1) 9%,rgba(254,254,254,1) 15%,rgba(255,255,255,1) 59%,rgba(254,254,254,1) 90%,rgba(232,231,231,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(232,231,231,1) 0%,rgba(254,254,254,1) 9%,rgba(254,254,254,1) 15%,rgba(255,255,255,1) 59%,rgba(254,254,254,1) 90%,rgba(232,231,231,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(232,231,231,1) 0%,rgba(254,254,254,1) 9%,rgba(254,254,254,1) 15%,rgba(255,255,255,1) 59%,rgba(254,254,254,1) 90%,rgba(232,231,231,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(232,231,231,1) 0%,rgba(254,254,254,1) 9%,rgba(254,254,254,1) 15%,rgba(255,255,255,1) 59%,rgba(254,254,254,1) 90%,rgba(232,231,231,1) 100%); /* W3C */
+	/*  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e7e7', endColorstr='#e8e7e7',GradientType=0 ); */ /* REMOVED BECAUSE IT CAUSED TEXT TO BE ALIASED IN IE8 AND UNDER */
+}
+
+#checkTable {
+	width: 100%;	
+	border: 0px solid #bbb;	
+}
+
+.titleTd {height: 30px;font-size: 18px;padding: 10px; color:#333;border-bottom: 1px solid #ccc;}
+.title2Td {height: 30px;font-size: 18px;padding: 10px; color:#333;}
+.titleTR td { padding-bottom: 15px; }
+.infoTd {height: 30px;font-size: 15px;padding: 20px 10px 20px 10px; color:#666;}
+.checkTd {
+	min-height: 399px;
+	margin-left: 10px;
+	margin-top: 15px;
+	padding-left: 30px;
+	font-size: 15px;
+	color:#666;
+	background-image: url('../images/tenant/check_big.jpg');
+	background-repeat:no-repeat;
+	background-position: 47px 15px;
+	border: 0px solid #bbb;
+}
+
+.oneMoreThing {font-size: 18px;}
+.weNeedYourTd {font-size: 12px; color: #a0a0a0;} 
+.inputTd input {height: 30px; width: 200px;border-radius: 4px; padding-left: 6px;margin-top: 10px;border: 1px solid #aaa;}
+.signatureTd {height: 50px;color: #ccc;}
+.youCanChangeTd {font-size: 10px; color: #aaa;font-style:italic;}
+.connectAccTd {border-top: 1px solid #ccc;}
+
+.connectAccTd div {float: right; margin: 7px 10px 0 0;}
+
+.connectAccTd button {
+	width: 209px;
+	height: 50px;
+	border: 0;
+	cursor:pointer;
+	background-image: url('../images/tenant/continue.png');
+	background-repeat:no-repeat;
+}
+
+#check {
+	width: 800px;
+	height: 375px;
+	margin-top: 50px;
+	margin-left: 40px;	
+	border: 0 solid #bbb;	
+	font-size: 18px;
+}
+
+#check td { height: 20px;}
+
+#check input[type="text"] {
+    font-size: 16px;
+    height: 35px;
+    margin: 4px 5px 10px;
+    padding: 5px;
+    border: 1px solid #96d898;
+    background-color: #f6fff6;
+    border-radius: 5px;
+}
+
+
+.bankNameI {width: 300px}
+.firstNameI {width: 150px}
+.lastNameI {width: 150px}
+.routingI {width: 170px}
+.accNumberI {width: 170px}
+
+#steps {
+	width: 100%;
+	padding: 10px;
+	text-align: center;	
+}
+
+#steps td {border-right: 1px solid #ccc;}
+#steps td.last {border-right: none;}
+
+/* CONFIRMATION PAGE *****************************************/
+
+.checkConfirmTd {
+	height: 322px;
+	margin-left: 10px;
+	padding-left: 30px;
+	font-size: 15px;
+	color:#666;
+	background-image: url('../images/tenant/check.jpg');
+	background-repeat:no-repeat;
+	border: 0px solid #bbb;
+}
+
+#checkConfirm{
+	width: 600px;	
+	border: 0px solid #bbb;	
+}
+
+.bottomRow td { 
+	font-size:24px;
+	padding-top: 12px;
+}
+
+#checkConfirm td { height: 20px; padding-top:-10px;}
+
+#checkConfirm input {
+	width:100px;
+}
+
+.payNowTd div {margin: 7px 10px 0 0;}
+
+.payNowTd button {
+	width: 140px;
+	height: 50px;
+	border: 0;
+	cursor:pointer;
+	background-image: url('../images/tenant/payNow.png');
+	background-repeat:no-repeat;
+	margin-bottom: 6px;
+}
+.payToTD td {
+	padding-top: 13px;
+}
+.payToBox {
+	text-align: left;
+	width: 325px;
+	margin-left: 54px;
+	float: left;
+}
+.payAmountBox {
+	float: left;
+	margin-left: 35px;
+	width: 125px;
+	padding-top: 4px;
+}
+.payNumberBox {
+	width: 490px;
+	padding-top: 2px;
+	padding-left: 4px;
+}
+.forRow td {
+	vertical-align: bottom;
+	padding-top: 12px;
+}
+
+/* RECEIPT PAGE *****************************************/
+
+#receiptContainer {
+	width: 100%;
+	height: auto;
+	border: 0px solid #CCC;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+
+#receiptContainer2 {
+	width: 80%;
+	height: auto;
+	border: 0px solid #CCC;
+	border-radius: 10px;
+	margin-top: 20px;
+	margin: 0 auto;
+}
+
+#receiptContainer td {
+	padding: 0 20px 0 0;	
+}
+
+#receiptContainer td.separator {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.doneTd div {margin: 7px 10px 0 0;}
+
+.doneTd button {
+	width: 140px;
+	height: 50px;
+	border: 0;
+	cursor:pointer;
+	background-image: url('../images/tenant/done.png');
+	background-repeat:no-repeat;
+}
+
+input {
+	box-shadow: none;
+}

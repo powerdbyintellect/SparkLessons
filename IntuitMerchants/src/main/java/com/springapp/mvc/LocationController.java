@@ -92,7 +92,7 @@ public class LocationController {
         	   BigDecimal discountpercent = couponInfo.getDiscountpercent() !=null ? couponInfo.getDiscountpercent() : BigDecimal.ZERO;
         	   
 	   	       ClientRequest request = new ClientRequest(
-                    "http://localhost:8080/LocationService/SendRequest");
+                    "http://localhost:8080/LocationServiceImpl/SendRequest");
                
                // Replace value for ZipCode in the request XML
                String originalLocationString = createLocationRequestFromXml(FILE_NAME_2);
@@ -164,7 +164,7 @@ public class LocationController {
         	   BigDecimal discountpercent = couponInfo.getDiscountpercent() !=null ? couponInfo.getDiscountpercent() : BigDecimal.ZERO;
         	   
 	   	       ClientRequest request = new ClientRequest(
-                    "http://localhost:8080/LocationService/SendRequest");
+                    "http://localhost:8080/LocationServiceImpl/SendRequest");
                
                // Replace value for ZipCode in the request XML
                String originalLocationString = createLocationRequestFromXml(FILE_NAME_2);
@@ -214,7 +214,7 @@ public class LocationController {
     public String sendRequest(ModelMap model, LocationSearch locationSearch) throws Exception {
         try {
             ClientRequest request = new ClientRequest(
-                    "http://localhost:8090/LocationService/SendRequest");
+                    "http://localhost:8080/LocationServiceImpl/SendRequest");
             
             String zipcode = locationSearch.getZipcode()!=null?locationSearch.getZipcode():"";
 	        String city = locationSearch.getCity()!=null?locationSearch.getCity():"";
