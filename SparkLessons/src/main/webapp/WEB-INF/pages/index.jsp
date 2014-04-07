@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Intuit Discounts</title>
+    <title>Spark Lessons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Spark Lessons, Payments">
+    <meta name="author" content="Harish Raghavendra">
 
     <!-- Le styles -->
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.css" rel="stylesheet">
@@ -20,6 +20,7 @@
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
      <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.min.css" rel="stylesheet">
+ <link href="${pageContext.servletContext.contextPath}/resources/css/tiles.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -35,83 +36,250 @@
   </head>
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Spark Lessons</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="${pageContext.servletContext.contextPath}/about">About</a></li>
-              <li><a href="${pageContext.servletContext.contextPath}/contact">Contact</a></li>
-            </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="Password">
-              <button type="submit" class="btn">Sign in</button>
-            </form>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Spark Lessons</h1>
-        <p>Get best offers from Small Business Merchants with Intuit. As a customer you get to shop at Small Business that is nearby.<br>
-        Get started and start saving money at your local stores!</p>
-        <p><a href="${pageContext.servletContext.contextPath}/search" class="btn btn-primary btn-large">Get Started &raquo;</a></p>
-        
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>Customers</h2>
-          <p><ul> 
-          <li>Search SMBs in your neighborhood</li>
-          <li>Get discounts on shopping</li>
-          <li>Know your neighborhood shops</li>
-          <li>Root for the little guy</li>
-          <li>Share your experience</li>
-          	</ul> </p>
-          <p><a class="btn" href="${pageContext.servletContext.contextPath}/customer">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>Merchants</h2>
-          <p><ul>
-          <li>Sell your awesome products</li>
-          <li>Get to know your customers</li>
-          <li>Be on the social media</li>
-          <li>Generate new products buzz</li>
-          <li>Dicounts for customers</li></ul>
-          <p><a class="btn" href="${pageContext.servletContext.contextPath}/merchant">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>Benefits</h2>
-          <p align="justify">
-         	As Intuit certified small businesses they are well trusted in customer community. 
-         	By providing great service at reasonable cost they get to attract customers &amp; put their name to get their name out there. 
-          </p>
-          <p><a class="btn" href="${pageContext.servletContext.contextPath}/about">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <hr>
-
-      <footer>
-        <p>&copy; Intuit 2013</p>
-      </footer>
-
-    </div> <!-- /container -->
+  <h1 align="center">Spark Lessons</h1>
+   <div id="wrapper">
+	<div id="columns">
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/piano.jpg" />
+			<p>
+				Music has been a part of my life as far back as I can remember.
+				I love how this picture sort of shows that the movements of 
+				the hands become more graceful as the pianist is lost in the 
+				emotion of the song. Learn to play Piano
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/tennis.jpg" />
+			<p>
+				RF always keeps his eye on the ball and leaves it at the point of 
+				contact for a split second once the ball leaves his racquet. Learn
+				to play like a pro. Signup for individual lessons.
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/swimming.jpg" />
+			<p>
+				This is why swimmers have amazing bodies. Total body workout 
+				every time you enter the water. Everyone is the same in the water. 
+				 
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/gymnastics1.jpg" />
+			<p>
+				 Where ever a gymnast goes doing gymnastics is a must do
+				 and if you really love gymnastics you'll do it every where. 
+				 Here's to the gymnasts .. it's not about 
+				 being a champion, it's about LOVING the sport!
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/painting.jpg" />
+			<p>
+				Art washes away from the soul, the dust of everyday life ~ Pablo Picasso
+				Acrylic, Oil, Watercolor. Abstract, Modern, Scenic, Landscapes 
+				Skyscapes, so many ways to show your creative side. Learn to paint. 
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/knitting.jpg" />
+			<p>
+				How to Magic Loop, Cabling Without a Cable Needle, 
+				Tubular Cast On, Weaving in Ends, Fair Isle - Yarn Dominance, 
+				Judy's Magic Cast On, Crochet Provisional Cast On, Kitchner Stitch.
+				Things all knitters should know
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>	
+		
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/ballerina.jpg" />
+			<p>
+				Ballet, Ballett, Ballerina, Dancer, Dance, Danza, Danse, Dansa, Dancing.
+				Learn Russian Ballet, French Ballet or Italian Ballet. 
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/soccer.jpg" />
+			<p>
+				Soccer is not only a beautiful game...it is filed with 
+				beautiful moments. Moments of greatness and moments that aren't 
+				always seen from the score of the game. Learn to bicycle kick and be a team player.
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/baseball.jpg" />
+			<p>
+				We need to take a leaf from him and have a shot at it. FOCUS &amp; DETERMINATION!
+				There's no crying in baseball!
+			</p>
+				<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/football3.jpg" />
+			<p>
+				If it doesnt matter who wins and loses, then why do they keep scores.
+				Winners never quit &amp; quitters never win. -Lombardi
+				Teamwork - No one can defeat us unless we first defeat ourselves
+			</p>
+				<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/basketball2.jpg" />
+			<p>
+				All kids need is a little help, a little hope and somebody who believes in them.
+				There's winning and there's losing and in life both will happen. 
+				What is never acceptable to me is quitting. - Magic
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/skateboard.jpg" />
+			<p>
+				I don't Skateboard to impress people, look cool, or be stylish. 
+				I do it because its just plain awesome!
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>	
+		
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/surfing.jpg" />
+			<p>
+				Go Surfing! Don't just dream and fantasize about it 
+				book a surf-trip or take a lesson. It's the only way to find 
+				out if it's as magical as you imagine it is..
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/rockclimbing1.jpg" />
+			<p>
+				Rock Climbing : The road to wisdom? — Well, it's plain and simple to express:~ 
+				Err, and err, and err again ~ but less, and less, and less. ~~ Piet Hein 
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	
+		<div class="pin">
+			<img src="${pageContext.servletContext.contextPath}/resources/img/lacrosse.jpg" />
+			<p>
+				Be a team player. Learn &amp; Play Lacross. 
+				Real team mates work together and share the victory with each other. 
+				Yeah there might be that star player but they are nothin without a solid 
+				team backing them up
+			</p>
+			<div class="pinSocialMeta">
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
+				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
+				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+			</div>
+		</div>
+	</div>
+</div>
 
     <!-- Le javascript
     ================================================== -->
