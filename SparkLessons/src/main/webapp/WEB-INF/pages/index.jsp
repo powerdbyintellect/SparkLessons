@@ -48,7 +48,7 @@
 				emotion of the song.
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/about"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
