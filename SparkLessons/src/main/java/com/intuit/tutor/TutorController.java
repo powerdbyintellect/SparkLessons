@@ -1,9 +1,6 @@
 package com.intuit.tutor;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.http.client.ClientProtocolException;
-import org.jboss.resteasy.client.ClientRequest;
-import org.jboss.resteasy.client.ClientResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -45,10 +45,10 @@
 				Music has been a part of my life as far back as I can remember.
 				I love how this picture sort of shows that the movements of 
 				the hands become more graceful as the pianist is lost in the 
-				emotion of the song. Learn to play Piano
+				emotion of the song.
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/about"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -61,7 +61,7 @@
 			<p>
 				RF always keeps his eye on the ball and leaves it at the point of 
 				contact for a split second once the ball leaves his racquet. Learn
-				to play like a pro. Signup for individual lessons.
+				to play like a pro. 
 			</p>
 			<div class="pinSocialMeta">
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
@@ -267,8 +267,6 @@
 			<p>
 				Be a team player. Learn &amp; Play Lacross. 
 				Real team mates work together and share the victory with each other. 
-				Yeah there might be that star player but they are nothin without a solid 
-				team backing them up
 			</p>
 			<div class="pinSocialMeta">
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
