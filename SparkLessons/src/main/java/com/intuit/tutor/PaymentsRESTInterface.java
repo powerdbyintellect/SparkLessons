@@ -6,7 +6,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.JAXBElement;
 
 import com.intuit.tutor.transaction.CreditCardAuth;
 import com.intuit.tutor.transaction.CreditCardCharge;
@@ -18,5 +17,5 @@ public interface PaymentsRESTInterface {
 	@POST
 	@Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_XML)
-	public CreditCardAuth chargeCreditCard(CreditCardCharge creditCardCharge);
+	public CreditCardAuth chargeCreditCard(@PathParam("realmid") String realmId, CreditCardCharge creditCardCharge);
 }

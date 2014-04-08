@@ -57,9 +57,8 @@
             <scope>test</scope>
         </dependency>
 
-       <!-- CXF Dependencies -->
-     
-        <dependency>
+        <!-- CXF Dependencies -->
+     	<dependency>
 	        <groupId>org.apache.cxf</groupId>
 	        <artifactId>cxf-rt-frontend-jaxws</artifactId>
 	        <version>${cxf.version}</version>
