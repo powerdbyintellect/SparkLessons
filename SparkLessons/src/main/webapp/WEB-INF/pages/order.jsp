@@ -76,16 +76,16 @@
 </div>
 
 <form name="couponForm" action="addCustomer" method="post"  class="form-signin">
-    <h3>Generate Discount Coupons </h3>
+    <h3>Activate Merchant Account </h3>
         <input type="text" size="20" name="firstname"  value="${customer.firstname}" class="input-block-level" placeholder="Firstname"/>
         <input type="text" size="20" name="lastname"  value="${customer.lastname}" class="input-block-level" placeholder="Lastname"/>
         <input type="text" size="20" name="ssn"  value="${customer.ssn}" class="input-block-level" placeholder="Social Security"/>
 		<input type="text" size="20" name="dob"  value="${customer.dob}" class="input-block-level" placeholder="Date Of Birth"/>
-		<input type="text" size="20" name="street1"  value="${customer.address.streetAddress1}" class="input-block-level" placeholder="Address 1"/>
-		<input type="text" size="20" name="street2"  value="${customer.address.streetAddress2}" class="input-block-level" placeholder="Address 2"/>
-		<input type="text" size="20" name="city"  value="${customer.address.city}" class="input-block-level" placeholder="City"/>
-		<input type="text" size="20" name="state"  value="${customer.address.state}" class="input-block-level" placeholder="State"/>
-		<input type="text" size="20" name="zipcode"  value="${customer.address.zipCode}" class="input-block-level" placeholder="Zipcode"/>
+		<input type="text" size="20" name="streetAddress1"  value="${address.streetAddress1}" class="input-block-level" placeholder="Address 1"/>
+		<input type="text" size="20" name="streetAddress2"  value="${address.streetAddress2}" class="input-block-level" placeholder="Address 2"/>
+		<input type="text" size="20" name="city"  value="${address.city}" class="input-block-level" placeholder="City"/>
+		<input type="text" size="20" name="state"  value="${address.state}" class="input-block-level" placeholder="State"/>
+		<input type="text" size="20" name="zipCode"  value="${address.zipCode}" class="input-block-level" placeholder="Zipcode"/>
         <input type="submit" class="btn btn-primary btn-large" value="Activate Now">
 </form>
 

@@ -5,7 +5,7 @@ public class Customer {
 	private String lastname;
 	private String ssn;
 	private String dob;
-	public Address address;
+	
 	public String getFirstname() {
 		return firstname;
 	}
@@ -29,11 +29,5 @@ public class Customer {
 	}
 	public void setDob(String dob) {
 		this.dob = dob;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
 	}
 }
