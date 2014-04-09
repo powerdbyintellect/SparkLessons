@@ -2,21 +2,40 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:http-conf="http://cxf.apache.org/transports/http/configuration" 
-       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+       xmlns:http-conf="http://cxf.apache.org/transports/http/configuration" xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:jaxrs-client="http://cxf.apache.org/jaxrs-client"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd 
+       http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd"
+       default-lazy-init="false">
 
-
-	
     <jaxrs:client id="paymentRESTProxy"
                   address="https://merchantaccount.ptc.quickbooks.com"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
-            <entry key="Accept" value="application/xml"/>
-            <entry key="Content-Type" value="application/xml"/>
+            <entry key="Accept" value="text/xml, application/xml"/>
             <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.payments.sdk_test,intuit_app_secret=PaymentsSDKTestApp"/>
+            <entry key="intuit_tid" value="ACTCODEJAME-2312312312312"/>
         </jaxrs:headers>
     </jaxrs:client>
+
+    <jaxrs:client id="onboardingServiceRestClient"
+                  address="https://onboarding-qa.payments.intuit.net"
+                  serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
+                  inheritHeaders="true" threadSafe="true">
+        <jaxrs:headers>
+            <entry key="Accept" value="text/xml, application/xml"/>
+        </jaxrs:headers>
+    </jaxrs:client>
+    
+   <!--  <jaxrs:client id="iam"
+                  address="https://accounts-e2e.platform.intuit.net"
+                  serviceClass="com.intuit.tutor.iam.IAMClient"
+                  inheritHeaders="true" threadSafe="true">
+        <jaxrs:headers>
+            <entry key="Accept" value="application/json"/>
+        </jaxrs:headers>
+    </jaxrs:client> -->
+
+
 </beans>
