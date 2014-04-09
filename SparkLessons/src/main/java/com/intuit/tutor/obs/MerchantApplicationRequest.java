@@ -140,7 +140,7 @@ public class MerchantApplicationRequest {
 		merchantApplicationRequest.setZip(address.getZipCode());
 		merchantApplicationRequest.setSsn(customer.getSsn());
 		merchantApplicationRequest.setPhone(customer.getPhone());
-		merchantApplicationRequest.setDbaName(customer.getDbaName());
+		merchantApplicationRequest.setDbaName(customer.getFirstname() + " " + customer.getLastname());
 		return merchantApplicationRequest;
 	}
 

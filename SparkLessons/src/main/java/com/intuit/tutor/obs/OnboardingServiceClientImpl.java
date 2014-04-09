@@ -188,6 +188,7 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 			throw new OnBoardingException("Received merchant order " + order);
 		MerchantApplicationResponse response = new MerchantApplicationResponse();
 		response.setMasterAccountId(order.getMasterAccountId());
+		response.setRealmId(order.getRealmId());
 		DecisionEnum status = order.getStatus();
 		if ((status == DecisionEnum.APPROVED) || (status == DecisionEnum.COMPLETE)
 				|| (status == DecisionEnum.IN_REVIEW) || (status == DecisionEnum.DECLINED)) {

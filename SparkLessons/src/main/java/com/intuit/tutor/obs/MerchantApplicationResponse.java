@@ -9,6 +9,7 @@ public class MerchantApplicationResponse {
 	private BigInteger daysToFund;
 	private String echoMerchantId;
 	private String masterAccountId;
+	private String realmId;
 	
 	public BigInteger getDaysToFund() {
 		return daysToFund;
@@ -53,6 +54,14 @@ public class MerchantApplicationResponse {
 
 	public String getMasterAccountId() {
 		return this.masterAccountId;
+	}
+
+	public String getRealmId() {
+		return realmId;
+	}
+
+	public void setRealmId(String realmId) {
+		this.realmId = realmId;
 	}
 
 }

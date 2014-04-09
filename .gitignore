@@ -4,3 +4,9 @@
 SparkLessons/.settings/org.eclipse.wst.common.component
 
 *.component
+
+*.prefs
+
+SparkLessons/.project
+
+SparkLessons/.project
