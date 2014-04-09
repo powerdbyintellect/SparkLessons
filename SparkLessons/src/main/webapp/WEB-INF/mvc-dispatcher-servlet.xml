@@ -22,15 +22,17 @@
 	<context:annotation-config/>
     
     <!-- Marshaller for CDM -->
-<!--     <bean id="jaxbMarshaller" class="com.intuit.psd.oasis.base.jaxb.SpringJaxb2Marshaller" lazy-init="false"> -->
-<!--         <property name="lazyInit" value="true"/> -->
-<!--         <property name="packagesToScan"> -->
-<!--             <list> -->
-<!--                 <value>com.intuit.tutor</value> -->
-<!--             </list> -->
-<!--         </property> -->
-<!--         <property name="supportJaxbElementClass" value="true"/> -->
-<!--     </bean> -->
+    <bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+        <property name="lazyInit" value="true"/>
+         <property name="classesToBeBound">
+            <list>
+                <value>com.intuit.payments.sdk.jaxb.types.CreditCardCharge</value> 
+                <value>com.intuit.payments.sdk.jaxb.types.CreditCard</value>                
+            </list>
+        </property>
+        <property name="supportJaxbElementClass" value="true"/>
+        
+    </bean>
 	
     <context:component-scan base-package="com.intuit.tutor"/>
 

@@ -15,7 +15,7 @@
     
     <properties>
         <spring.version>3.2.0.RELEASE</spring.version>
-        <cxf.version>3.0.0-milestone2</cxf.version>
+        <cxf.version>2.7.5</cxf.version>
     </properties>
 
     <dependencies>
@@ -28,6 +28,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
             <version>${spring.version}</version>
         </dependency>
 
@@ -58,33 +64,116 @@
         </dependency>
 
         <!-- CXF Dependencies -->
-     	<dependency>
-	        <groupId>org.apache.cxf</groupId>
-	        <artifactId>cxf-rt-frontend-jaxws</artifactId>
-	        <version>${cxf.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.apache.cxf</groupId>
-	        <artifactId>cxf-rt-transports-http</artifactId>
-	        <version>${cxf.version}</version>
-	    </dependency>
-	        <!-- Jetty is needed if you're are not using the CXFServlet -->
-	    <dependency>
-	        <groupId>org.apache.cxf</groupId>
-	        <artifactId>cxf-rt-transports-http-jetty</artifactId>
-	        <version>${cxf.version}</version>
-	    </dependency>
-       <dependency>
-		  <groupId>org.apache.cxf</groupId>
-		  <artifactId>cxf-rt-rs-client</artifactId>
-		  <version>${cxf.version}</version>
-		</dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-bundle-jaxrs</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-core</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-databinding-jaxb</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+		
+		<!-- CXF Dependencies from mule-module-cxf -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-simple</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-databinding-aegis</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-databinding-jibx</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-local</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-security</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-rm</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-addr</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-wstx-msv-validation</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <!-- End CXF Dependencies from mule-module-cxf -->
+
+        <!-- JAX-RS -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>1.6</version>
+        </dependency>
 		
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -109,10 +198,22 @@
             <artifactId>cdm-types</artifactId>
             <version>1.28.0</version>
         </dependency>
+        <dependency>
+		  <groupId>com.intuit.payments.sdk</groupId>
+		  <artifactId>qbmsconnector-api</artifactId>
+		  <version>6.4.0</version>
+		  <scope>compile</scope>
+		</dependency>
+		 
+		<dependency>
+		  <groupId>com.intuit.payments.sdk</groupId>
+		  <artifactId>qbmsconnector-rest-impl</artifactId>
+		  <version>6.4.0</version>
+		  <scope>compile</scope>
+		</dependency>
     </dependencies>
 
-	
-    <build>
+ 	<build>
         <finalName>SparkLessons</finalName>
         <plugins>
             <plugin>
