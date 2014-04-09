@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import javax.ws.rs.BadRequestException;
 import javax.ws.rs.core.Response.Status;
 import javax.xml.bind.JAXBElement;
 
@@ -14,6 +15,7 @@ import com.intuit.psd.cdm.v1.ApplicationChannelTypeEnum;
 import com.intuit.psd.cdm.v1.ApplicationSourceEnum;
 import com.intuit.psd.cdm.v1.ApplyOptionEnum;
 import com.intuit.psd.cdm.v1.BusinessInfo;
+import com.intuit.psd.cdm.v1.BusinessInfoContact;
 import com.intuit.psd.cdm.v1.BusinessOwner;
 import com.intuit.psd.cdm.v1.CdmComplexBase;
 import com.intuit.psd.cdm.v1.CheckSubAccount;
@@ -56,8 +58,8 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 	private final static  String IAM_TICKET_ID_HEADER = "x_intuit_ticket";
 	private final static String FIELD_DELIMITER = ",";
 	private final static String KEY_VALUE_DELIMITER = "=";
-	private static final ApplicationChannelTypeEnum DEFAULT_APPLICATION_CHANNEL_ENUM = ApplicationChannelTypeEnum.SPARK_RENT;
-	private static final ApplicationSourceEnum DEFAULT_APPLICATION_SOURCE_ENUM = ApplicationSourceEnum.SRT;
+	private static final ApplicationChannelTypeEnum DEFAULT_APPLICATION_CHANNEL_ENUM = ApplicationChannelTypeEnum.QBO_SPA;
+	private static final ApplicationSourceEnum DEFAULT_APPLICATION_SOURCE_ENUM = ApplicationSourceEnum.UAE;
 	private static final Logger logger = Logger.getLogger(OnboardingServiceClientImpl.class);
 	private static final String DEFAULT_DESCRIPTION = "SparkRent landlord.";
 	
@@ -68,13 +70,13 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 	private String sparkrentServiceGatewaySecret = "6M50GN0AHsITfe6fkSYAtE";
 	private String sparkrentServiceGatewayAppId = "Intuit.sbg.payments.onboarding.test";
 
-	private static String applicationChannel;
-	private static String applicationSource;
-	private static String countryCode;
+	private static String applicationChannel = "QBO_SPA";
+	private static String applicationSource = "SRT";
+	private static String countryCode ="USA";
 	private static String description = DEFAULT_DESCRIPTION;
-	private static String offerId;
-	private static String brandId;
-	private static String sicCode;
+	private static String offerId = "qboh_mm_n-3111-20287";
+	private static String brandId = "qbo_spa";
+	private static String sicCode = "6513";
 	private static OfferDetail offerDetails;
 	
 	//test method. To be removed before we go to prod. 
@@ -156,7 +158,10 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 			throws OnBoardingException {
 		String authHeader = createAuthHeader(token.getTokenId(), token.getAuthId());
 		MerchantOrder merchantOrder = createMerchantOrder(merchantApplication, userEmail);
-		RestResponse response = onboardingServiceRestClient.createOrUpdateOrder(merchantOrder, authHeader, clientIPAddress, requestId);
+		ObjectFactory objectFactory = new ObjectFactory();
+		RestResponse response = onboardingServiceRestClient.createOrUpdateOrder(objectFactory.createMerchantOrder(merchantOrder), authHeader, clientIPAddress, requestId);
+		
+		
 		try {
 			handleRestError(response);
 			if (response != null) {
@@ -164,8 +169,17 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 						.getValue()).getCDMObject().getValue();
 				return createMerchantApplicationResponse(order);
 			}
-		} finally {
-		}
+		 } catch(BadRequestException ex) {
+			 ErrorResponse responseData = null;
+			  if(response!=null && response.getSystemResponse().getValue() instanceof com.intuit.psd.cdm.v1.ErrorResponse)
+				  responseData = (ErrorResponse) response.getSystemResponse().getValue();
+			  ex.printStackTrace();
+		 } catch (Exception e) {
+			 logger.error("Error in OBS call : "+e.getMessage());
+		 } finally {
+		 
+		 }
+
 		return null;
 	}
 
@@ -202,6 +216,7 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 		order.setDepositAccount(createDepositAccount(merchantApplication));
 		order.getSubAccountItem().add(getCheckSubAccountItem());
 		order.getSubAccountItem().add(getCreditCardSubAccountItem());
+		order.setOfferDetail(createOfferDetails());
 		return order;
 	}
 	
@@ -214,8 +229,8 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 		return offerDetail;
 	}
 
-	private BusinessInfo createNewBusinessInfo(MerchantApplicationRequest application, String userEmail) {
-		BusinessInfo businessInfo = new BusinessInfo();
+	private BusinessInfoContact createNewBusinessInfo(MerchantApplicationRequest application, String userEmail) {
+		BusinessInfoContact businessInfo = new BusinessInfoContact();
 		businessInfo.setBusinessType(PartyTypeEnum.BUSINESS);
 		businessInfo.setLegalName(application.getFirstName() + " " + application.getLastName());
 		businessInfo.setBusinessAddress(createPhysicalAddress(application));

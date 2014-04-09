@@ -135,7 +135,7 @@ public interface OnboardingServiceRestClient {
 	 */
 	@POST
 	@Path("/orders")
-	RestResponse createOrUpdateOrder(MerchantOrder order,
+	RestResponse createOrUpdateOrder(JAXBElement<MerchantOrder> order,
 			@HeaderParam(AUTHORIZATION_PARAM) String authHeader,
 			@HeaderParam("intuit_originatingip") String clientIPAddr,
 			@HeaderParam("intuit_tid") UUID requestId);

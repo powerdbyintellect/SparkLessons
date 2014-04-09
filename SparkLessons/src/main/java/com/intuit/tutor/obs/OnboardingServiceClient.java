@@ -6,6 +6,7 @@ import com.intuit.tutor.security.Token;
 
 public interface OnboardingServiceClient {
 
+	
 	MerchantApplicationResponse submitMerchantApplication(MerchantApplicationRequest merchantApplication, Token token,
 			String clientIPAddress, UUID requestId, String userEmail) throws OnBoardingException;
 	
