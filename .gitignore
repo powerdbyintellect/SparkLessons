@@ -1,2 +1,6 @@
 
 .DS_Store
+
+SparkLessons/.settings/org.eclipse.wst.common.component
+
+*.component
