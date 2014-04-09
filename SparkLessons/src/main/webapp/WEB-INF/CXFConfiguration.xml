@@ -19,17 +19,22 @@
         </jaxrs:headers>
     </jaxrs:client>
 
-    <jaxrs:client id="onboardingServiceRestClient"
-                  address="https://onboarding-qa.payments.intuit.net"
-                  serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
-                  inheritHeaders="true" threadSafe="true">
-        <jaxrs:headers>
-            <entry key="Accept" value="text/xml, application/xml"/>
-        </jaxrs:headers>
-    </jaxrs:client>
+    <bean id="onboardingServiceClient" class="com.intuit.tutor.obs.OnboardingServiceClientImpl" init-method="initialize">
+		<property name="onboardingServiceRestClient">
+			<ref bean="onboardingServiceRestClient" />
+		</property>
+<!-- 		<property name="applicationChannel" value="${sparkrent.application.channel}" />
+		<property name="applicationSource" value="${sparkrent.application.source}" />
+		<property name="countryCode" value="${sparkrent.application.countryCode}" />
+		<property name="offerId" value="${sparkrent.application.offerid}" />
+		<property name="brandId" value="${sparkrent.application.brandid}" />
+		<property name="sicCode" value="${sparkrent.application.siccode}" />
+		<property name="sparkrentServiceGatewayAppId" value="${sparkrent.servicegateway.appid}" />
+		<property name="sparkrentServiceGatewaySecret" value="${sparkrent.servicegateway.secret}" /> -->
+	</bean>
     
    <jaxrs:client id="iamRESTProxy"
-                  address="https://accounts-e2e.platform.intuit.net"
+				address="https://accounts-e2e.platform.intuit.net"
                   serviceClass="com.intuit.tutor.IamRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>

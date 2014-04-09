@@ -24,8 +24,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.intuit.tutor.entity.Address;
+import com.intuit.tutor.entity.BankAccount;
 import com.intuit.tutor.entity.Customer;
+import com.intuit.tutor.obs.MerchantApplicationRequest;
+import com.intuit.tutor.obs.MerchantApplicationResponse;
 import com.intuit.tutor.obs.OnboardingServiceClient;
+import com.intuit.tutor.security.Token;
 import com.intuit.platform.integration.consumer.GSONMarshaller;
 import com.intuit.platform.integration.consumer.JAXBXMLMarshaller;
 import com.intuit.platform.integration.consumer.JSONMarshaller;
@@ -52,6 +56,34 @@ public class CustomerController {
 	
 	@Autowired
 	private IamRESTInterface iamRESTClient;
+
+	private static final String XML_FILE_PATH = "/";
+	private String authHeader;
+	private String offeringId = "Intuit.payments.pcsactivation.sparklessons";
+	private static final UUID TEST_REQUEST_ID = UUID.randomUUID();
+	private static final String TEST_IP_ADDRESS = "199.16.140.27";
+	private static final String TEST_PASSWORD = "123test";
+	private static final String TEST_GLOBAL_NAMESPACE = "50000003";
+	
+	@Autowired
+	private OnboardingServiceClient onboardingServiceClient;
+
+	public void setAuthHeader(String authHeader) {
+		this.authHeader = authHeader;
+	}
+	
+	@SuppressWarnings("serial")
+	protected static final Map<IntuitHeader, String> headers = new HashMap<IntuitHeader, String>() {{
+	    put(IntuitHeader.APPID, "Intuit.cto.iam.ius.tests");
+	    put(IntuitHeader.APPSECRET, "F3MVISrnOmHsz7Y1Fzwvb7");
+	    put(IntuitHeader.OFFERINGID, "Intuit.cto.iam.ius.tests");
+	    put(IntuitHeader.ORIGINATINGIP, "172.18.33.10");   // 123.45.67.89
+	}};
+
+	protected static final String baseUrl = "https://accounts-e2e.platform.intuit.com/";
+//	private static final IMarshaller marshaller = new GSONMarshaller();
+//	private static final IMarshaller marshaller = new JAXBXMLMarshaller();
+	private static final IMarshaller marshaller = new JSONMarshaller();
 	
 	private ObjectFactory objectFactory = new ObjectFactory();
 	
@@ -86,47 +118,30 @@ public class CustomerController {
 				+ address.getState() + " " + address.getZipCode());
 
 		
-		// RequestSenderCXF client = new RequestSenderCXF();
-		// String sampleMerchantOrderMaterialsFromXml =
-		// createSampleMerchantOrderMaterialsFromXml("");
-		// HashMap<String, String> headers = new HashMap<String, String>();
-		// headers.put("intuit_tid", "" + UUID.randomUUID());
-		// headers.put("intuit_originatingip", "10.10.21.121");
-		// headers.put("activation_partner_code", "Foo");
-		// headers.put("activation_source", "Foo");
-		// headers.put("activation_transaction_id", "" +
-		// System.currentTimeMillis());
-		// headers.put("activation_subscriber_id", "Foo");
-		// headers.put("activation_originating_ip", "Foo");
-		// headers.put("fail_on_processor", "CrmStateChangeProcessor");
-		//
-		// //String newMomString =
-		// sampleMerchantOrderMaterialsFromXml.replaceFirst("(?i)\\<ApplicationChannel\\>.*\\</ApplicationChannel\\>",
-		// "<ApplicationChannel>QBDT_IPD</ApplicationChannel>");
-		// String newMomString =
-		// sampleMerchantOrderMaterialsFromXml.replaceFirst("(?i)\\<Id\\>.*\\</Id\\>",
-		// "<Id>" + System.currentTimeMillis() + "</Id>");
-		// newMomString =
-		// newMomString.replaceFirst("(?i)\\<MasterAccountId\\>.*\\</MasterAccountId\\>",
-		// "<MasterAccountId>" + generateRandomMasterAccountId() +
-		// "</MasterAccountId>");
-		// // System.out.println("request = " + newMomString);
-		//
-		// //qa1
-		// String response = (String)
-		// client.send("https://onboarding-qa.payments.intuit.net/v1/orders",
-		// newMomString, String.class, headers);
-
-		
-		
-		createIAMUser(customer, address);
+//		createIAMUser(customer, address);
 
 		// Send create account request
-
 		// String str = iam.signup(id, "127.0.0.1", getAuthHeader(),
 		// getOfferingId());
 		// System.out.println(str);
-
+//		IAMToken iamToken = new IAMToken();
+		String ticket = "V1-203-Q3f10vwsjk8pqkuqfwcgeb";//iamToken.getTicket();
+		String authId = "1056553675";//iamToken.getUserId();
+		customer.setEmail("tester60af3c9852b94db6a6cc1e4b7f73e3e1@test.intuit.com");
+		
+		BankAccount bankAccount = new BankAccount();
+		
+		Token token = new Token();
+		token.setAuthId(authId);
+		token.setTokenId(ticket);
+		
+		MerchantApplicationRequest merchantApplicationRequest = MerchantApplicationRequest.createFromMerchantApplication(customer, address, bankAccount);
+		
+		MerchantApplicationResponse applicationResult = onboardingServiceClient.submitMerchantApplication(merchantApplicationRequest, 
+				token, TEST_IP_ADDRESS, TEST_REQUEST_ID, customer.getEmail());
+		
+		System.out.println(" Master Account "+applicationResult.getMasterAccountId());
+		
 		return "order";
 	}
 
