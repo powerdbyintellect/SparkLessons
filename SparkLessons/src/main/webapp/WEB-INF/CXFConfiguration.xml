@@ -19,6 +19,16 @@
         </jaxrs:headers>
     </jaxrs:client>
 
+    <jaxrs:client id="onboardingServiceRestClient"
+                  address="https://onboarding-qa.payments.intuit.net"
+                  serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
+                  inheritHeaders="true" threadSafe="true">
+        <jaxrs:headers>
+            <entry key="Accept" value="text/xml, application/xml"/>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.sbg.payments.onboarding.test,intuit_app_secret=6M50GN0AHsITfe6fkSYAtE,x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
+        </jaxrs:headers>
+    </jaxrs:client>
+    
     <bean id="onboardingServiceClient" class="com.intuit.tutor.obs.OnboardingServiceClientImpl" init-method="initialize">
 		<property name="onboardingServiceRestClient">
 			<ref bean="onboardingServiceRestClient" />
