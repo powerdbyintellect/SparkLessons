@@ -2,20 +2,27 @@ package com.intuit.tutor;
 
 import java.io.InputStream;
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+import javax.ws.rs.NotSupportedException;
+import javax.ws.rs.core.MultivaluedMap;
 import javax.xml.bind.JAXBElement;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.cxf.jaxrs.impl.MetadataMap;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.intuit.tutor.entity.Address;
 import com.intuit.tutor.entity.Customer;
 import com.intuit.tutor.obs.OnboardingServiceClient;
@@ -29,46 +36,24 @@ import com.intuit.platform.integration.iface.IMarshaller;
 import com.intuit.platform.integration.iface.ISecurity;
 import com.intuit.platform.integration.iface.IntuitHeader;
 import com.intuit.platform.integration.iface.ISecurity.APIAuthMethod;
+import com.intuit.platform.integration.ius.common.types.AcceptInvitationRequest;
 import com.intuit.platform.integration.ius.common.types.ChallengeQuestionAnswer;
 import com.intuit.platform.integration.ius.common.types.Email;
 import com.intuit.platform.integration.ius.common.types.FullName;
 import com.intuit.platform.integration.ius.common.types.IAMTicket;
+import com.intuit.platform.integration.ius.common.types.IAMTicketSignInRequest;
+import com.intuit.platform.integration.ius.common.types.ObjectFactory;
 import com.intuit.platform.integration.ius.common.types.User;
 import com.intuit.platform.integration.rest.client.IUSRestClient;
 import com.intuit.psd.cdm.v1.*;
 
 @Controller
 public class CustomerController {
-	private static final String XML_FILE_PATH = "/";
-	private String authHeader;
-	private String offeringId = "Intuit.payments.pcsactivation.sparklessons";
-
-	// @Autowired
-	// private OnboardingServiceClient onboardingServiceClient;
-
-	public void setAuthHeader(String authHeader) {
-		this.authHeader = authHeader;
-	}
 	
-	@SuppressWarnings("serial")
-	protected static final Map<IntuitHeader, String> headers = new HashMap<IntuitHeader, String>() {{
-	    put(IntuitHeader.APPID, "Intuit.cto.iam.ius.tests");
-	    put(IntuitHeader.APPSECRET, "F3MVISrnOmHsz7Y1Fzwvb7");
-	    put(IntuitHeader.OFFERINGID, "Intuit.cto.iam.ius.tests");
-	    put(IntuitHeader.ORIGINATINGIP, "172.18.33.10");   // 123.45.67.89
-	}};
-
-	protected static final String baseUrl = "https://accounts-e2e.platform.intuit.com/";
-	//protected static final String baseUrl = "http://localhost:8080/ius/";
-
-//	private static final IMarshaller marshaller = new GSONMarshaller();
-	private static final IMarshaller marshaller = new JSONMarshaller();
-//	private static final IMarshaller marshaller = new JAXBXMLMarshaller();
+	@Autowired
+	private IamRESTInterface iamRESTClient;
 	
-	private static final ISecurity security = new OIIRequestHeaderHandler(headers, null, APIAuthMethod.IAMTicket, true, "iusc");
-	private static final IHttpClient httpClient = new ApacheHttpClient(null, 0);
-	private static final IUSRestClient iusClient = new IUSRestClient(baseUrl, marshaller, httpClient, security);
-	
+	private ObjectFactory objectFactory = new ObjectFactory();
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
@@ -147,6 +132,7 @@ public class CustomerController {
 
 	private User createIAMUser(Customer customer, Address customerAddress)
 			throws Exception {
+		
 		User user = new User();
 		String guuid = UUID.randomUUID().toString().replace("-", "");
 		user.setUsername("iustestuser" + guuid);
@@ -175,37 +161,34 @@ public class CustomerController {
 		fullName.setSuffix("O'");
 		fullName.setSurName("O'neil");
 		user.getFullName().add(fullName);
-		iusClient.signup(user);
-
+		//iusClient.signup(user);
+		
+		JAXBElement<User> createdUserElement = iamRESTClient.signup(guuid, objectFactory.createUser(user));
+		User newuser = createdUserElement.getValue();
 		// validate user is created
-		IAMTicket ticket = iusClient.signin(user.getUsername(),
-				user.getPassword());
-		System.out.println("UserId :" + ticket.getUserId());
-		System.out.println("Ticket :" + ticket.getTicket());
-
-		User retUser = iusClient.getUserByUserId(ticket.getTicket(),
-				ticket.getUserId());
-		System.out.println("  Email :" + retUser.getEmail().getAddress());
-
-		return retUser;
-	}
-
-	private String createSampleMerchantOrderMaterialsFromXml(String fileName) {
-
+		
+		String body = "{\"userId\":\"" + newuser.getUserId() + "\",\"password\":\"" + user.getPassword() + "\"}";
+		System.out.println("body: " + body);
 		try {
-			InputStream fileStream = CustomerController.class
-					.getResourceAsStream(XML_FILE_PATH + fileName);
-			StringWriter writer = new StringWriter();
-			IOUtils.copy(fileStream, writer);
-			String merchOrderMaterials = writer.toString();
-			merchOrderMaterials = merchOrderMaterials.replaceFirst(
-					"TESTAPS-000002", "" + new Random().nextInt());
-			return merchOrderMaterials;
-		} catch (Exception e) {
+			JAXBElement<IAMTicket> iamTicketElement = iamRESTClient.signin(guuid, body);
+			IAMTicket ticket = iamTicketElement.getValue();
+			System.out.println("UserId :" + ticket.getUserId());
+			System.out.println("Ticket :" + ticket.getTicket());
+			System.out.println("RealmId :" + ticket.getRealmId());
+		} catch (NotSupportedException e) {
+			System.out.println(e.getResponse().getEntity());
 		}
+	
+		
+//
+//		User retUser = iusClient.getUserByUserId(ticket.getTicket(),
+//				ticket.getUserId());
+//		System.out.println("  Email :" + retUser.getEmail().getAddress());
 
-		return null;
+		//return retUser;
+		return user;
 	}
+
 
 	@RequestMapping(value = "/updateCustomer", method = RequestMethod.POST)
 	public String updateCustomer(ModelMap model, Customer customer)
@@ -223,22 +206,6 @@ public class CustomerController {
 	public String deleteCustomer(ModelMap model, Customer customer)
 			throws Exception {
 		return "index";
-	}
-
-	public String getOfferingId() {
-		return offeringId;
-	}
-
-	public void setOfferingId(String offeringId) {
-		this.offeringId = offeringId;
-	}
-
-	public String getAuthHeader() {
-		return authHeader;
-	}
-
-	public IUSRestClient getIusClient() {
-		return iusClient;
 	}
 
 }
