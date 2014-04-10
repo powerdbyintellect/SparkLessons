@@ -96,7 +96,7 @@ public class CustomerController {
 		if(facebook != null) {
 			UserEntity user = null;
 			try {
-				user = userEntityDAO.getUser(facebook.getMe().getEmail());
+				user = userEntityDAO.getUserByLoginId(facebook.getMe().getId());
 			} catch (Exception e) {
 				
 			}
@@ -128,13 +128,15 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
-	public String addCustomer(ModelMap model, Customer customer, Address address)
+	public String addCustomer(ModelMap model, Customer customer, Address address, HttpServletRequest request)
 			throws Exception {
 		System.out.println("F: " + customer.getFirstname() + "\nL: "
 				+ customer.getLastname() + "\nAddr: "
 				+ address.getStreetAddress1() + " " + address.getCity() + " "
 				+ address.getState() + " " + address.getZipCode());
 
+		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+		
 		customer.setPhone("8188188818");
 		customer.setPassword("testiususer");
 		BankAccount bankAccount = new BankAccount();
@@ -183,26 +185,13 @@ public class CustomerController {
 		userEntity.setPassword(customer.getPassword());
 		userEntity.setRealmid(applicationResult.getRealmId());
 		userEntity.setUserid(authId);
+		if(facebook != null) {
+			userEntity.setLoginid(facebook.getMe().getId());
+		}
+		
 		userEntityDAO.saveUser(userEntity);
 
-//		Testdb testDB = new Testdb("http://localhost/xdb");
-//		String sql_insert = 
-//			"insert into users (userid, password, email, firstname, lastname, masteraccount, realmid, accountnumber, loginid)" +
-//				"values ( '"+authId+ "','"+ new String("pwd") +"','"+customer.getEmail()+"','"+merchantApplicationRequest.getFirstName()+"','"+merchantApplicationRequest.getLastName()+"','"+
-//				applicationResult.getMasterAccountId()+"','"+applicationResult.getRealmId()+"','"+new String("none")+"','"+new String("login")+"' );";
-//		
-//		testDB.update(sql_insert);
-//		
-		/**
-		 * //		 try {
-			//		     Class.forName("org.hsqldb.jdbc.JDBCDriver" );
-			//		 } catch (Exception e) {
-			//		     System.err.println("ERROR: failed to load HSQLDB JDBC driver.");
-			//		     e.printStackTrace();
-			//		 }
-			//		Connection c = DriverManager.getConnection("jdbc:hsqldb:http://localhost/xdb", "SA", "");
-			//		testDB.query(sql_insert);
-		 */
+
 		if(applicationResult.getMasterAccountId() !=null){
 			CreditCard cc = new CreditCard();
 			cc.setRealmId(applicationResult.getRealmId());

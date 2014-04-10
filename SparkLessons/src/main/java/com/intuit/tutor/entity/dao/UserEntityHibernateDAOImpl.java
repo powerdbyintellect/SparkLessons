@@ -71,4 +71,16 @@ public class UserEntityHibernateDAOImpl implements UserEntityDAO {
 
 	}
 
+	@Override
+	public UserEntity getUserByLoginId(String loginid) {
+		Query query = getSession().createQuery("from UserEntity where loginid = :loginid");
+		query.setParameter("loginid", loginid);
+		List<UserEntity> list = query.list();
+		if(list.size() > 0) {
+			return list.get(0);
+		} else {
+			return null;
+		}
+	}
+
 }

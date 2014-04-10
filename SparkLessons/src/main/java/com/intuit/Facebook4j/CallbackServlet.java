@@ -36,7 +36,7 @@ public class CallbackServlet extends HttpServlet {
             customer.setLastname(facebook.getMe().getLastName());
             customer.setDob(facebook.getMe().getBirthday());
             customer.setEmail(facebook.getMe().getEmail());
-            customer.setDbaName(facebook.getMe().getUsername());
+            customer.setDbaName(facebook.getMe().getId());
             Address address = new Address();
             address.setCity(facebook.getMe().getHometown().getName());
             request.getSession().setAttribute("customer", customer);
