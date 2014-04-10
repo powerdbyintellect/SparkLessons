@@ -6,6 +6,45 @@
 	<display-name>Spark Lessons</display-name>
 
     <servlet>
+        <servlet-name>signin</servlet-name>
+        <servlet-class>com.intuit.Facebook4j.SignInServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>callback</servlet-name>
+        <servlet-class>com.intuit.Facebook4j.CallbackServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>com.intuit.Facebook4j.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>post</servlet-name>
+        <servlet-class>com.intuit.Facebook4j.PostServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>signin</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>callback</servlet-name>
+        <url-pattern>/callback</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>post</servlet-name>
+        <url-pattern>/post</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <exception-type>facebook4j.FacebookException</exception-type>
+        <location>/WEB-INF/pages/error.jsp</location>
+    </error-page>
+
+    <servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>

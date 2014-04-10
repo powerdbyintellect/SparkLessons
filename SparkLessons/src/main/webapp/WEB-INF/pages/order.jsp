@@ -1,8 +1,9 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Arrays"%>
-<%@page contentType="text/html"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
   <head>
@@ -75,22 +76,85 @@
   </div>
 </div>
 
+ <tag:notloggedin>
+     <a href="signin">Sign in with Facebook</a>
+ </tag:notloggedin>
+ <tag:loggedin>
+     <h1>Welcome to Spark Lessons ${facebook.name}</h1>
+     <a href="./logout">logout</a>
+ </tag:loggedin>
+
 <form name="couponForm" action="addCustomer" method="post"  class="form-signin">
     <h3>Activate Merchant Account </h3>
-        <input type="text" size="20" name="firstname"  value="${customer.firstname}" class="input-block-level" placeholder="Firstname"/>
-        <input type="text" size="20" name="lastname"  value="${customer.lastname}" class="input-block-level" placeholder="Lastname"/>
-        <input type="text" size="20" name="ssn"  value="${customer.ssn}" class="input-block-level" placeholder="Social Security"/>
-		<input type="text" size="20" name="dob"  value="${customer.dob}" class="input-block-level" placeholder="Date Of Birth"/>
-		<input type="text" size="20" name="streetAddress1"  value="${address.streetAddress1}" class="input-block-level" placeholder="Address 1"/>
-		<input type="text" size="20" name="streetAddress2"  value="${address.streetAddress2}" class="input-block-level" placeholder="Address 2"/>
-		<input type="text" size="20" name="city"  value="${address.city}" class="input-block-level" placeholder="City"/>
-		<input type="text" size="20" name="state"  value="${address.state}" class="input-block-level" placeholder="State"/>
-		<input type="text" size="20" name="zipCode"  value="${address.zipCode}" class="input-block-level" placeholder="Zipcode"/>
+    <input type="text" size="20" name="firstname"  value="${customer.firstname}" class="input-block-level" placeholder="Firstname"/>
+    <input type="text" size="20" name="lastname"  value="${customer.lastname}" class="input-block-level" placeholder="Lastname"/>
+    <input type="text" size="20" name="username"  value="${customer.dbaName}" class="input-block-level" placeholder="username"/>
+    <input type="text" size="20" name="email"  value="${customer.email}" class="input-block-level" placeholder="email"/>
+    <input type="text" size="20" name="ssn"  value="${customer.ssn}" class="input-block-level" placeholder="Social Security"/>
+    <input type="text" size="20" name="dob"  value="${customer.dob}" class="input-block-level" placeholder="Date Of Birth"/>
+    <input type="text" size="20" name="streetAddress1"  value="${address.streetAddress1}" class="input-block-level" placeholder="Address 1"/>
+    <input type="text" size="20" name="streetAddress2"  value="${address.streetAddress2}" class="input-block-level" placeholder="Address 2"/>
+    <input type="text" size="20" name="city"  value="${address.city}" class="input-block-level" placeholder="City"/>
+    <input type="text" size="20" name="state"  value="${address.state}" class="input-block-level" placeholder="State"/>
+    <input type="text" size="20" name="zipCode"  value="${address.zipCode}" class="input-block-level" placeholder="Zipcode"/>
         <input type="submit" class="btn btn-primary btn-large" value="Activate Now">
 </form>
 
 
    <hr>
+
+<h4>Small Business Coupons</h4>
+
+<div class="table-container">
+      <table id="table1" class="table table-hover table-striped">
+    	<thead>
+    	<tr>
+	    	<th>Business Name </th>
+	    	<th>Coupon Code</th>
+	    	<th>Start Date</th>
+			<th>Coupon Expiration</th>
+	    	<th>Number of Coupons</th>	    
+	    	<th>Minimum Amount</th>	
+	    	<th>Discount Percentage</th>
+		</tr>
+		</thead>
+		<tbody>
+        <c:forEach var="result" items='${couponList}'>
+            <tr>
+                 <td>
+                    <c:out value="${result.merchantname}"></c:out>
+                </td>
+                <td>
+                    <c:out value="${result.couponcode}"></c:out>
+                </td>
+                 <td>
+                    <c:out value="${result.startdate}"></c:out>
+                </td>
+                <td>
+                    <c:out value="${result.expirationdate}"></c:out>
+                </td>
+                <td>
+                    <c:out value="${result.couponcount}"></c:out>
+                </td>
+                 <td>
+                    <c:out value="${result.mintransactionamount}"></c:out>
+                </td>
+                  <td>
+                    <c:out value="${result.discountpercent}"></c:out>%
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</div>
+
+
+
+   <hr>
+
+      <footer>
+        <p>&copy; Intuit 2013</p>
+      </footer>
 
     </div> <!-- /container -->
 
