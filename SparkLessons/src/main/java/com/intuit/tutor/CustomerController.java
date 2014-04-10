@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBElement;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ import com.intuit.tutor.obs.MerchantApplicationRequest;
 import com.intuit.tutor.obs.MerchantApplicationResponse;
 import com.intuit.tutor.obs.OnboardingServiceClient;
 import com.intuit.tutor.security.Token;
+
+import facebook4j.Facebook;
 
 @Controller
 public class CustomerController {
@@ -86,7 +89,22 @@ public class CustomerController {
 	}
 
 	@RequestMapping(value = "/order", method = RequestMethod.GET)
-	public String initializePage(ModelMap model) {
+	public String initializePage(ModelMap model, HttpServletRequest request) {
+		
+		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+		
+		if(facebook != null) {
+			UserEntity user = null;
+			try {
+				user = userEntityDAO.getUser(facebook.getMe().getEmail());
+			} catch (Exception e) {
+				
+			}
+			if(user != null) {
+				model.put("realmId", user.getRealmid());
+				return "makepayment";
+			}	
+		}
 		System.out.println("Inside Customer Controller");
 		Customer customer = new Customer();
 		Address address = new Address();
@@ -97,8 +115,16 @@ public class CustomerController {
 	}
 	
 	@RequestMapping(value = "/makepayment", method = RequestMethod.GET)
-	public String makepaymentPage(ModelMap model) {
+	public String makepaymentPage(ModelMap model, HttpServletRequest request) {
+		try {
+			Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+			UserEntity user = userEntityDAO.getUser(facebook.getMe().getEmail());
+			model.put("realmId", user.getRealmid());
+		} catch (Exception e) {
+			return "makepayment"; 
+		}
 		return "makepayment";
+			
 	}
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)

@@ -52,7 +52,7 @@ public class UserEntityHibernateDAOImpl implements UserEntityDAO {
     }
 	@Override
 	public UserEntity getUser(String emailAddress) {
-		Query query = getSession().createQuery("select UserEntity where email = :email");
+		Query query = getSession().createQuery("from UserEntity where email = :email");
 		query.setParameter("email", emailAddress);
 		List<UserEntity> list = query.list();
 		if(list.size() > 0) {

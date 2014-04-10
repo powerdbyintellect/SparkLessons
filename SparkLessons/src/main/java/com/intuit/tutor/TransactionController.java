@@ -16,6 +16,7 @@ import javax.xml.namespace.QName;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.XmlMappingException;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
@@ -58,7 +59,11 @@ public class TransactionController {
 		creditCard.setExpirationYear(new BigInteger(expYear));
 		creditCard.setNameOnCard(ccName);
 		charge.setCreditCard(creditCard );
-		charge.setAmount(new BigDecimal(chargeAmount));
+		if(StringUtils.isEmpty(chargeAmount)) {
+			charge.setAmount(new BigDecimal("25.00"));
+		} else {
+			charge.setAmount(new BigDecimal(chargeAmount));
+		}
 		charge.setCardSecurityCode(cvc);
 		
 		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(realmId, UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
