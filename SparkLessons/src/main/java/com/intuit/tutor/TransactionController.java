@@ -41,26 +41,26 @@ public class TransactionController {
 	private Jaxb2Marshaller jaxbMarshaller;
 	
 	private ObjectFactory objectFactory = new ObjectFactory();
+	
+	
 	//accept card
-	@RequestMapping(value="/charge", method = RequestMethod.GET)
-	public ModelAndView ownerHandler(@RequestParam("realmid") String realmid) {
+	@RequestMapping(value="/charge", method = RequestMethod.POST)
+	public ModelAndView ownerHandler(com.intuit.tutor.entity.CreditCard userCreditCard) {
 		
 		
 		
 		CreditCardCharge charge = objectFactory.createCreditCardCharge();
 		CreditCard creditCard = new CreditCard();
-		creditCard.setCreditCardNumber("5503252761289519");
-		creditCard.setCreditCardPostalCode("91325");
-		creditCard.setExpirationMonth(12);
-		BigInteger year = new BigInteger("2020");
-		creditCard.setExpirationYear(year);
-		creditCard.setNameOnCard("Joe Who");
+		creditCard.setCreditCardNumber(userCreditCard.getCreditCardNumber());
+		creditCard.setCreditCardPostalCode(userCreditCard.getPostalCode());
+		creditCard.setExpirationMonth(userCreditCard.getExperiationMonth());
+		creditCard.setExpirationYear(new BigInteger(userCreditCard.getExperiationYear().toString()));
+		creditCard.setNameOnCard(userCreditCard.getNameOnCard());
 		charge.setCreditCard(creditCard );
-		charge.setAmount(new BigDecimal("12.23"));
-		charge.setCardSecurityCode("024");
+		charge.setAmount(userCreditCard.getChargeAmount());
+		charge.setCardSecurityCode(userCreditCard.getSecurityCode());
 		
-		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(realmid, UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
-		Map<String, ?> model;
+		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(userCreditCard.getRealmId(), UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
 		return new ModelAndView("charge", "creditCardResponse", response.getValue());
         //return new ModelMap(response.getValue());
     }
