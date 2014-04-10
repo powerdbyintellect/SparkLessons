@@ -45,24 +45,27 @@ public class TransactionController {
 	
 	//accept card
 	@RequestMapping(value="/charge", method = RequestMethod.POST)
-	public ModelAndView ownerHandler(com.intuit.tutor.entity.CreditCard userCreditCard) {
+	public ModelAndView ownerHandler(@RequestParam("cc_number") String ccNumber, @RequestParam("cc_exp_year") String expYear, @RequestParam("cc_exp_month") String expMonth, 
+			@RequestParam("cc_cvc") String cvc, @RequestParam("cc_name") String ccName, @RequestParam("realmId") String realmId, @RequestParam("chargeamount") String chargeAmount ) {
 		
 		
 		
 		CreditCardCharge charge = objectFactory.createCreditCardCharge();
 		CreditCard creditCard = new CreditCard();
-		creditCard.setCreditCardNumber(userCreditCard.getCreditCardNumber());
-		creditCard.setCreditCardPostalCode(userCreditCard.getPostalCode());
-		creditCard.setExpirationMonth(userCreditCard.getExperiationMonth());
-		creditCard.setExpirationYear(new BigInteger(userCreditCard.getExperiationYear().toString()));
-		creditCard.setNameOnCard(userCreditCard.getNameOnCard());
+		creditCard.setCreditCardNumber(ccNumber);
+		//creditCard.setCreditCardPostalCode(userCreditCard.getPostalCode());
+		creditCard.setExpirationMonth(new Integer(expMonth));
+		creditCard.setExpirationYear(new BigInteger(expYear));
+		creditCard.setNameOnCard(ccName);
 		charge.setCreditCard(creditCard );
-		charge.setAmount(userCreditCard.getChargeAmount());
-		charge.setCardSecurityCode(userCreditCard.getSecurityCode());
+		charge.setAmount(new BigDecimal(chargeAmount));
+		charge.setCardSecurityCode(cvc);
 		
-		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(userCreditCard.getRealmId(), UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
+		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(realmId, UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
+		//model.put("creditCardResponse", response.getValue());
 		return new ModelAndView("charge", "creditCardResponse", response.getValue());
         //return new ModelMap(response.getValue());
+		//return "charge";
     }
 	
 	//authorize charge

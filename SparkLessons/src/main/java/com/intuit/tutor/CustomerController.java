@@ -26,6 +26,7 @@ import com.intuit.platform.integration.ius.common.types.ObjectFactory;
 import com.intuit.platform.integration.ius.common.types.User;
 import com.intuit.tutor.entity.Address;
 import com.intuit.tutor.entity.BankAccount;
+import com.intuit.tutor.entity.CreditCard;
 import com.intuit.tutor.entity.Customer;
 import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
@@ -115,9 +116,11 @@ public class CustomerController {
 		bankAccount.setRoutingNumber("122000661");
 		bankAccount.setBankName("Bank of America");
 		
-		String guuid = UUID.randomUUID().toString().replace("-", "");
-		//customer.setEmail("tester60af3c9852b94db6a6cc1e4b7f73e3e1@test.intuit.com");
-		customer.setEmail("tester" + guuid + "@test.intuit.com");
+		if(customer.getEmail() == null) {
+			String guuid = UUID.randomUUID().toString().replace("-", "");
+			//customer.setEmail("tester60af3c9852b94db6a6cc1e4b7f73e3e1@test.intuit.com");
+			customer.setEmail("tester" + guuid + "@test.intuit.com");
+		}
 
 		
 		IAMTicket iamticket = createIAMUser(customer, address);
@@ -141,6 +144,7 @@ public class CustomerController {
 		
 		System.out.println(" Master Account "+applicationResult.getMasterAccountId());
 		System.out.println(" RealmId "+applicationResult.getRealmId());
+		System.out.println(" Email "+ customer.getEmail());
 		
 		
 		UserEntity userEntity = new UserEntity();
@@ -173,10 +177,15 @@ public class CustomerController {
 			//		Connection c = DriverManager.getConnection("jdbc:hsqldb:http://localhost/xdb", "SA", "");
 			//		testDB.query(sql_insert);
 		 */
-		if(applicationResult.getMasterAccountId() !=null)
+		if(applicationResult.getMasterAccountId() !=null){
+			CreditCard cc = new CreditCard();
+			cc.setRealmId(applicationResult.getRealmId());
+			//cc.setCreditCardNumber("5174554122715233");
+			model.put("realmId", applicationResult.getRealmId());
 			return "makepayment";
-		else 
+		}else{ 
 			return "order";
+		}
 	}
 
 	private IAMTicket createIAMUser(Customer customer, Address customerAddress)

@@ -193,11 +193,12 @@ margin-right: -5px;
 	  <p align="center">You are about get paid for lessons you gave !!</p>
 
   <div class="checkout">
-  <p><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/piano.jpg" />Piano Lessons for 1 hour: $25.00</p>
+  <form name="paymentform" action="charge" method="post">
+  <p><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/piano.jpg" />Piano Lessons for 1 hour: $<input type="text" size="8" name="chargeamount" class="input-block-level" placeholder="25.00"/></p>
   <p>You don't have a card saved with us. You'll need to add one now</p>
   <section>
         <!-- START FORM -->
-        <form name="paymentform" action="chargePayment" method="post">
+        
         
         <div align="right">
           <div class="credit-card-input no-js" id="skeuocard">
@@ -217,25 +218,26 @@ margin-right: -5px;
               <option value="dinersclubintl">Diners Club</option>
             </select>
             <label for="cc_number">Card Number</label>
-            <input type="text" name="cc_number" id="cc_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" size="19">
+            <input type="text" name="cc_number" id="cc_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" size="19" >
             <label for="cc_exp_month">Expiration Month</label>
             <input type="text" name="cc_exp_month" id="cc_exp_month" placeholder="00">
             <label for="cc_exp_year">Expiration Year</label>
-            <input type="text" name="cc_exp_year" id="cc_exp_year" placeholder="00">
+            <input type="text" name="cc_exp_year" id="cc_exp_year" placeholder="00" >
             <label for="cc_name">Cardholder's Name</label>
             <input type="text" name="cc_name" id="cc_name" placeholder="John Doe" value="">
             <label for="cc_cvc">Card Validation Code</label>
             <input type="text" name="cc_cvc" id="cc_cvc" placeholder="123" maxlength="3" size="3">
+            <input type="hidden" name="realmId" value="${realmId}"/>
           </div>
           	<div align="center">
           	  <input type="submit" align="left" class="btn btn-primary btn-large" value="Submit Payment"/>
         	</div>
          </div> 
         
-         </form>
+        
         <!-- END FORM -->
       </section>
-  
+   </form>
 
   <!-- <p>Now, where to send it?</p>
    <div class="addr">
