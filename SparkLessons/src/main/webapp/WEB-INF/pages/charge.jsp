@@ -49,18 +49,18 @@
     	<table width="500px">
         <tr><td><b> Merchant Account Number : </b> </td> <td> ${creditCardResponse.merchantAccountNumber} </td></tr>
         <tr><td><b> Transaction Identifier  : </b> </td> <td> ${creditCardResponse.creditCardTransID}</td></tr>
-        <tr><td><b> Payment Status  		: </b> </td> <td> ${creditCardResponse.creditCardTransID} </td></tr>
-        <tr><td><b> Transaction Auth Time   : </b> </td> <td> ${creditCardResponse.creditCardTransID}</td></tr>
-        <tr><td><b> Authorization Code      : </b>  </td> <td>${creditCardResponse.creditCardTransID} </td></tr>
-        <tr><td><b> Authorization Amount    : </b> </td> <td>${creditCardResponse.creditCardTransID}  </b></td></tr>
-        <tr><td><b> Transaction Identifier  : </b>  </td> <td>${creditCardResponse.creditCardTransID} </td></tr>
+        <tr><td><b> Payment Status  		: </b> </td> <td> ${creditCardResponse.paymentStatus} </td></tr>
+        <tr><td><b> Transaction Auth Time   : </b> </td> <td> ${creditCardResponse.transAuthorizationTime}</td></tr>
+        <tr><td><b> Authorization Code      : </b>  </td> <td>${creditCardResponse.authorizationCode} </td></tr>
+        <tr><td><b> Authorization Amount    : </b> </td> <td> <b>${amount}  </b></td></tr>
         </table>
     </div>
   </div>
 </div>
 </div>
-
-
+<div align="center">
+	<a style="text-decoration: none;" href="${pageContext.servletContext.contextPath}"><b>Home</b></a> 
+</div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

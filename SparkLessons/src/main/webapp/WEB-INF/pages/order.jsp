@@ -76,13 +76,13 @@
   </div>
 </div>
 
- <tag:notloggedin>
-     <a href="signin">Sign in with Facebook</a>
- </tag:notloggedin>
- <tag:loggedin>
-     <h1>Welcome to Spark Lessons ${facebook.name}</h1>
-     <a href="./logout">logout</a>
- </tag:loggedin>
+ <tag:notloggedin>
+     <a href="signin"><img src="${pageContext.servletContext.contextPath}/resources/img/fbloginbutton.png" alt="Login with Facebook" align="middle"></a>
+ </tag:notloggedin>
+ <tag:loggedin>
+     <h3 align="center">Welcome to Spark Lessons ${facebook.name}</h3>
+ </tag:loggedin>
+
 
 <form name="couponForm" action="addCustomer" method="post"  class="form-signin">
     <h3>Activate Merchant Account </h3>

@@ -68,7 +68,10 @@ public class TransactionController {
 		
 		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(realmId, UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
 		//model.put("creditCardResponse", response.getValue());
-		return new ModelAndView("charge", "creditCardResponse", response.getValue());
+		ModelAndView mav = new ModelAndView("charge");
+		mav.addObject("creditCardResponse", response.getValue());
+		mav.addObject("amount", charge.getAmount());
+		return mav; //new ModelAndView("charge", "creditCardResponse", response.getValue());
         //return new ModelMap(response.getValue());
 		//return "charge";
     }
