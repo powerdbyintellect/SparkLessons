@@ -1,5 +1,7 @@
 package com.intuit.tutor;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -130,6 +132,27 @@ public class CustomerController {
 		System.out.println(" Master Account "+applicationResult.getMasterAccountId());
 		System.out.println(" RealmId "+applicationResult.getRealmId());
 		
+		
+
+//		Testdb testDB = new Testdb("http://localhost/xdb");
+//		String sql_insert = 
+//			"insert into users (userid, password, email, firstname, lastname, masteraccount, realmid, accountnumber, loginid)" +
+//				"values ( '"+authId+ "','"+ new String("pwd") +"','"+customer.getEmail()+"','"+merchantApplicationRequest.getFirstName()+"','"+merchantApplicationRequest.getLastName()+"','"+
+//				applicationResult.getMasterAccountId()+"','"+applicationResult.getRealmId()+"','"+new String("none")+"','"+new String("login")+"' );";
+//		
+//		testDB.update(sql_insert);
+//		
+		/**
+		 * //		 try {
+			//		     Class.forName("org.hsqldb.jdbc.JDBCDriver" );
+			//		 } catch (Exception e) {
+			//		     System.err.println("ERROR: failed to load HSQLDB JDBC driver.");
+			//		     e.printStackTrace();
+			//		 }
+			//		Connection c = DriverManager.getConnection("jdbc:hsqldb:http://localhost/xdb", "SA", "");
+			//		testDB.query(sql_insert);
+		 */
+		
 		return "order";
 	}
 
@@ -178,7 +201,7 @@ public class CustomerController {
 		System.out.println("UserId :" + ticket.getUserId());
 		System.out.println("Ticket :" + ticket.getTicket());
 		System.out.println("RealmId :" + ticket.getRealmId());
-		
+
 		return ticket;
 	}
 

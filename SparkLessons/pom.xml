@@ -254,6 +254,15 @@
 			<artifactId>rest-client</artifactId>
 			<version>1.0.0.108</version>
 		</dependency>
+		
+		<!-- HSQL DB -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.2.9</version>
+		</dependency>
+		            
+		
 	</dependencies>
 
 	<build>
