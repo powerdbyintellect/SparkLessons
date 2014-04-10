@@ -128,6 +128,7 @@ public class CustomerController {
 				token, TEST_IP_ADDRESS, TEST_REQUEST_ID, customer.getEmail());
 		
 		System.out.println(" Master Account "+applicationResult.getMasterAccountId());
+		System.out.println(" RealmId "+applicationResult.getRealmId());
 		
 		return "order";
 	}
