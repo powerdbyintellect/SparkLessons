@@ -20,34 +20,55 @@
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
      <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.min.css" rel="stylesheet">
- <link href="${pageContext.servletContext.contextPath}/resources/css/tiles.css" rel="stylesheet">
+ 	<link href="${pageContext.servletContext.contextPath}/resources/css/tiles.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/skeuocard.reset.css" />
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/skeuocard.css" />
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/demo.css">
+    <script src="${pageContext.servletContext.contextPath}/resources/js/vendor/cssua.min.js"></script>
+     
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
   </head>
 
   <body>
-  <h1 align="center">Spark Lessons</h1>
    
-   <div>MerchantAccountNumber Processed: ${creditCardResponse.merchantAccountNumber}</div>
-   <div>tid: ${creditCardResponse.creditCardTransID}</div>
-   <div>paymentStatus: ${creditCardResponse.paymentStatus}</div>
-   <div>transAuthorizationTime: ${creditCardResponse.transAuthorizationTime}</div>
-   <div>authorizationCode: ${creditCardResponse.authorizationCode}</div>
-   
+   	<h1 align="center">Spark Lessons - Payment Confirmed!</h1>
+   	<p align="center">You are all set. You'll see cha-ching in your bank soon.</p>
+ <div class="container">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+    </div>
+    <div class="couponForm" align="center" class="form-signin">
+    	<table width="500px">
+        <tr><td><b> Merchant Account Number : </b> </td> <td> ${creditCardResponse.merchantAccountNumber} </td></tr>
+        <tr><td><b> Transaction Identifier  : </b> </td> <td> ${creditCardResponse.creditCardTransID}</td></tr>
+        <tr><td><b> Payment Status  		: </b> </td> <td> ${creditCardResponse.creditCardTransID} </td></tr>
+        <tr><td><b> Transaction Auth Time   : </b> </td> <td> ${creditCardResponse.creditCardTransID}</td></tr>
+        <tr><td><b> Authorization Code      : </b>  </td> <td>${creditCardResponse.creditCardTransID} </td></tr>
+        <tr><td><b> Authorization Amount    : </b> </td> <td>${creditCardResponse.creditCardTransID}  </b></td></tr>
+        <tr><td><b> Transaction Identifier  : </b>  </td> <td>${creditCardResponse.creditCardTransID} </td></tr>
+        </table>
+    </div>
+  </div>
+</div>
+</div>
+
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+     <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <script src='http://stripe.github.io/jquery.payment/lib/jquery.payment.js'></script>
+
+  <script src="${pageContext.servletContext.contextPath}/resources/js/index.js"></script>
+    
     <script src="${pageContext.servletContext.contextPath}/resources/js/jquery.js"></script>
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-transition.js"></script>
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-alert.js"></script>

@@ -92,59 +92,6 @@
 
    <hr>
 
-<h4>Small Business Coupons</h4>
-
-<div class="table-container">
-      <table id="table1" class="table table-hover table-striped">
-    	<thead>
-    	<tr>
-	    	<th>Business Name </th>
-	    	<th>Coupon Code</th>
-	    	<th>Start Date</th>
-			<th>Coupon Expiration</th>
-	    	<th>Number of Coupons</th>	    
-	    	<th>Minimum Amount</th>	
-	    	<th>Discount Percentage</th>
-		</tr>
-		</thead>
-		<tbody>
-        <c:forEach var="result" items='${couponList}'>
-            <tr>
-                 <td>
-                    <c:out value="${result.merchantname}"></c:out>
-                </td>
-                <td>
-                    <c:out value="${result.couponcode}"></c:out>
-                </td>
-                 <td>
-                    <c:out value="${result.startdate}"></c:out>
-                </td>
-                <td>
-                    <c:out value="${result.expirationdate}"></c:out>
-                </td>
-                <td>
-                    <c:out value="${result.couponcount}"></c:out>
-                </td>
-                 <td>
-                    <c:out value="${result.mintransactionamount}"></c:out>
-                </td>
-                  <td>
-                    <c:out value="${result.discountpercent}"></c:out>%
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
-
-
-
-   <hr>
-
-      <footer>
-        <p>&copy; Intuit 2013</p>
-      </footer>
-
     </div> <!-- /container -->
 
     <!-- Le javascript

@@ -32,7 +32,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
   </head>
 
   <body>
@@ -52,7 +51,7 @@
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
-				<a class="socialItem"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/makepayment"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif" /></a>
 			</div>
 		</div>
 	

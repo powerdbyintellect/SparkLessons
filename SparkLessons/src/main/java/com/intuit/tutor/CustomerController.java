@@ -94,6 +94,11 @@ public class CustomerController {
 		mav.addObject("address", address);
 		return "order";
 	}
+	
+	@RequestMapping(value = "/makepayment", method = RequestMethod.GET)
+	public String makepaymentPage(ModelMap model) {
+		return "makepayment";
+	}
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
 	public String addCustomer(ModelMap model, Customer customer, Address address)
@@ -168,8 +173,10 @@ public class CustomerController {
 			//		Connection c = DriverManager.getConnection("jdbc:hsqldb:http://localhost/xdb", "SA", "");
 			//		testDB.query(sql_insert);
 		 */
-		
-		return "order";
+		if(applicationResult.getMasterAccountId() !=null)
+			return "makepayment";
+		else 
+			return "order";
 	}
 
 	private IAMTicket createIAMUser(Customer customer, Address customerAddress)
