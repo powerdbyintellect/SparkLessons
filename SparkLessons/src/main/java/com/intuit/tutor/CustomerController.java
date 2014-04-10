@@ -27,6 +27,8 @@ import com.intuit.platform.integration.ius.common.types.User;
 import com.intuit.tutor.entity.Address;
 import com.intuit.tutor.entity.BankAccount;
 import com.intuit.tutor.entity.Customer;
+import com.intuit.tutor.entity.UserEntity;
+import com.intuit.tutor.entity.dao.UserEntityDAO;
 import com.intuit.tutor.obs.MerchantApplicationRequest;
 import com.intuit.tutor.obs.MerchantApplicationResponse;
 import com.intuit.tutor.obs.OnboardingServiceClient;
@@ -37,6 +39,9 @@ public class CustomerController {
 	
 	@Autowired
 	private IamRESTInterface iamRESTClient;
+	
+	@Autowired
+	private UserEntityDAO userEntityDAO;
 
 	private static final String XML_FILE_PATH = "/";
 	private String authHeader;
@@ -133,6 +138,17 @@ public class CustomerController {
 		System.out.println(" RealmId "+applicationResult.getRealmId());
 		
 		
+		UserEntity userEntity = new UserEntity();
+		//userEntity.setAccountnumber();
+		userEntity.setEmail(customer.getEmail());
+		userEntity.setFirstname(customer.getFirstname());
+		userEntity.setLastname(customer.getLastname());
+		//userEntity.setLoginid();
+		userEntity.setMasteraccount(applicationResult.getMasterAccountId());
+		userEntity.setPassword(customer.getPassword());
+		userEntity.setRealmid(applicationResult.getRealmId());
+		userEntity.setUserid(authId);
+		userEntityDAO.saveUser(userEntity);
 
 //		Testdb testDB = new Testdb("http://localhost/xdb");
 //		String sql_insert = 
