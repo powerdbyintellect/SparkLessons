@@ -53,6 +53,20 @@
 
     </style>
 
+  <style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto|Allura);
+
+body{
+  background: #EEE;
+}
+body, input{
+  font-family: "Roboto";
+  font-size: 1em;
+}
+h1, .credit{
+  font-family: "Roboto Slab";
+}</style>
+
 </head>
 <body>
 
@@ -72,12 +86,12 @@
 	          <p><span>Founder &amp; Platforms</span> <a href="#" class="light" target="_blank">@asimkhaja</a></p>
 	      </div>
 	      <div class="span2">
-	          <img src="${pageContext.servletContext.contextPath}/resources/img/harish.jpeg" width="170" height="170">
+	          <img src="${pageContext.servletContext.contextPath}/resources/img/harish.png" width="170" height="170">
 	          <h3>Harish Raghavendra</h3>
 	          <p><span>Founder &amp; Interactions</span> <a href="#" class="light" target="_blank">@harishraghavendra</a></p>
 	      </div>
 	      <div class="span2 offset1">
-	          <img src="${pageContext.servletContext.contextPath}/resources/img/mario.jpeg" width="170" height="170">
+	          <img src="${pageContext.servletContext.contextPath}/resources/img/mario.png" width="170" height="170">
 	          <h3>Mario Abundis</h3>
 	          <p><span>Founder &amp; Social</span> <a href="#" class="light" target="_blank">@marioabundis</a></p>
 	      </div>

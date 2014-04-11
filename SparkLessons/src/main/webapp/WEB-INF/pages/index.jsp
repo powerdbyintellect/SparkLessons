@@ -32,6 +32,20 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+ 
+ 	   <style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto|Allura);
+
+body{
+  background: #EEE;
+}
+body, input{
+  font-family: "Roboto";
+  font-size: 1em;
+}
+h1, .credit{
+  font-family: "Roboto Slab";
+}</style>
   </head>
 
   <body>

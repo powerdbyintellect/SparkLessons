@@ -59,6 +59,20 @@
 
     </style>
 
+  <style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto|Allura);
+
+body{
+  background: #EEE;
+}
+body, input{
+  font-family: "Roboto";
+  font-size: 1em;
+}
+h1, .credit{
+  font-family: "Roboto Slab";
+}</style>
+
 </head>
 <body>
 
