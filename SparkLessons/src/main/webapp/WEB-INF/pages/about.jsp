@@ -97,12 +97,11 @@ h1, .credit{
  <div class="span16">
  <table align="center"> <tr align="center">
  <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
- 	<iframe align="middle" allowfullscreen="" src="http://www.powtoon.com/p/geO7d9eJtdA/" frameborder="0" width="880" height="441"></iframe>
+ 	<iframe align="middle" allowfullscreen="" src="http://www.powtoon.com/embed/geO7d9eJtdA/" frameborder="0" width="880" height="441"></iframe>
   </div> </tr>
  </table> 
    </div>
    </div>
-
 <br/>
 <br/>
 <hr/>
