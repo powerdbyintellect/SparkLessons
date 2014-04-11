@@ -103,12 +103,6 @@
 </form>
 
 
-   <hr>
-
-      <footer>
-        <p>&copy; Intuit 2014</p>
-      </footer>
-
     </div> <!-- /container -->
 
     <!-- Le javascript
@@ -130,7 +124,8 @@
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-datepicker.js"></script>
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-min.js"></script>
 </div>
-
-
 </body>
+<%@ include file="footer.jsp" %>
+
+
 </html>

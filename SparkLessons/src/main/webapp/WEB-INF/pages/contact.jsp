@@ -56,73 +56,37 @@
 </head>
 <body>
 
-
- <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="${pageContext.servletContext.contextPath}/">Intuit Discounts</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="${pageContext.servletContext.contextPath}/">Home</a></li>
-              <li><a href="${pageContext.servletContext.contextPath}/about">About</a></li>
-              <li class="active"><a href="${pageContext.servletContext.contextPath}/contact">Contact</a></li>
-            </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="Password">
-              <button type="submit" class="btn">Sign in</button>
-            </form>
-          </div><!--/.nav-collapse -->
-        </div>
+<div class="hero-unit" align="center">
+        <h2 align="center">Spark Lessons</h2>
+        <p> We help you achieve whatever you are passionate about by handling Payments!</p>
+        <p></p>
       </div>
-    </div>
-
- <div class="container">
-	<div class="container-fluid">
-	  <div class="row-fluid">
-	    <div class="span2">
-	      <!--Sidebar content-->
-	    </div>
-	    <div class="span10">
-	      <!--Body content-->
-	    </div>
-	  </div>
-	</div>
-
 	
-<div class="container" >
+
+	<div class="container" >
 		<section class="row team">
 	    <h2 class="span2 offset1">Our team</h2>
+	       <div class="span2 offset1" style="padding-right: 70px;">
+	          <img src="${pageContext.servletContext.contextPath}/resources/img/asim.png" width="170" height="170">
+	          <h3>Asim Khaja</h3>
+	          <p><span>Founder &amp; Platforms</span> <a href="#" class="light" target="_blank">@asimkhaja</a></p>
+	      </div>
 	      <div class="span2">
 	          <img src="${pageContext.servletContext.contextPath}/resources/img/harish.jpeg" width="170" height="170">
 	          <h3>Harish Raghavendra</h3>
-	          <p><span>Founder &amp; Tech</span> <a href="#" class="light" target="_blank">@harishraghaendra</a></p>
+	          <p><span>Founder &amp; Interactions</span> <a href="#" class="light" target="_blank">@harishraghavendra</a></p>
 	      </div>
-	
 	      <div class="span2 offset1">
 	          <img src="${pageContext.servletContext.contextPath}/resources/img/mario.jpeg" width="170" height="170">
 	          <h3>Mario Abundis</h3>
 	          <p><span>Founder &amp; Social</span> <a href="#" class="light" target="_blank">@marioabundis</a></p>
 	      </div>
-	      
-	       <div class="span2 offset1">
-	          <img src="${pageContext.servletContext.contextPath}/resources/img/kishore.jpeg" width="170" height="170">
-	          <h3>Kishore Chidipudi</h3>
-	          <p><span>Founder &amp; Mobile</span> <a href="#" class="light" target="_blank">@kishorechidipudi</a></p>
-	      </div>
+	    
 	  </section>
 		
 	</div>
 	
-   <hr>
-      <footer>
-        <p>&copy; Intuit 2013</p>
-      </footer>
+     <%@ include file="footer.jsp" %>
 </div> <!-- /container -->
 
     <!-- Le javascript

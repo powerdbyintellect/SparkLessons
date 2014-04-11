@@ -83,6 +83,7 @@
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-carousel.js"></script>
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-typeahead.js"></script>
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-min.js"></script>
-
-  </body>
+</body>
+<%@ include file="footer.jsp" %>
+  
 </html>

@@ -194,7 +194,7 @@ margin-right: -5px;
 
   <div class="checkout">
   <form name="paymentform" action="charge" method="post">
-  <p><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/piano.jpg" />Piano Lessons for 1 hour: $<input type="text" size="8" name="chargeamount" class="input-block-level" placeholder="25.00"/></p>
+  <p><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/piano.jpg" />Piano Lessons for 1 hour: $ &nbsp;&nbsp;<input type="text" size="3" style="max-width: 75px;" name="chargeamount" class="input-block-level" placeholder="25.00"/></p>
   <p>You don't have a card saved with us. You'll need to add one now</p>
   <section>
         <!-- START FORM -->
@@ -229,29 +229,19 @@ margin-right: -5px;
             <input type="text" name="cc_cvc" id="cc_cvc" placeholder="123" maxlength="3" size="3">
             <input type="hidden" name="realmId" value="${realmId}"/>
           </div>
-          	<div align="center">
-          	  <input type="submit" align="left" class="btn btn-primary btn-large" value="Submit Payment"/>
+          	<div align="center" style="padding-left: 150px;">
+          		<br/>
+          	  <input type="submit" class="btn btn-primary btn-large" value="Submit Payment"/>
         	</div>
          </div> 
         
-        
         <!-- END FORM -->
       </section>
+      <div align="center" style="padding-left: 50px;padding-top: 200px"> <%@ include file="footer.jsp" %></div>
    </form>
-
-  <!-- <p>Now, where to send it?</p>
-   <div class="addr">
-   <input type="text" placeholder="Address Line 1" />
-    <input type="text" placeholder="Address Line 2" />
-    <input type="text" placeholder="Town" />
-    <input type="text" placeholder="Postcode" />
-    <input type="text" placeholder="Country" />
-   </div>
-   <div class="button">
-    Submit Billing Address
-  </div> -->
    
 </div>
+
   </div>
   
   
@@ -301,5 +291,6 @@ margin-right: -5px;
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-carousel.js"></script>
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-typeahead.js"></script>
     <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-min.js"></script>
+
 
 </html>
