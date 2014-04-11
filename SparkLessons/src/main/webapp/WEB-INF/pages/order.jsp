@@ -101,7 +101,7 @@ h1, .credit{
 
 
 <form name="couponForm" action="addCustomer" method="post"  class="form-signin">
-    <h3>Activate Merchant Account </h3>
+    <h3>Activate Payments Account </h3>
     <input type="text" size="20" name="firstname"  value="${customer.firstname}" class="input-block-level" placeholder="Firstname"/>
     <input type="text" size="20" name="lastname"  value="${customer.lastname}" class="input-block-level" placeholder="Lastname"/>
     <input type="text" size="20" name="username"  value="${customer.dbaName}" class="input-block-level" placeholder="username"/>
@@ -113,7 +113,7 @@ h1, .credit{
     <input type="text" size="20" name="city"  value="${address.city}" class="input-block-level" placeholder="City"/>
     <input type="text" size="20" name="state"  value="${address.state}" class="input-block-level" placeholder="State"/>
     <input type="text" size="20" name="zipCode"  value="${address.zipCode}" class="input-block-level" placeholder="Zipcode"/>
-        <input type="submit" class="btn btn-primary btn-large" value="Activate Now">
+    <div align="center"><input type="submit" class="btn btn-primary btn-large" style="" align="middle" value="Activate Now"/></div>
 </form>
 
 

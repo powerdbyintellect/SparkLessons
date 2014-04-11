@@ -105,12 +105,15 @@ public class CustomerController {
 				return "makepayment";
 			}	
 		}
+		String lessonType = (String) request.getAttribute("type");
+		lessonType = (lessonType == null) ? "piano" : lessonType;
 		System.out.println("Inside Customer Controller");
 		Customer customer = new Customer();
 		Address address = new Address();
 		ModelAndView mav = new ModelAndView("customer");
 		mav.addObject("customer", customer);
 		mav.addObject("address", address);
+		mav.addObject("type",lessonType);
 		return "order";
 	}
 	

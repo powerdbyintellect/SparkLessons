@@ -49,7 +49,7 @@ h1, .credit{
   </head>
 
   <body>
-  <h1 align="center">Spark Lessons</h1>
+  <h1 style="font-family: Roboto Slab;" align="center">Spark Lessons</h1>
   <h4 align="center"><i>Go...chase your passion. We take care of payments for you.</i></h4>
    <div id="wrapper">
 	<div id="columns">
