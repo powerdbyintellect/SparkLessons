@@ -8,7 +8,7 @@
        http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd"
        default-lazy-init="false">
 
-
+<!-- merchantaccount.ptc.quickbooks.com  -->
     <jaxrs:client id="paymentRESTProxy"
                   address="https://transaction-api-prf.payments.intuit.net"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
@@ -20,7 +20,7 @@
     </jaxrs:client>
 
     <jaxrs:client id="onboardingServiceRestClient"
-                  address="https://onboarding-qa.payments.intuit.net"
+                  address="https://onboarding-perf.payments.intuit.net"
                   serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
@@ -42,9 +42,9 @@
 		<property name="sparkrentServiceGatewayAppId" value="${sparkrent.servicegateway.appid}" />
 		<property name="sparkrentServiceGatewaySecret" value="${sparkrent.servicegateway.secret}" /> -->
 	</bean>
-    
+    <!-- accounts-e2e.platform.intuit.net -->
    <jaxrs:client id="iamRESTProxy"
-				address="https://accounts-e2e.platform.intuit.net"
+				address="https://accounts-prf.platform.intuit.net"
                   serviceClass="com.intuit.tutor.IamRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
