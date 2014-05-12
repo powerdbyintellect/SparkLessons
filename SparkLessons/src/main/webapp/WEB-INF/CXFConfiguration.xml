@@ -10,7 +10,7 @@
 
 
     <jaxrs:client id="paymentRESTProxy"
-                  address="https://merchantaccount.ptc.quickbooks.com"
+                  address="https://transaction-api-prf.payments.intuit.net"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
