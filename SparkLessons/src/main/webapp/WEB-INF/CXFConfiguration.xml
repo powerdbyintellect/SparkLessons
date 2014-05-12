@@ -8,15 +8,25 @@
        http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd"
        default-lazy-init="false">
 
+
+	<bean id="logInbound" class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
+	<bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
+
 <!-- merchantaccount.ptc.quickbooks.com  -->
     <jaxrs:client id="paymentRESTProxy"
-                  address="https://transaction-api-prf.payments.intuit.net"
+                  address="https://merchantaccount.ptc.quickbooks.com"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
             <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.payments.sdk_test,intuit_app_secret=PaymentsSDKTestApp"/>
         </jaxrs:headers>
+        <jaxrs:inInterceptors>
+        	<ref bean="logInbound"/>
+         </jaxrs:inInterceptors>
+         <jaxrs:outInterceptors>
+             <ref bean="logOutbound"/>
+         </jaxrs:outInterceptors>
     </jaxrs:client>
 
     <jaxrs:client id="onboardingServiceRestClient"
@@ -27,6 +37,12 @@
             <entry key="Accept" value="text/xml, application/xml"/>
             <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.sbg.payments.onboarding.test,intuit_app_secret=6M50GN0AHsITfe6fkSYAtE,x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
         </jaxrs:headers>
+        <jaxrs:inInterceptors>
+        	<ref bean="logInbound"/>
+         </jaxrs:inInterceptors>
+         <jaxrs:outInterceptors>
+             <ref bean="logOutbound"/>
+         </jaxrs:outInterceptors>
     </jaxrs:client>
     
     <bean id="onboardingServiceClient" class="com.intuit.tutor.obs.OnboardingServiceClientImpl" init-method="initialize">
@@ -53,6 +69,12 @@
             <entry key="intuit_offeringId" value="Intuit.cto.iam.ius.tests"/>
             <entry key="intuit_originatingip" value="123.45.67.89" />
         </jaxrs:headers>
+        <jaxrs:inInterceptors>
+        	<ref bean="logInbound"/>
+         </jaxrs:inInterceptors>
+         <jaxrs:outInterceptors>
+             <ref bean="logOutbound"/>
+         </jaxrs:outInterceptors>
     </jaxrs:client>
 
 
