@@ -66,6 +66,9 @@ public class TransactionController {
 		}
 		charge.setCardSecurityCode(cvc);
 		
+		if(StringUtils.isEmpty(realmId)) {
+			realmId = "1003729781";
+		}
 		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(realmId, UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
 		//model.put("creditCardResponse", response.getValue());
 		ModelAndView mav = new ModelAndView("charge");
