@@ -176,6 +176,7 @@ public class CustomerController {
 		System.out.println(" Master Account "+applicationResult.getMasterAccountId());
 		System.out.println(" RealmId "+applicationResult.getRealmId());
 		System.out.println(" Email "+ customer.getEmail());
+		System.out.println(" MID "+ applicationResult.getMID());
 		
 		
 		UserEntity userEntity = new UserEntity();

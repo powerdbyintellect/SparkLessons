@@ -9,6 +9,7 @@ import java.math.BigInteger;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -32,6 +33,9 @@ import com.intuit.payments.sdk.jaxb.types.CreditCardCharge;
 import com.intuit.payments.sdk.jaxb.types.CreditCardResponse;
 import com.intuit.payments.sdk.jaxb.types.ObjectFactory;
 
+import facebook4j.Facebook;
+import facebook4j.FacebookException;
+
 @Controller
 public class TransactionController {
 	
@@ -47,7 +51,8 @@ public class TransactionController {
 	//accept card
 	@RequestMapping(value="/charge", method = RequestMethod.POST)
 	public ModelAndView ownerHandler(@RequestParam("cc_number") String ccNumber, @RequestParam("cc_exp_year") String expYear, @RequestParam("cc_exp_month") String expMonth, 
-			@RequestParam("cc_cvc") String cvc, @RequestParam("cc_name") String ccName, @RequestParam("realmId") String realmId, @RequestParam("chargeamount") String chargeAmount ) {
+			@RequestParam("cc_cvc") String cvc, @RequestParam("cc_name") String ccName, @RequestParam("realmId") String realmId, @RequestParam("chargeamount") String chargeAmount, 
+			HttpServletRequest request) {
 		
 		
 		
@@ -74,6 +79,16 @@ public class TransactionController {
 		ModelAndView mav = new ModelAndView("charge");
 		mav.addObject("creditCardResponse", response.getValue());
 		mav.addObject("amount", charge.getAmount());
+		
+		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+		String lessonType = request.getAttribute("type") == null?"": (String) request.getAttribute("type");
+		String ref = response!=null&& response.getValue()!=null && response.getValue().getClientTransID()!=null?"Ref: "+response.getValue().getClientTransID() : "";
+		try {
+			facebook.postStatusMessage("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! "+ref);
+		} catch (FacebookException e) {
+			e.printStackTrace();
+		}
+	
 		return mav; //new ModelAndView("charge", "creditCardResponse", response.getValue());
         //return new ModelMap(response.getValue());
 		//return "charge";
