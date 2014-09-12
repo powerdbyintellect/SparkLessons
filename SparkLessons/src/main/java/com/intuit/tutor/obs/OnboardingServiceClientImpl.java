@@ -11,6 +11,7 @@ import javax.xml.bind.JAXBElement;
 
 import org.apache.log4j.Logger;
 
+import com.intuit.psd.cdm.v1.AccountNumber;
 import com.intuit.psd.cdm.v1.ApplicationChannelTypeEnum;
 import com.intuit.psd.cdm.v1.ApplicationSourceEnum;
 import com.intuit.psd.cdm.v1.ApplyOptionEnum;
@@ -21,6 +22,7 @@ import com.intuit.psd.cdm.v1.CdmComplexBase;
 import com.intuit.psd.cdm.v1.CheckSubAccount;
 import com.intuit.psd.cdm.v1.CheckSubscription;
 import com.intuit.psd.cdm.v1.CreditCardApplyOption;
+import com.intuit.psd.cdm.v1.CreditCardSubAccount;
 import com.intuit.psd.cdm.v1.CreditCardSubscription;
 import com.intuit.psd.cdm.v1.DecisionEnum;
 import com.intuit.psd.cdm.v1.DepositAccount;
@@ -41,6 +43,7 @@ import com.intuit.psd.cdm.v1.ProductChannelTypeEnum;
 import com.intuit.psd.cdm.v1.ProductIdentifierTypeEnum;
 import com.intuit.psd.cdm.v1.RestResponse;
 import com.intuit.psd.cdm.v1.ServiceTypeEnum;
+import com.intuit.psd.cdm.v1.SrcDomainEnum;
 import com.intuit.psd.cdm.v1.SubAccount;
 import com.intuit.psd.cdm.v1.SubscriptionAccountStatusEnum;
 import com.intuit.psd.cdm.v1.SubscriptionBase;
@@ -392,7 +395,8 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 		if (masterAccountId == null || token == null || requestId == null)
 			throw new IllegalArgumentException(" Required paramters are missing for onboarding service invocation ");
 		String authHeader = createAuthHeader(token.getTokenId(), token.getAuthId());
-		RestResponse clientResponse = onboardingServiceRestClient.getAccount(authHeader, requestId, masterAccountId);
+		
+		RestResponse clientResponse = onboardingServiceRestClient.getAccount(authHeader, requestId, masterAccountId); //This method if you know master accountid
 		MerchantApplicationResponse result = null;
 		try {
 			result = new MerchantApplicationResponse();
@@ -450,6 +454,112 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 					}
 					else{
 						logger.debug("No order ID returned for merchant application: " + masterAccountId);
+						throw new OnBoardingException(OnBoardingException.UNEXPECTED_STATUS_CODE);
+					}
+				}
+
+			}
+		} finally {
+		}
+		return result;
+	}
+	
+	public MerchantApplicationResponse getMerchantInformationByAuthId(Token token, UUID requestId)
+			throws OnBoardingException {
+		
+		String authHeader = createAuthHeader(token.getTokenId(), token.getAuthId());
+		
+		RestResponse clientResponse = onboardingServiceRestClient.getAccountByUserId(authHeader, requestId);
+		System.out.println(" OBS Response \n"+clientResponse.toString());
+		MerchantApplicationResponse result = null;
+		try {
+			result = new MerchantApplicationResponse();
+			if (clientResponse.getSystemResponse().getValue()!=null) {
+				JAXBElement<? extends CdmComplexBase> subscriptionsEl = clientResponse.getSystemResponse();
+				if(subscriptionsEl == null || subscriptionsEl.getValue() == null || ((MasterAccounts)subscriptionsEl.getValue()).getMasterAccount().size() == 0){
+					//There may not be any status. Make sure that the application is in the created state.
+					logger.debug("Not application status returned for authId " + token.getAuthId());
+				}
+				else{
+					MasterAccounts masterAccounts = (MasterAccounts) subscriptionsEl.getValue();
+					/*
+					 * Currently there is only one master account for the user. But in future we may
+					 * have multiple master accounts and in that case we will augment the code below.
+					 */
+					MasterAccount masterAccount = masterAccounts.getMasterAccount().get(0);
+					String orderId = masterAccount.getMerchantOrderId();
+					masterAccount.getStatus();
+					result.setMasterAccountId(masterAccount.getId());
+					result.setRealmId(masterAccount.getRealmId());
+					//MasterAccountStatusEnum.
+					if(orderId!=null && !orderId.equalsIgnoreCase("")){
+						if(MasterAccountStatusEnum.CLOSED == masterAccount.getStatus() || MasterAccountStatusEnum.SUSPENDED == masterAccount.getStatus()){
+							result.setOnboardingStatus(OnboardingStatus.DECLINED);
+							
+						} 
+						
+						/*
+						 * There could be multiple subaccounts for credit card and checks. For now, we are interested only
+						 * in the check account.
+						 */
+						for(JAXBElement<? extends SubAccount>  subAccountEl : masterAccount.getSubscriptionService()){
+							SubAccount acct = subAccountEl.getValue();
+							
+//							if(ServiceTypeEnum.CHECK == acct.getServiceType()){ //get the credit card subscription
+//								
+//								CheckSubAccount checkAccount = (CheckSubAccount) acct;
+//								/*
+//								 * Now let us do the status check. Check for echo merchant ID only if the
+//								 * subscription status is SUBSCRIBED.
+//								 */
+//								SubscriptionAccountStatusEnum subscriptionStatus = checkAccount.getStatus();
+//								if (subscriptionStatus == SubscriptionAccountStatusEnum.SUBSCRIBED) {
+//									result.setOnboardingStatus(OnboardingStatus.APPROVED);
+//									result.setEchoMerchantId(checkAccount.getEchoId());
+//									result.setDaysTofund(checkAccount.getDaysToFund());
+//									result.setMID(checkAccount.getMID());
+//								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.DENIED ||
+//										subscriptionStatus == SubscriptionAccountStatusEnum.CANCELLED) {
+//									result.setOnboardingStatus(OnboardingStatus.DECLINED);
+//								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.PENDING) {
+//									result.setOnboardingStatus(OnboardingStatus.IN_REVIEW);
+//								}
+//							}
+							
+							if(ServiceTypeEnum.CREDIT_CARD == acct.getServiceType()){ //get the credit card subscription
+								
+								CreditCardSubAccount creditCardSubAccount = (CreditCardSubAccount) acct;
+								
+								AccountNumber accountNumber = creditCardSubAccount.getAccountNumber();
+								result.setMID(accountNumber.getValue());
+								
+						        List<AccountNumber> additionalAccountNumberList = creditCardSubAccount.getAdditionalAccountNumber(); 
+						        if ((additionalAccountNumberList != null) && (additionalAccountNumberList.size() > 0)) {
+						            for (AccountNumber additionalAccountNumber : additionalAccountNumberList) {
+						                if (additionalAccountNumber.getSourceDomain() == SrcDomainEnum.PTS) {
+						                    result.setMID(additionalAccountNumber.getValue());
+						                    break;
+						                }
+						            }
+						        }
+								
+//								SubscriptionAccountStatusEnum subscriptionStatus = cardAccount.getStatus();
+//								if (subscriptionStatus == SubscriptionAccountStatusEnum.SUBSCRIBED) {
+//									result.setOnboardingStatus(OnboardingStatus.APPROVED);
+//									result.setMID(cardAccount.getAccountNumber().);
+//									result
+//								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.DENIED ||
+//										subscriptionStatus == SubscriptionAccountStatusEnum.CANCELLED) {
+//									result.setOnboardingStatus(OnboardingStatus.DECLINED);
+//								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.PENDING) {
+//									result.setOnboardingStatus(OnboardingStatus.IN_REVIEW);
+//								}
+							}
+							
+						}
+					}
+					else{
+						logger.debug("No order ID returned for merchant application with auth id: " + token.getAuthId());
 						throw new OnBoardingException(OnBoardingException.UNEXPECTED_STATUS_CODE);
 					}
 				}

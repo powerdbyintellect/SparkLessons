@@ -24,6 +24,7 @@ import com.intuit.platform.integration.ius.common.types.Email;
 import com.intuit.platform.integration.ius.common.types.FullName;
 import com.intuit.platform.integration.ius.common.types.IAMTicket;
 import com.intuit.platform.integration.ius.common.types.ObjectFactory;
+import com.intuit.platform.integration.ius.common.types.SignInRequest;
 import com.intuit.platform.integration.ius.common.types.User;
 import com.intuit.tutor.entity.Address;
 import com.intuit.tutor.entity.BankAccount;
@@ -92,29 +93,56 @@ public class CustomerController {
 	public String initializePage(ModelMap model, HttpServletRequest request) {
 		
 		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+		String returnPage = null;
+		ModelAndView mav = new ModelAndView("customer");
 		
 		if(facebook != null) {
 			UserEntity user = null;
+			IAMTicket ticket = null; 
+			MerchantApplicationResponse applicationResult = null;
 			try {
 				user = userEntityDAO.getUserByLoginId(facebook.getMe().getId());
-			} catch (Exception e) {
 				
+				JAXBElement<IAMTicket> existingUserTicket = iamRESTClient.signin( UUID.randomUUID().toString().replace("-", ""),  "{\"username\":\"" + facebook.getMe().getEmail() + "\",\"password\":\"" +  "testiususer" + "\"}");
+				if(existingUserTicket!=null) {
+					ticket = existingUserTicket.getValue();
+					Token token = new Token();
+					token.setAuthId(ticket.getUserId());
+					token.setTokenId(ticket.getTicket());
+					applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
+					
+					System.out.println(" Master Account "+applicationResult.getMasterAccountId());
+					System.out.println(" RealmId "+applicationResult.getRealmId());
+					System.out.println(" MID "+ applicationResult.getMID());
+					
+
+					if(applicationResult.getMasterAccountId() !=null){
+						CreditCard cc = new CreditCard();
+						cc.setRealmId(applicationResult.getRealmId());
+						//cc.setCreditCardNumber("5174554122715233");
+						model.put("realmId", applicationResult.getRealmId());
+						mav.addObject("realmId", applicationResult.getRealmId());
+						returnPage = "makepayment";
+					}	//end result
+				}	//End If 
+			}catch (Exception e) {
+				System.out.println("Exception !! "+e.getMessage());
 			}
-			if(user != null) {
-				model.put("realmId", user.getRealmid());
-				return "makepayment";
-			}	
 		}
+		
 		String lessonType = (String) request.getAttribute("type");
 		lessonType = (lessonType == null) ? "piano" : lessonType;
-		System.out.println("Inside Customer Controller");
+		System.out.println("Inside Initialize in CustomerController");
+		
 		Customer customer = new Customer();
 		Address address = new Address();
-		ModelAndView mav = new ModelAndView("customer");
 		mav.addObject("customer", customer);
 		mav.addObject("address", address);
 		mav.addObject("type",lessonType);
-		return "order";
+		if(null == returnPage)
+			returnPage = "order";
+		
+		return returnPage;
 	}
 	
 	@RequestMapping(value = "/makepayment", method = RequestMethod.GET)
@@ -168,16 +196,21 @@ public class CustomerController {
 		token.setAuthId(authId);
 		token.setTokenId(ticket);
 		
-		MerchantApplicationRequest merchantApplicationRequest = MerchantApplicationRequest.createFromMerchantApplication(customer, address, bankAccount);
+		MerchantApplicationResponse applicationResult = null;
 		
-		MerchantApplicationResponse applicationResult = onboardingServiceClient.submitMerchantApplication(merchantApplicationRequest, 
-				token, TEST_IP_ADDRESS, TEST_REQUEST_ID, customer.getEmail());
+		//Call to get list of master accounts based on IUS id token
+		applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
+		
+		if( null == applicationResult || (applicationResult.getMasterAccountId() == null && applicationResult.getRealmId() == null && applicationResult.getMID() == null)) {
+			MerchantApplicationRequest merchantApplicationRequest = MerchantApplicationRequest.createFromMerchantApplication(customer, address, bankAccount);
+			applicationResult = onboardingServiceClient.submitMerchantApplication(merchantApplicationRequest, 
+					token, TEST_IP_ADDRESS, TEST_REQUEST_ID, customer.getEmail());
+		}
 		
 		System.out.println(" Master Account "+applicationResult.getMasterAccountId());
 		System.out.println(" RealmId "+applicationResult.getRealmId());
 		System.out.println(" Email "+ customer.getEmail());
 		System.out.println(" MID "+ applicationResult.getMID());
-		
 		
 		UserEntity userEntity = new UserEntity();
 		//userEntity.setAccountnumber();
@@ -211,6 +244,8 @@ public class CustomerController {
 			throws Exception {
 		
 		User user = new User();
+		JAXBElement<IAMTicket> existingUserTicket = null;
+		IAMTicket ticket = null; 
 		String guuid = UUID.randomUUID().toString().replace("-", "");
 		user.setUsername(customer.getEmail());
 		user.setPassword(customer.getPassword());
@@ -238,17 +273,26 @@ public class CustomerController {
 		//fullName.setSuffix("O'");
 		fullName.setSurName(customer.getLastname());
 		user.getFullName().add(fullName);
+		try {
+			existingUserTicket = iamRESTClient.signin(guuid,  "{\"username\":\"" + customer.getEmail() + "\",\"password\":\"" +  "testiususer" + "\"}");
+		} catch (Exception e) {
+			existingUserTicket = null;
+			System.out.println("Not able to logon "+e.getMessage());
+		}
+		if(null == existingUserTicket) {
+			JAXBElement<User> createdUserElement = iamRESTClient.signup(guuid, objectFactory.createUser(user));
+			User newuser = createdUserElement.getValue();
+			newuser.setPassword(user.getPassword());
+			// validate user is created
+			String body = "{\"userId\":\"" + newuser.getUserId() + "\",\"password\":\"" +  newuser.getPassword() + "\"}";
+			System.out.println("body: " + body);
+			JAXBElement<IAMTicket> iamTicketElement = iamRESTClient.signin(guuid, body);
+			ticket = iamTicketElement.getValue();
+			
+		} else {
+			ticket = existingUserTicket.getValue();
+		}
 		
-		JAXBElement<User> createdUserElement = iamRESTClient.signup(guuid, objectFactory.createUser(user));
-		User newuser = createdUserElement.getValue();
-		newuser.setPassword(user.getPassword());
-		// validate user is created
-		
-		String body = "{\"userId\":\"" + newuser.getUserId() + "\",\"password\":\"" + user.getPassword() + "\"}";
-		System.out.println("body: " + body);
-		
-		JAXBElement<IAMTicket> iamTicketElement = iamRESTClient.signin(guuid, body);
-		IAMTicket ticket = iamTicketElement.getValue();
 		System.out.println("UserId :" + ticket.getUserId());
 		System.out.println("Ticket :" + ticket.getTicket());
 		System.out.println("RealmId :" + ticket.getRealmId());

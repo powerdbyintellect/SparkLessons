@@ -139,4 +139,12 @@ public interface OnboardingServiceRestClient {
 			@HeaderParam(AUTHORIZATION_PARAM) String authHeader,
 			@HeaderParam("intuit_originatingip") String clientIPAddr,
 			@HeaderParam("intuit_tid") UUID requestId);
+	
+	@GET
+	@Path("/accounts")
+	@Produces(MediaType.APPLICATION_XML)
+	@Consumes(MediaType.APPLICATION_XML)
+	public RestResponse getAccountByUserId(
+			@HeaderParam(AUTHORIZATION_PARAM) String authHeader,
+			@HeaderParam("intuit_tid") UUID requestId);
 }

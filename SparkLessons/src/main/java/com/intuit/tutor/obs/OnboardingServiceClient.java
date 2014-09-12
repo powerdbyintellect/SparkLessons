@@ -13,4 +13,6 @@ public interface OnboardingServiceClient {
 	MerchantApplicationResponse getMerchantApplicationStatus(String masterAccountId, Token token,
 			UUID requestId) throws OnBoardingException;
 
+	MerchantApplicationResponse getMerchantInformationByAuthId(Token token, UUID requestId) throws OnBoardingException;
+	
 }

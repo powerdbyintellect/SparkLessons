@@ -28,6 +28,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import twitter4j.Status;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.auth.AccessToken;
+import twitter4j.auth.RequestToken;
+import twitter4j.conf.ConfigurationBuilder;
+
 import com.intuit.payments.sdk.jaxb.types.CreditCard;
 import com.intuit.payments.sdk.jaxb.types.CreditCardCharge;
 import com.intuit.payments.sdk.jaxb.types.CreditCardResponse;
@@ -79,20 +87,48 @@ public class TransactionController {
 		ModelAndView mav = new ModelAndView("charge");
 		mav.addObject("creditCardResponse", response.getValue());
 		mav.addObject("amount", charge.getAmount());
-		
+		String lessonType = "";
 		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
-		String lessonType = request.getAttribute("type") == null?"": (String) request.getAttribute("type");
-		String ref = response!=null&& response.getValue()!=null && response.getValue().getClientTransID()!=null?"Ref: "+response.getValue().getClientTransID() : "";
-		try {
-			facebook.postStatusMessage("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! "+ref);
-		} catch (FacebookException e) {
-			e.printStackTrace();
+		if(null!=facebook) {
+			lessonType = request.getAttribute("type") == null?"": (String) request.getAttribute("type");
+			String ref = response!=null&& response.getValue()!=null && response.getValue().getClientTransID()!=null?"Ref: "+response.getValue().getClientTransID() : "";
+			try {
+				facebook.postStatusMessage("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
+			} catch (FacebookException e) {
+				e.printStackTrace();
+			}
 		}
-	
+		//Twitter Integration 
+		
+		// The factory instance is re-useable and thread safe.
+//	    TwitterFactory factory = new TwitterFactory();
+//	    AccessToken accessToken = null;
+//	    Twitter twitter = factory.getInstance();
+//	    twitter.setOAuthConsumer("CdU4znJoWKeylArzs5dHsZPhb", "ZhNAuzC4cYxPkkYwlj9A32cm35E2v8a7SolkzGUk73hysDBqZv");
+//	    twitter.setOAuthAccessToken(accessToken);
+//	    
+//		 // The factory instance is re-useable and thread safe.
+//	    Status status;
+//		try {
+//			RequestToken requestToken = twitter.getOAuthRequestToken();
+//            System.out.println(requestToken.getAuthorizationURL());
+//            accessToken = twitter.getOAuthAccessToken(requestToken);
+//    		status = twitter.updateStatus("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
+//    		System.out.println("Got access token.");
+//            System.out.println("Access token: " + accessToken.getToken());
+//            System.out.println("Access token secret: " + accessToken.getTokenSecret());
+//			System.out.println("Successfully updated the status to [" + status.getText() + "].");
+//		} catch (TwitterException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	    
 		return mav; //new ModelAndView("charge", "creditCardResponse", response.getValue());
         //return new ModelMap(response.getValue());
 		//return "charge";
     }
+	
+	
 	
 	//authorize charge
 	//deposit payment
