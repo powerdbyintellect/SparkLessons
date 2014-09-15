@@ -1,6 +1,7 @@
 package com.intuit.tutor;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,8 @@ import java.util.UUID;
 
 public class TutorController {
 	
+	 private static final Logger logger = Logger.getLogger(TutorController.class);
+	
 	private static final String XML_FILE_PATH = "/";
     private static final String FILE_NAME_1 = "locationServiceRequest.xml";
     private static final String FILE_NAME_2 = "couponServiceRequest.xml";
@@ -35,9 +38,6 @@ public class TutorController {
     public String searchRequest(ModelMap model) throws Exception {
     	  System.out.println("Inside search request");  
 	      ModelAndView mav = new ModelAndView("locationSearch") ;
-//	      mav.addObject("locationSearch", locationSearch);
-//	      ArrayList businessCategory = new ArrayList();
-//	      mav.addObject("busCategoryList", businessCategory);
     	return "search";
     }
     

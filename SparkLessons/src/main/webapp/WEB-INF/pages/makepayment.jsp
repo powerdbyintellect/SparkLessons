@@ -194,7 +194,7 @@ margin-right: -5px;
 
   <div class="checkout">
   <form name="paymentform" action="charge" method="post">
-  <p><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/piano.jpg" />Piano Lessons for 1 hour: $ &nbsp;&nbsp;<input type="text" size="3" style="max-width: 75px;" name="chargeamount" class="input-block-level" placeholder="25.00"/></p>
+  <p><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/${type}.jpg" /><b>${type}</b> Lessons for 1 hour: $ &nbsp;&nbsp;<input type="text" size="3" style="max-width: 75px;" name="chargeamount" class="input-block-level" placeholder="25.00"/></p>
   <p>You don't have a card saved with us. You'll need to add one now</p>
   <section>
         <!-- START FORM -->

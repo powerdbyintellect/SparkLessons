@@ -208,10 +208,6 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 		 * Create a merchant Order now.
 		 */
 		MerchantOrder order = new MerchantOrder();
-		/*
-		 * 1. A new channel and source for SparkRent will need a change for the OBS API as well.
-		 * 
-		 */
 		order.setAcceptedTermsAndConditions(true);
 		order.setApplicationChannel(applicationChannelEnum);
 		order.setApplicationSource(applicationSourceEnum);
@@ -505,13 +501,8 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 						for(JAXBElement<? extends SubAccount>  subAccountEl : masterAccount.getSubscriptionService()){
 							SubAccount acct = subAccountEl.getValue();
 							
-//							if(ServiceTypeEnum.CHECK == acct.getServiceType()){ //get the credit card subscription
-//								
+//							if(ServiceTypeEnum.CHECK == acct.getServiceType())	{ 			//get the credit card subscription
 //								CheckSubAccount checkAccount = (CheckSubAccount) acct;
-//								/*
-//								 * Now let us do the status check. Check for echo merchant ID only if the
-//								 * subscription status is SUBSCRIBED.
-//								 */
 //								SubscriptionAccountStatusEnum subscriptionStatus = checkAccount.getStatus();
 //								if (subscriptionStatus == SubscriptionAccountStatusEnum.SUBSCRIBED) {
 //									result.setOnboardingStatus(OnboardingStatus.APPROVED);
@@ -526,10 +517,8 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 //								}
 //							}
 							
-							if(ServiceTypeEnum.CREDIT_CARD == acct.getServiceType()){ //get the credit card subscription
-								
+							if(ServiceTypeEnum.CREDIT_CARD == acct.getServiceType())	{ 	//get the credit card subscription
 								CreditCardSubAccount creditCardSubAccount = (CreditCardSubAccount) acct;
-								
 								AccountNumber accountNumber = creditCardSubAccount.getAccountNumber();
 								result.setMID(accountNumber.getValue());
 								
@@ -542,18 +531,15 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 						                }
 						            }
 						        }
-								
-//								SubscriptionAccountStatusEnum subscriptionStatus = cardAccount.getStatus();
-//								if (subscriptionStatus == SubscriptionAccountStatusEnum.SUBSCRIBED) {
-//									result.setOnboardingStatus(OnboardingStatus.APPROVED);
-//									result.setMID(cardAccount.getAccountNumber().);
-//									result
-//								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.DENIED ||
-//										subscriptionStatus == SubscriptionAccountStatusEnum.CANCELLED) {
-//									result.setOnboardingStatus(OnboardingStatus.DECLINED);
-//								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.PENDING) {
-//									result.setOnboardingStatus(OnboardingStatus.IN_REVIEW);
-//								}
+								SubscriptionAccountStatusEnum subscriptionStatus = creditCardSubAccount.getStatus();
+								if (subscriptionStatus == SubscriptionAccountStatusEnum.SUBSCRIBED) {
+									result.setOnboardingStatus(OnboardingStatus.APPROVED);
+								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.DENIED ||
+										subscriptionStatus == SubscriptionAccountStatusEnum.CANCELLED) {
+									result.setOnboardingStatus(OnboardingStatus.DECLINED);
+								} else if (subscriptionStatus == SubscriptionAccountStatusEnum.PENDING) {
+									result.setOnboardingStatus(OnboardingStatus.IN_REVIEW);
+								}
 							}
 							
 						}

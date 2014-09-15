@@ -99,7 +99,7 @@ public class TransactionController {
 			}
 		}
 		//Twitter Integration 
-		
+//		https://apps.twitter.com/app/6866796/keys
 		// The factory instance is re-useable and thread safe.
 //	    TwitterFactory factory = new TwitterFactory();
 //	    AccessToken accessToken = null;

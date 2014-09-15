@@ -1,7 +1,5 @@
 package com.intuit.tutor;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -9,6 +7,8 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBElement;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,7 +24,6 @@ import com.intuit.platform.integration.ius.common.types.Email;
 import com.intuit.platform.integration.ius.common.types.FullName;
 import com.intuit.platform.integration.ius.common.types.IAMTicket;
 import com.intuit.platform.integration.ius.common.types.ObjectFactory;
-import com.intuit.platform.integration.ius.common.types.SignInRequest;
 import com.intuit.platform.integration.ius.common.types.User;
 import com.intuit.tutor.entity.Address;
 import com.intuit.tutor.entity.BankAccount;
@@ -41,6 +40,8 @@ import facebook4j.Facebook;
 
 @Controller
 public class CustomerController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);;
 	
 	@Autowired
 	private IamRESTInterface iamRESTClient;
@@ -80,11 +81,7 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
-		System.out.println("Inside Customer controller"); // dbaName, Address
-															// (street, city,
-															// state, zipcode,
-															// phonenumber),
-															// businessdescription
+		System.out.println("Inside Customer controller"); 
 		model.addAttribute("message", "Welcome to Spark Lessons");
 		return "index";
 	}
@@ -95,6 +92,12 @@ public class CustomerController {
 		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
 		String returnPage = null;
 		ModelAndView mav = new ModelAndView("customer");
+		
+		String lessonType = (String) request.getParameter("type");
+		lessonType = (lessonType == null) ? "piano" : lessonType;
+		System.out.println("Inside Initialize in CustomerController "+lessonType);
+		logger.debug("d Inside Initialize in CustomerController");
+		logger.info("i Inside Initialize in CustomerController");
 		
 		if(facebook != null) {
 			UserEntity user = null;
@@ -111,6 +114,10 @@ public class CustomerController {
 					token.setTokenId(ticket.getTicket());
 					applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
 					
+//					logger.info(" Master Account "+applicationResult.getMasterAccountId());
+//					logger.info(" RealmId "+applicationResult.getRealmId());
+//					logger.info(" MID "+ applicationResult.getMID());
+//					
 					System.out.println(" Master Account "+applicationResult.getMasterAccountId());
 					System.out.println(" RealmId "+applicationResult.getRealmId());
 					System.out.println(" MID "+ applicationResult.getMID());
@@ -122,6 +129,8 @@ public class CustomerController {
 						//cc.setCreditCardNumber("5174554122715233");
 						model.put("realmId", applicationResult.getRealmId());
 						mav.addObject("realmId", applicationResult.getRealmId());
+						model.put("type", lessonType);
+						mav.addObject("type", lessonType);
 						returnPage = "makepayment";
 					}	//end result
 				}	//End If 
@@ -130,10 +139,7 @@ public class CustomerController {
 			}
 		}
 		
-		String lessonType = (String) request.getAttribute("type");
-		lessonType = (lessonType == null) ? "piano" : lessonType;
-		System.out.println("Inside Initialize in CustomerController");
-		
+	
 		Customer customer = new Customer();
 		Address address = new Address();
 		mav.addObject("customer", customer);
@@ -183,12 +189,6 @@ public class CustomerController {
 
 		
 		IAMTicket iamticket = createIAMUser(customer, address);
-
-		// Send create account request
-		// String str = iam.signup(id, "127.0.0.1", getAuthHeader(),
-		// getOfferingId());
-		// System.out.println(str);
-//		IAMToken iamToken = new IAMToken();
 		String ticket = iamticket.getTicket();//iamToken.getTicket();
 		String authId = iamticket.getUserId();//iamToken.getUserId();
 

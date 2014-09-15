@@ -62,7 +62,7 @@ h1, .credit{
 				emotion of the song.
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=piano"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -78,7 +78,7 @@ h1, .credit{
 				to play like a pro. 
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=tennis"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -94,7 +94,7 @@ h1, .credit{
 				 
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=swimming"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -103,7 +103,7 @@ h1, .credit{
 		</div>
 	
 		<div class="pin">
-			<img src="${pageContext.servletContext.contextPath}/resources/img/gymnastics1.jpg" />
+			<img src="${pageContext.servletContext.contextPath}/resources/img/gymnastics.jpg" />
 			<p>
 				 Where ever a gymnast goes doing gymnastics is a must do
 				 and if you really love gymnastics you'll do it every where. 
@@ -111,7 +111,7 @@ h1, .credit{
 				 being a champion, it's about LOVING the sport!
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=gymnastics"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -127,7 +127,7 @@ h1, .credit{
 				Skyscapes, so many ways to show your creative side. Learn to paint. 
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=painting"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -144,7 +144,7 @@ h1, .credit{
 				Things all knitters should know
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=knitting"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -159,7 +159,7 @@ h1, .credit{
 				Learn Russian Ballet, French Ballet or Italian Ballet. 
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=ballerina"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -175,7 +175,7 @@ h1, .credit{
 				always seen from the score of the game. Learn to bicycle kick and be a team player.
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=soccer"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -190,7 +190,7 @@ h1, .credit{
 				There's no crying in baseball!
 			</p>
 				<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=baseball"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -199,14 +199,14 @@ h1, .credit{
 		</div>
 	
 		<div class="pin">
-			<img src="${pageContext.servletContext.contextPath}/resources/img/football3.jpg" />
+			<img src="${pageContext.servletContext.contextPath}/resources/img/football.jpg" />
 			<p>
 				If it doesnt matter who wins and loses, then why do they keep scores.
 				Winners never quit &amp; quitters never win. -Lombardi
 				Teamwork - No one can defeat us unless we first defeat ourselves
 			</p>
 				<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=football"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -215,14 +215,14 @@ h1, .credit{
 		</div>
 	
 		<div class="pin">
-			<img src="${pageContext.servletContext.contextPath}/resources/img/basketball2.jpg" />
+			<img src="${pageContext.servletContext.contextPath}/resources/img/basketball.jpg" />
 			<p>
 				All kids need is a little help, a little hope and somebody who believes in them.
 				There's winning and there's losing and in life both will happen. 
 				What is never acceptable to me is quitting. - Magic
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=basketball"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -237,7 +237,7 @@ h1, .credit{
 				I do it because its just plain awesome!
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=skateboard"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -253,7 +253,7 @@ h1, .credit{
 				out if it's as magical as you imagine it is..
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=surfing"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -262,13 +262,13 @@ h1, .credit{
 		</div>
 	
 		<div class="pin">
-			<img src="${pageContext.servletContext.contextPath}/resources/img/rockclimbing1.jpg" />
+			<img src="${pageContext.servletContext.contextPath}/resources/img/rockclimbing.jpg" />
 			<p>
 				Rock Climbing : The road to wisdom? — Well, it's plain and simple to express:~ 
 				Err, and err, and err again ~ but less, and less, and less. ~~ Piet Hein 
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=rockclimbing"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
@@ -283,7 +283,7 @@ h1, .credit{
 				Real team mates work together and share the victory with each other. 
 			</p>
 			<div class="pinSocialMeta">
-				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
+				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=lacrosse"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/twitter.png" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 21px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif" /></a>
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png" /></a>
