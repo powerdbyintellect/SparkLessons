@@ -466,7 +466,6 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 		String authHeader = createAuthHeader(token.getTokenId(), token.getAuthId());
 		
 		RestResponse clientResponse = onboardingServiceRestClient.getAccountByUserId(authHeader, requestId);
-		System.out.println(" OBS Response \n"+clientResponse.toString());
 		MerchantApplicationResponse result = null;
 		try {
 			result = new MerchantApplicationResponse();

@@ -75,7 +75,7 @@ h1, .credit{
 			<p>
 				RF always keeps his eye on the ball and leaves it at the point of 
 				contact for a split second once the ball leaves his racquet. Learn
-				to play like a pro. 
+				to play like a pro. Get tennis lessons now!
 			</p>
 			<div class="pinSocialMeta">
 				<a class="socialItem" href="${pageContext.servletContext.contextPath}/order?type=tennis"><img style="max-height: 20px; max-width: 20px" src="${pageContext.servletContext.contextPath}/resources/img/facebook.png" /></a>
@@ -264,7 +264,7 @@ h1, .credit{
 		<div class="pin">
 			<img src="${pageContext.servletContext.contextPath}/resources/img/rockclimbing.jpg" />
 			<p>
-				Rock Climbing : The road to wisdom? — Well, it's plain and simple to express:~ 
+				Rock Climbing: The road to wisdom? Well, it's plain and simple to express:~ 
 				Err, and err, and err again ~ but less, and less, and less. ~~ Piet Hein 
 			</p>
 			<div class="pinSocialMeta">
