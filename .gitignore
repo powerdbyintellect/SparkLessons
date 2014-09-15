@@ -10,3 +10,21 @@ SparkLessons/.settings/org.eclipse.wst.common.component
 SparkLessons/.project
 
 SparkLessons/.project
+
+.DS_Store
+
+SparkLessons/.classpath
+
+SparkLessons/.DS_Store
+
+SparkLessons/.settings/org.eclipse.core.resources.prefs
+
+*.prefs
+
+SparkLessons/.settings/org.eclipse.jdt.core.prefs
+
+SparkLessons/.settings/org.eclipse.wst.common.component
+
+SparkLessons/src/.DS_Store
+
+SparkLessons/src/main/.DS_Store
