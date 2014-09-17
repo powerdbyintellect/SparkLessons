@@ -8,7 +8,7 @@
     <meta name="description" content="Spark Lessons, Payments">
     <meta name="author" content="Harish Raghavendra">
 
-    <!-- Le styles -->
+    <!-- Le styles --> 
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.css" rel="stylesheet">
     <link rel="shortcut icon" href="${pageContext.servletContext.contextPath}/resources/img/favicon.ico" />
     <style type="text/css">
