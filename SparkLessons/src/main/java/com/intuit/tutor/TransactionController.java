@@ -43,6 +43,12 @@ public class TransactionController {
 	
 	private ObjectFactory objectFactory = new ObjectFactory();
 	
+	@RequestMapping(value="/charge", method = RequestMethod.GET) 
+	public ModelAndView getChargePage (HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("charge");
+		mav.addObject("amount", "0.00");
+		return mav;
+	}
 	
 	//accept card
 	@RequestMapping(value="/charge", method = RequestMethod.POST)

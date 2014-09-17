@@ -176,6 +176,9 @@ margin-right: -5px;
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/skeuocard.reset.css" />
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/skeuocard.css" />
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/demo.css">
+    <link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/resources/css/nav.css"
+	type="text/css" />
     <script src="${pageContext.servletContext.contextPath}/resources/js/vendor/cssua.min.js"></script>
      
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -185,70 +188,68 @@ margin-right: -5px;
 
 
 </head>
-
+<%@ include file="header.jsp"%>
 <body>
 
- <h1 align="center">Spark Lessons - Payment page</h1>
+
+
+
    <div id="wrapper">
+    
+  <div class="checkout" style="padding-top: 50px;">
+  	<h4 align="center">Payment page</h4>
 	  <p align="center">You are about get paid for lessons you gave !!</p>
-
-  <div class="checkout">
-  <form name="paymentform" action="charge" method="post">
-  <p><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/${type}.jpg" /><b>${type}</b> Lessons for 1 hour: $ &nbsp;&nbsp;<input type="text" size="3" style="max-width: 75px;" name="chargeamount" class="input-block-level" placeholder="25.00"/></p>
-  <p>You don't have a card saved with us. You'll need to add one now</p>
-  <section>
-        <!-- START FORM -->
-        
-        
-        <div align="right">
-          <div class="credit-card-input no-js" id="skeuocard">
-            <p class="no-support-warning">
-              Either you have Javascript disabled, or you're using an unsupported browser, amigo! That's why you're seeing this old-school credit card input form instead of a fancy new Skeuocard. On the other hand, at least you know it gracefully degrades...
-            </p>
-            <label for="cc_type">Card Type</label>
-            <select name="cc_type">
-              <option value="">...</option>
-              <option value="visa">Visa</option>
-              <option value="discover">Discover</option>
-              <option value="mastercard">MasterCard</option>
-              <option value="maestro">Maestro</option>
-              <option value="jcb">JCB</option>
-              <option value="unionpay">China UnionPay</option>
-              <option value="amex">American Express</option>
-              <option value="dinersclubintl">Diners Club</option>
-            </select>
-            <label for="cc_number">Card Number</label>
-            <input type="text" name="cc_number" id="cc_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" size="19" >
-            <label for="cc_exp_month">Expiration Month</label>
-            <input type="text" name="cc_exp_month" id="cc_exp_month" placeholder="00">
-            <label for="cc_exp_year">Expiration Year</label>
-            <input type="text" name="cc_exp_year" id="cc_exp_year" placeholder="00" >
-            <label for="cc_name">Cardholder's Name</label>
-            <input type="text" name="cc_name" id="cc_name" placeholder="John Doe" value="">
-            <label for="cc_cvc">Card Validation Code</label>
-            <input type="text" name="cc_cvc" id="cc_cvc" placeholder="123" maxlength="3" size="3">
-            <input type="hidden" name="realmId" value="${realmId}"/>
-          </div>
-          	<div align="center" style="padding-left: 150px;">
-          		<br/>
-          	  <input type="submit" class="btn btn-primary btn-large" value="Submit Payment"/>
-        	</div>
-         </div> 
-        
-        <!-- END FORM -->
-      </section>
-      <div align="center" style="padding-left: 50px;padding-top: 200px"> <%@ include file="footer.jsp" %></div>
-   </form>
-   
+  		
+		  <form name="paymentform" action="charge" method="post">
+		  <span style="size: auto;"><img class="item" title="Image of Cover" src="${pageContext.servletContext.contextPath}/resources/img/${type}.jpg" /><b>${type}</b> 
+		  Lessons for 1 hour: $ &nbsp;&nbsp;<input type="text" size="3" style="max-width: 50px;" name="chargeamount" class="input-block-level" placeholder="25.00"/></span>
+		  <p align="center" style="padding-top: 20px">You don't have a card saved with us. You'll need to add one now</p>
+		  <section>
+		        <!-- START FORM -->
+		        <div align="right" style="padding-right: 25px;">
+		          <div class="credit-card-input no-js" id="skeuocard">
+		            <p class="no-support-warning">
+		              Either you have Javascript disabled, or you're using an unsupported browser, amigo! That's why you're seeing this old-school credit card input form instead of a fancy new Skeuocard. On the other hand, at least you know it gracefully degrades...
+		            </p>
+		            <label for="cc_type">Card Type</label>
+		            <select name="cc_type">
+		              <option value="">...</option>
+		              <option value="visa">Visa</option>
+		              <option value="discover">Discover</option>
+		              <option value="mastercard">MasterCard</option>
+		              <option value="maestro">Maestro</option>
+		              <option value="jcb">JCB</option>
+		              <option value="unionpay">China UnionPay</option>
+		              <option value="amex">American Express</option>
+		              <option value="dinersclubintl">Diners Club</option>
+		            </select>
+		            <label for="cc_number">Card Number</label>
+		            <input type="text" name="cc_number" id="cc_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" size="19" >
+		            <label for="cc_exp_month">Expiration Month</label>
+		            <input type="text" name="cc_exp_month" id="cc_exp_month" placeholder="00">
+		            <label for="cc_exp_year">Expiration Year</label>
+		            <input type="text" name="cc_exp_year" id="cc_exp_year" placeholder="00" >
+		            <label for="cc_name">Cardholder's Name</label>
+		            <input type="text" name="cc_name" id="cc_name" placeholder="John Doe" value="">
+		            <label for="cc_cvc">Card Validation Code</label>
+		            <input type="text" name="cc_cvc" id="cc_cvc" placeholder="123" maxlength="3" size="3">
+		            <input type="hidden" name="realmId" value="${realmId}"/>
+		          </div>
+		          	<div align="center" style="padding-left: 150px;">
+		          		<br/>
+		          	  <input type="submit" class="btn btn-primary btn-large" value="Submit Payment"/>
+		        	</div>
+		         </div> 
+		        
+		        <!-- END FORM -->
+		      </section>
+		      <div align="center" style="padding-left: 50px;padding-top: -100px;"> <%@ include file="footer.jsp" %></div>
+		   </form>
 </div>
-
-  </div>
-  
-  
+</div>
 
   <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
   <script src='http://stripe.github.io/jquery.payment/lib/jquery.payment.js'></script>
-
   <script src="${pageContext.servletContext.contextPath}/resources/js/index.js"></script>
 
 </body>

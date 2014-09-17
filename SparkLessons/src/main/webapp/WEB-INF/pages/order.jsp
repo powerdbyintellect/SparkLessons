@@ -1,6 +1,5 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Arrays"%>
-<%@page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,7 +7,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Spark Lessons</title>
+    <title>Spark Lessons - Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -25,11 +24,8 @@
       }
     </style>
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.css" rel="stylesheet">
-		<link href="${pageContext.servletContext.contextPath}/resources/css/tiles.css" rel="stylesheet">
-
-    <title>Search Nearby</title>
-
-
+	<link href="${pageContext.servletContext.contextPath}/resources/css/tiles.css" rel="stylesheet">
+ 	<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/nav.css">
 	 <style type="text/css">
 
       .form-signin {
@@ -76,7 +72,7 @@ h1, .credit{
 </head>
 <body>
 
-
+<%@ include file="header.jsp"%>
 
  <div class="container">
 <div class="container-fluid">
@@ -90,18 +86,18 @@ h1, .credit{
   </div>
 </div>
 
-Â <tag:notloggedin>
-	<div align="center">
-Â  Â  Â <a href="signin"><img src="${pageContext.servletContext.contextPath}/resources/img/fbloginbutton.png" alt="Login with Facebook"></a>
-	</div>Â 
+ <tag:notloggedin>
+	<div align="center" style="padding-top: 30px;">
+     <a href="signin"><img src="${pageContext.servletContext.contextPath}/resources/img/fbloginbutton.png" alt="Login with Facebook"></a>
+	</div> 
 </tag:notloggedin>
-Â <tag:loggedin>
-Â  Â  Â <h3 align="center">Welcome to Spark Lessons ${facebook.name}</h3>
-Â </tag:loggedin>
+<%--  <tag:loggedin>
+     <h3 align="center">Welcome to Spark Lessons ${facebook.name}</h3>
+ </tag:loggedin> --%>
 
 
 <form name="couponForm" action="addCustomer" method="post"  class="form-signin">
-    <h3>Activate Payments Account </h3>
+    <h4 align="center">Activate Payments Account </h4>
     <input type="text" size="20" name="firstname"  value="${customer.firstname}" class="input-block-level" placeholder="Firstname"/>
     <input type="text" size="20" name="lastname"  value="${customer.lastname}" class="input-block-level" placeholder="Lastname"/>
     <input type="text" size="20" name="username"  value="${customer.dbaName}" class="input-block-level" placeholder="username"/>
@@ -109,7 +105,7 @@ h1, .credit{
     <input type="text" size="20" name="ssn"  value="${customer.ssn}" class="input-block-level" placeholder="Social Security"/>
     <input type="text" size="20" name="dob"  value="${customer.dob}" class="input-block-level" placeholder="Date Of Birth"/>
     <input type="text" size="20" name="streetAddress1"  value="${address.streetAddress1}" class="input-block-level" placeholder="Address 1"/>
-    <input type="text" size="20" name="streetAddress2"  value="${address.streetAddress2}" class="input-block-level" placeholder="Address 2"/>
+   <%--  <input type="text" size="20" name="streetAddress2"  value="${address.streetAddress2}" class="input-block-level" placeholder="Address 2"/> --%>
     <input type="text" size="20" name="city"  value="${address.city}" class="input-block-level" placeholder="City"/>
     <input type="text" size="20" name="state"  value="${address.state}" class="input-block-level" placeholder="State"/>
     <input type="text" size="20" name="zipCode"  value="${address.zipCode}" class="input-block-level" placeholder="Zipcode"/>

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/skeuocard.reset.css" />
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/skeuocard.css" />
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/demo.css">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/nav.css">
     <script src="${pageContext.servletContext.contextPath}/resources/js/vendor/cssua.min.js"></script>
      
 
@@ -127,44 +128,24 @@
 
 
   </head>
-
+<%@ include file="header.jsp"%>
   <body>
    
-   	<h1 align="center">Spark Lessons - Payment Confirmed!</h1>
+   <div class="checkout" style="padding-top: 80px;">
+   	<h4 align="center">Payment Confirmed!</h4>
    	<p align="center">You are all set. You'll see cha-ching in your bank soon.</p>
-<%--  <div class="container">
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <!--Sidebar content-->
-    </div>
-    <div align="center" >
-    	<table width="300px">
-        <tr><td><b> Merchant Account Number : </b> </td> <td> ${creditCardResponse.merchantAccountNumber} </td></tr>
-        <tr><td><b> Transaction Identifier  : </b> </td> <td> ${creditCardResponse.creditCardTransID}</td></tr>
-        <tr><td><b> Payment Status  		: </b> </td> <td> ${creditCardResponse.paymentStatus} </td></tr>
-        <tr><td><b> Transaction Auth Time   : </b> </td> <td> ${creditCardResponse.transAuthorizationTime}</td></tr>
-        <tr><td><b> Authorization Code      : </b>  </td> <td>${creditCardResponse.authorizationCode} </td></tr>
-        <tr><td><b> Authorization Amount    : </b> </td> <td> <b>${amount}  </b></td></tr>
-        </table>
-    </div>
-  </div>
+	<div>
+	    <table cellspacing="0">
+	    <tr><th>Transaction Details</th><th>Summary</th></tr>
+	    <tr><td>Merchant Account Number</td><td>${creditCardResponse.merchantAccountNumber}</td></tr>
+	    <tr><td>Transaction Identifier</td><td>${creditCardResponse.creditCardTransID}</td></tr>
+	    <tr><td>Payment Status</td><td>${creditCardResponse.paymentStatus}</td></tr>
+	    <tr><td>Authorization Time </td><td>${creditCardResponse.transAuthorizationTime}</td></tr>
+	    <tr><td>Authorization Code </td><td>${creditCardResponse.authorizationCode} </td></tr>
+	    <tr><td>Authorization Amount </td><td>${amount}</td></tr>
+	    </table>
+	</div>
 </div>
-</div>
- --%>
-
-<div id="content">
-    <table cellspacing="0">
-    <tr><th>Transaction Details</th><th>Summary</th></tr>
-    <tr><td>Merchant Account Number</td><td>${creditCardResponse.merchantAccountNumber}</td></tr>
-    <tr><td>Transaction Identifier</td><td>${creditCardResponse.creditCardTransID}</td></tr>
-    <tr><td>Payment Status</td><td>${creditCardResponse.paymentStatus}</td></tr>
-    <tr><td>Authorization Time </td><td>${creditCardResponse.transAuthorizationTime}</td></tr>
-    <tr><td>Authorization Code </td><td>${creditCardResponse.authorizationCode} </td></tr>
-    <tr><td>Authorization Amount </td><td>${amount}</td></tr>
-    </table>
-</div>
-
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

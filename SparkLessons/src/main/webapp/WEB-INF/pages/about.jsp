@@ -1,18 +1,17 @@
 <%@page import="java.util.*"%>
-<%@page contentType="text/html"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Intuit Discounts - About</title>
+    <title>Spark Lessons - About</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le styles -->
     <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/nav.css">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -21,38 +20,8 @@
     </style>
 
 
-    <title>About Intuit Discounts</title>
+    <title>About Us</title>
 
-
-	 <style type="text/css">
-
-      .form-signin {
-        max-width: 350px;
-        padding: 19px 29px 29px;
-        margin: 0 auto 20px;
-        background-color: #fff;
-        border: 1px solid #e5e5e5;
-        -webkit-border-radius: 5px;
-           -moz-border-radius: 5px;
-                border-radius: 5px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-                box-shadow: 0 1px 2px rgba(0,0,0,.05);
-      }
-      .form-signin .form-signin-heading,
-      .form-signin .checkbox {
-        margin-bottom: 10px;
-      }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        font-size: 16px;
-        height: auto;
-        margin-bottom: 15px;
-        padding: 7px 9px;
-      }
-
-    </style>
-    
       <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto|Allura);
 
@@ -71,65 +40,25 @@ h1, .credit{
 </head>
 <body>
 
+<%@ include file="header.jsp"%>
 
 
- <div class="container">
-	<div class="container-fluid">
-	  <div class="row-fluid">
-	    <div class="span2">
-	      <!--Sidebar content-->
-	    </div>
-	    <div class="span10">
-	      <!--Body content-->
-	    </div>
-	  </div>
-	</div>
-
-
-<div class="hero-unit" align="center">
-        <h2 align="center">Spark Lessons</h2>
+<div align="center">
+        <h4 align="center">About Us!</h4>
         <p> We help you achieve whatever you are passionate about by handling Payments!</p>
-        <p></p>
       </div>
 
 
 <div class="container">
  <div class="span16">
  <table align="center"> <tr align="center">
- <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
- 	<iframe align="middle" allowfullscreen="" src="http://www.powtoon.com/embed/geO7d9eJtdA/" frameborder="0" width="880" height="441"></iframe>
-  </div> </tr>
- </table> 
+	 <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;padding-left:50px;">
+ 	<iframe align="middle" style="padding-left:20px;" allowfullscreen="" src="http://www.powtoon.com/embed/geO7d9eJtdA/" frameborder="0" width="750" height="441"></iframe>
+ 	 </div> </tr>
+	 </table> 
    </div>
    </div>
-<br/>
-<br/>
-<hr/>
 
-	<div class="container" >
-		<section class="row team">
-	    <h2 class="span2 offset1">Our team</h2>
-	       <div class="span2 offset1"  style="padding-right: 70px; padding-left: -50px;">
-	          <img src="${pageContext.servletContext.contextPath}/resources/img/asim.png" width="170" height="170">
-	          <h3>Asim Khaja</h3>
-	          <p><span>Founder &amp; Platforms</span> <a href="#" class="light" target="_blank">@asimkhaja</a></p>
-	      </div>
-	      <div class="span2">
-	          <img src="${pageContext.servletContext.contextPath}/resources/img/harish.png" width="170" height="170">
-	          <h3>Harish Raghavendra</h3>
-	          <p><span>Founder &amp; Interactions</span> <a href="#" class="light" target="_blank">@harishraghavendra</a></p>
-	      </div>
-	      <div class="span2 offset1">
-	          <img src="${pageContext.servletContext.contextPath}/resources/img/mario.png" width="170" height="170">
-	          <h3>Mario Abundis</h3>
-	          <p><span>Founder &amp; Social</span> <a href="#" class="light" target="_blank">@marioabundis</a></p>
-	      </div>
-	    
-	  </section>
-		
-	</div>
-	
-   <hr>
      <%@ include file="footer.jsp" %>
 </div> <!-- /container -->
 
