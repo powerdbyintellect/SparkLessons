@@ -92,28 +92,14 @@ public class TransactionController {
 				e.printStackTrace();
 			}
 		}
-		//Twitter Integration 
-//		https://apps.twitter.com/app/6866796/keys
-		// The factory instance is re-useable and thread safe.
-	    /*TwitterFactory factory = new TwitterFactory();
-	    AccessToken accessToken = null;
-	    Twitter twitter = factory.getInstance();
-	    twitter.setOAuthConsumer("CdU4znJoWKeylArzs5dHsZPhb", "ZhNAuzC4cYxPkkYwlj9A32cm35E2v8a7SolkzGUk73hysDBqZv");
-	    twitter.setOAuthAccessToken(accessToken);*/
+		
 		Twitter twitter = TwitterFactory.getSingleton();
-	     // The factory instance is re-useable and thread safe.
 	    Status status;
 		try {
-			//RequestToken requestToken = twitter.getOAuthRequestToken();
-            //log.debug(requestToken.getAuthorizationURL());
-            //accessToken = twitter.getOAuthAccessToken(requestToken);
-    		status = twitter.updateStatus("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
+			status = twitter.updateStatus("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
     		log.debug("Got access token.");
-            //log.debug("Access token: " + accessToken.getToken());
-            //log.debug("Access token secret: " + accessToken.getTokenSecret());
-			log.debug("Successfully updated the status to [" + status.getText() + "].");
+        	log.debug("Successfully updated the status to [" + status.getText() + "].");
 		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
 			log.error(e);
 		}
 	    
