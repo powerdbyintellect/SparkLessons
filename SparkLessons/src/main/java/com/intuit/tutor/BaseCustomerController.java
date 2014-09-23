@@ -7,12 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.intuit.platform.integration.ius.common.types.IAMTicket;
 import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
-
-import facebook4j.Facebook;
-import facebook4j.FacebookException;
-import facebook4j.User;
 
 @Controller
 public class BaseCustomerController {
@@ -23,32 +20,11 @@ public class BaseCustomerController {
 	private static final Logger logger = LoggerFactory.getLogger(BaseCustomerController.class);;
 	
 	public UserEntity getUserAndCreate(HttpServletRequest request)  {
-		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
-		String emailAddress = null;
-		String loginId = null;
-
+		IAMTicket ticket = (IAMTicket) request.getSession().getAttribute("ticket");
+		
 		UserEntity user = null;
-		if(facebook != null) {
-			try {
-				User me = facebook.getMe();
-				user = userEntityDAO.getUser(me.getEmail());
-				emailAddress = me.getEmail();
-				loginId = me.getId();
-				
-				//
-				if(user == null) {
-					user = new UserEntity();
-					//userEntity.setLoginid();
-					user.setLoginid(loginId);
-					user.setEmail(emailAddress);
-					user.setFirstname(me.getFirstName());
-					user.setLastname(me.getLastName());
-					user = userEntityDAO.saveUser(user);
-					return user;
-				}
-			} catch (FacebookException facebookexception) {
-				logger.error("could not get facebook user info");
-			}
+		if(ticket != null) {
+			user = userEntityDAO.getUserByRealmId(ticket.getRealmId());
 		}
 	
 		return user;

@@ -73,7 +73,7 @@
             <div class="subtx" data-ix="from-top-on-load-2">connecting teachers with students</div>
             <div class="btn" data-ix="from-top-on-load-3">
               <div class="w-row row-class">
-                <div class="w-col w-col-4"><a class="button" href="#">Signup with facebook</a>
+                <div class="w-col w-col-4"><a class="button" href="${pageContext.servletContext.contextPath}/signin">Signup with facebook</a>
                 </div>
                 <div class="w-col w-col-4">
                   <img src="${pageContext.servletContext.contextPath}/resources/images/Img_Or.png" width="53" alt="54208ecadc9f75dd73ac645e_Img_Or.png">

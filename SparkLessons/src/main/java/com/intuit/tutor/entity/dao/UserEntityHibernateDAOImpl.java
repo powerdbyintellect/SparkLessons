@@ -88,4 +88,16 @@ public class UserEntityHibernateDAOImpl implements UserEntityDAO {
 		return (UserEntity) getSession().get(UserEntity.class, id);
 	}
 
+	@Override
+	public UserEntity getUserByRealmId(String realmId) {
+		Query query = getSession().createQuery("from UserEntity where realmId = :realmId");
+		query.setParameter("realmId", realmId);
+		List<UserEntity> list = query.list();
+		if(list.size() > 0) {
+			return list.get(0);
+		} else {
+			return null;
+		}
+	}
+
 }

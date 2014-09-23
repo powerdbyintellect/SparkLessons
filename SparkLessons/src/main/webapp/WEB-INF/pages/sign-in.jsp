@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Sep 23 2014 17:41:04 GMT+0000 (UTC) -->
@@ -81,13 +84,13 @@
     <div class="w-row">
       <div class="w-col w-col-6">
         <div class="w-form">
-          <form class="w-clearfix form-style" id="email-form" name="email-form" data-name="Email Form">
+          <form:form class="w-clearfix form-style" id="email-form" name="email-form" data-name="Email Form" action="sign-in"  >
             <label class="project-tittle" for="email">EMAIL ADDRESS</label>
             <input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="Email" required="required">
-            <label class="project-tittle" for="Lesson-Name">PASSWORD</label>
-            <input class="w-input btn-style" id="Lesson-Name" type="password" placeholder="Password" name="Lesson-Name" required="required" data-name="Lesson Name">
+            <label class="project-tittle" for="password">PASSWORD</label>
+            <input class="w-input btn-style" id="password" type="password" placeholder="password" name="password" required="required" data-name="password">
             <input class="w-button submit-btn" type="submit" value="SIGN IN" data-wait="Please wait...">
-          </form>
+          </form:form>
           <div class="w-form-done">
             <p>Thank you! Your submission has been received!</p>
           </div>
