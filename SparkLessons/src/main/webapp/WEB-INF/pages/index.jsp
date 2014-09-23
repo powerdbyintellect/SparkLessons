@@ -1,610 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Tue Sep 23 2014 17:41:04 GMT+0000 (UTC) -->
+<html data-wf-site="5420869c24ed7cd271a3ef44" data-wf-page="5420869c24ed7cd271a3ef46">
 <head>
-<meta charset="utf-8">
-<title>Spark Lessons</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Spark Lessons, Payments">
-<meta name="author" content="Harish Raghavendra">
-<link rel="stylesheet"
-	href="${pageContext.servletContext.contextPath}/resources/css/nav.css"
-	type="text/css" />
-<!-- Le styles -->
-<link
-	href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.css"
-	rel="stylesheet">
-<link rel="shortcut icon"
-	href="${pageContext.servletContext.contextPath}/resources/img/favicon.ico" />
-<style type="text/css">
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-}
-</style>
-<link
-	href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.css"
-	rel="stylesheet">
-<link
-	href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css"
-	rel="stylesheet">
-<link
-	href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.min.css"
-	rel="stylesheet">
-<link
-	href="${pageContext.servletContext.contextPath}/resources/css/tiles.css"
-	rel="stylesheet">
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
-    <![endif]-->
-
-<!-- Fav and touch icons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="../assets/ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114"
-	href="../assets/ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="../assets/ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed"
-	href="../assets/ico/apple-touch-icon-57-precomposed.png">
-
-<style type="text/css">
-@import
-	url(http://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto|Allura)
-	;
-
-body {
-	background: #EEE;
-}
-
-body,input {
-	font-family: "Roboto";
-	font-size: 1em;
-}
-
-h1,.credit {
-	font-family: "Roboto Slab";
-}
-</style>
+  <meta charset="utf-8">
+  <title>SparkLessons - connecting teachers with students</title>
+  <meta name="description" content="SparkLessons is a site where students &amp; teachers get together and share the knowledge without worrying about payments.">
+  <meta name="keywords" content="sparklessons, payments, easy payment, social marketing, social integration, learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/sparklessons.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Raleway:100,200,300,regular,500,600,700,800,900","Arvo:regular,italic,700,700italic","Libre Baskerville:regular,italic,700"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="${pageContext.servletContext.contextPath}/resources/images/fav.png">
+  <link rel="apple-touch-icon" href="${pageContext.servletContext.contextPath}/resources/images/ico-phone.png">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53838527-5'], ['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
-
 <body>
-	<%@ include file="header.jsp"%>
-	<!-- <div align="center"><h4 align="center"><i>Go...chase your passion. We take care of payments for you.</i></h4></div> -->
-	<div id="wrapper">
-		<div id="columns">
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/piano.jpg"
-					alt="" />
-				<p>Music has been a part of my life as far back as I can
-					remember. I love how this picture sort of shows that the movements
-					of the hands become more graceful as the pianist is lost in the
-					emotion of the song.</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=piano"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/makepayment"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/tennis.jpg"
-					alt="" />
-				<p>RF always keeps his eye on the ball and leaves it at the
-					point of contact for a split second once the ball leaves his
-					racquet. Learn to play like a pro. Get tennis lessons now!</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=tennis"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/swimming.jpg"
-					alt="" />
-				<p>This is why swimmers have amazing bodies. Total body workout
-					every time you enter the water. Everyone is the same in the water.
-
-				</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=swimming"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/gymnastics.jpg"
-					alt="" />
-				<p>Where ever a gymnast goes doing gymnastics is a must do and
-					if you really love gymnastics you'll do it every where. Here's to
-					the gymnasts .. it's not about being a champion, it's about LOVING
-					the sport!</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=gymnastics"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/painting.jpg"
-					alt="" />
-				<p>Art washes away from the soul, the dust of everyday life ~
-					Pablo Picasso Acrylic, Oil, Watercolor. Abstract, Modern, Scenic,
-					Landscapes Skyscapes, so many ways to show your creative side.
-					Learn to paint.</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=painting"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/knitting.jpg"
-					alt="" />
-				<p>How to Magic Loop, Cabling Without a Cable Needle, Tubular
-					Cast On, Weaving in Ends, Fair Isle - Yarn Dominance, Judy's Magic
-					Cast On, Crochet Provisional Cast On, Kitchner Stitch. Things all
-					knitters should know</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=knitting"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/ballerina.jpg"
-					alt="" />
-				<p>Ballet, Ballett, Ballerina, Dancer, Dance, Danza, Danse,
-					Dansa, Dancing. Learn Russian Ballet, French Ballet or Italian
-					Ballet.</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=ballerina"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/soccer.jpg"
-					alt="" />
-				<p>Soccer is not only a beautiful game...it is filed with
-					beautiful moments. Moments of greatness and moments that aren't
-					always seen from the score of the game. Learn to bicycle kick and
-					be a team player.</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=soccer"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/baseball.jpg"
-					alt="" />
-				<p>We need to take a leaf from him and have a shot at it. FOCUS
-					&amp; DETERMINATION! There's no crying in baseball!</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=baseball"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/football.jpg"
-					alt="" />
-				<p>If it doesnt matter who wins and loses, then why do they keep
-					scores. Winners never quit &amp; quitters never win. -Lombardi
-					Teamwork - No one can defeat us unless we first defeat ourselves</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=football"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/basketball.jpg"
-					alt="" />
-				<p>All kids need is a little help, a little hope and somebody
-					who believes in them. There's winning and there's losing and in
-					life both will happen. What is never acceptable to me is quitting.
-					- Magic</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=basketball"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/skateboard.jpg"
-					alt="" />
-				<p>I don't Skateboard to impress people, look cool, or be
-					stylish. I do it because its just plain awesome!</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=skateboard"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/surfing.jpg"
-					alt="" />
-				<p>Go Surfing! Don't just dream and fantasize about it book a
-					surf-trip or take a lesson. It's the only way to find out if it's
-					as magical as you imagine it is..</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=surfing"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/rockclimbing.jpg"
-					alt="" />
-				<p>Rock Climbing: The road to wisdom? Well, it's plain and
-					simple to express:~ Err, and err, and err again ~ but less, and
-					less, and less. ~~ Piet Hein</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=rockclimbing"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-
-			<div class="pin">
-				<img
-					src="${pageContext.servletContext.contextPath}/resources/img/lacrosse.jpg"
-					alt="" />
-				<p>Be a team player. Learn &amp; Play Lacross. Real team mates
-					work together and share the victory with each other.</p>
-				<div class="pinSocialMeta">
-					<a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order?type=lacrosse"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/facebook.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/twitter.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 21px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/linkedin.gif"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/pinterest.png"
-						alt="" /></a> <a class="socialItem"
-						href="${pageContext.servletContext.contextPath}/order"><img
-						style="max-height: 20px; max-width: 20px"
-						src="${pageContext.servletContext.contextPath}/resources/img/social_gglp.gif"
-						alt="" /></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<%@ include file="footer.jsp"%>
-	<!-- Le javascript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/jquery.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-transition.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-alert.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-modal.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-dropdown.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-scrollspy.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-tab.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-tooltip.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-popover.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-button.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-collapse.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-carousel.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-typeahead.js"
-		type="text/javascript"></script>
-	<script
-		src="${pageContext.servletContext.contextPath}/resources/js/bootstrap-min.js"
-		type="text/javascript"></script>
-
+  <div class="banner" id="top" data-ix="show-nav">
+    <div class="w-nav w-hidden-medium w-hidden-small w-hidden-tiny navbar-scroll" data-collapse="medium" data-animation="over-right" data-duration="400" data-contain="1" data-ix="display-none">
+      <div class="w-container">
+        <a class="w-nav-brand w-clearfix logo sc" href="${pageContext.servletContext.contextPath}">
+          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="5420a24882027adc73b7a86d_SL_Logo4.png">
+          <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/project-page"><span>SIGN IN</span></a>
+            <a
+            class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/contact"><span>contact</span>
+        </a>
+        </nav>
+        </a>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+    <div class="w-nav navbar" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
+      <div class="w-container">
+        <a class="w-nav-brand logo" href="${pageContext.servletContext.contextPath}/">
+          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="5420a24882027adc73b7a86d_SL_Logo4.png">
+        </a>
+        <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
+          <a
+          class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/contact"><span>contact</span>
+            </a>
+        </nav>
+        <div class="w-nav-button ico-device">
+          <div class="w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+    <div class="w-slider slider" data-animation="outin" data-duration="500" data-infinite="1">
+      <div class="w-slider-mask">
+        <div class="w-slide slide">
+          <div class="w-container sl-con">
+            <h1 class="is" data-ix="from-top-on-load">WElcome to Spark lessons<span class="light"></span></h1>
+            <div class="subtx" data-ix="from-top-on-load-2">connecting teachers with students</div>
+            <div class="btn" data-ix="from-top-on-load-3">
+              <div class="w-row row-class">
+                <div class="w-col w-col-4"><a class="button" href="#">Signup with facebook</a>
+                </div>
+                <div class="w-col w-col-4">
+                  <img src="${pageContext.servletContext.contextPath}/resources/images/Img_Or.png" width="53" alt="54208ecadc9f75dd73ac645e_Img_Or.png">
+                </div>
+                <div class="w-col w-col-4">
+                  <div class="w-form w-clearfix">
+                    <form class="w-clearfix div-submitclass" id="email-form" name="email-form" data-name="Email Form" method="post">
+                      <input class="w-input email-signup" id="Email-Address" type="email" placeholder="Email Address" name="Email-Address" data-name="Email Address" required="required">
+                      <input class="w-button submit-btn" type="submit" value="SIGN UP" data-wait="Please wait...">
+                    </form>
+                    <div class="w-form-done">
+                      <p>Thank you! Your submission has been received!</p>
+                    </div>
+                    <div class="w-form-fail">
+                      <p>Oops! Something went wrong while submitting the form :(</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-slide">
+          <div class="w-container sl-con">
+            <h1 class="is">Follow your passion</h1>
+            <div class="subtx">focus only on learning and leave rest to us&nbsp;</div>
+            <div class="btn"><a class="button" href="#">browse now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-slider-arrow-left">
+        <div class="w-icon-slider-left arrow"></div>
+      </div>
+      <div class="w-slider-arrow-right">
+        <div class="w-icon-slider-right arrow"></div>
+      </div>
+      <div class="w-slider-nav w-round nav-dots"></div>
+    </div>
+  </div>
+  <div class="service-section" id="howit">
+    <div class="w-container">
+      <div class="text-hero">
+        <h2 class="sp">HOW&nbsp;IT WORKS</h2>
+        <p class="sub-text">Spark Lessons enables teachers&nbsp;to find students &amp;&nbsp;getting paid fast</p>
+      </div>
+      <div class="w-row">
+        <div class="w-col w-col-4 w-col-stack service-column">
+          <div class="icon-service"></div>
+          <h4>create lessons</h4>
+          <p>Create, manage &amp;&nbsp;promote your lessons. Get unlimited social marketing to organize &amp;&nbsp;grow your business.</p>
+        </div>
+        <div class="w-col w-col-4 w-col-stack service-column">
+          <div class="icon-service pixel"></div>
+          <h4>take lessons</h4>
+          <p>Follow your passion and find the perfect lesson that you want to pursue &amp;&nbsp;we take of the rest&nbsp;</p>
+        </div>
+        <div class="w-col w-col-4 w-col-stack service-column">
+          <div class="icon-service phone"></div>
+          <h4>get paid</h4>
+          <p>We make it easy to pay for lessons &amp;&nbsp;getting paid by any means of payment.
+            <br>You focus on teaching &amp;&nbsp;learning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="work-section">
+    <div class="w-row">
+      <div class="w-col w-col-3 w-col-stack portfolio-image">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/piano.jpg" width="260" height="280" alt="5420aa48dc9f75dd73ac65bd_piano.jpg">
+        <div class="portfolio-overlay">
+          <div class="ico-wrapper">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            </a>
+            <a class="w-lightbox w-inline-block" href="#">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <script type="application/json" class="w-json">
+                {
+                  "items": [
+                    {
+                      "type": "image",
+                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61958b195c15b32bf7841_light1.jpg",
+                      "caption": "This is a caption!",
+                      "width": 755,
+                      "height": 943
+                    },
+                    {
+                      "type": "image",
+                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e619718fe341c348ee72d2_light2.jpg",
+                      "caption": "",
+                      "width": 755,
+                      "height": 471
+                    },
+                    {
+                      "type": "image",
+                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e6197ab195c15b32bf7845_light3.jpg",
+                      "caption": "",
+                      "width": 755,
+                      "height": 471
+                    }
+                  ]
+                }
+              </script>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-tittle"><a class="tittle" href="#">project #1</a>
+        </div>
+        <div class="catergory">print, photography</div>
+      </div>
+      <div class="w-col w-col-3 w-col-stack portfolio-image">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/baseball.jpg" width="260" height="280" alt="5420ac8d82027adc73b7a95b_baseball.jpg">
+        <div class="portfolio-tittle"><a class="tittle" href="#">project #2</a>
+        </div>
+        <div class="catergory">print, photography</div>
+        <div class="portfolio-overlay">
+          <div class="ico-wrapper">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            </a>
+            <a class="w-lightbox w-inline-block" href="#">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <script type="application/json" class="w-json">
+                {
+                  "items": [
+                    {
+                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61a828fe341c348ee72dc_light4.jpg",
+                      "caption": "",
+                      "type": "image"
+                    },
+                    {
+                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61a8cb195c15b32bf7857_light5.jpg",
+                      "caption": "",
+                      "type": "image"
+                    }
+                  ]
+                }
+              </script>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-col w-col-3 w-col-stack portfolio-image">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/tennis.jpg" width="260" height="280" alt="5420ab207fed5ca22a8ac6f5_tennis.jpg">
+        <div class="portfolio-tittle"><a class="tittle" href="#">project #3</a>
+        </div>
+        <div class="catergory">print, photography</div>
+        <div class="portfolio-overlay">
+          <div class="ico-wrapper">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            </a>
+            <a class="w-lightbox w-inline-block" href="#">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <script type="application/json" class="w-json">
+                {
+                  "items": [
+                    {
+                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61b1fb195c15b32bf7860_light7.png",
+                      "caption": "This is a logo!",
+                      "type": "image"
+                    },
+                    {
+                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61b0ab195c15b32bf785d_light6.jpg",
+                      "caption": "",
+                      "type": "image"
+                    }
+                  ]
+                }
+              </script>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-col w-col-3 w-col-stack portfolio-image">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/painting.jpg" width="260" height="280" alt="5420ab7182027adc73b7a953_painting.jpg">
+        <div class="portfolio-tittle"><a class="tittle" href="#">project #4</a>
+        </div>
+        <div class="catergory">print, photography</div>
+        <div class="portfolio-overlay">
+          <div class="ico-wrapper">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            </a>
+            <a class="w-lightbox w-inline-block" href="#">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <script type="application/json" class="w-json">
+                {
+                  "mode": "video",
+                  "items": [
+                    {
+                      "url": "http://vimeo.com/21356824",
+                      "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F21356824&src_secure=1&url=http%3A%2F%2Fvimeo.com%2F21356824&image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F172763181_1280.jpg&key=c4e54deccf4d4ec997a64902e9a30300&type=text%2Fhtml&schema=vimeo\" scrolling=\"no\" frameborder=\"0\" allowfullscreen></iframe>",
+                      "width": 940,
+                      "height": 529,
+                      "type": "video"
+                    }
+                  ]
+                }
+              </script>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="team-section">
+    <div class="w-container">
+      <div class="text-hero">
+        <h2 class="sp">OUR LOVELY&nbsp;<span class="light">TEAM</span></h2>
+        <p class="sub-text">Team is what is important and that each of us, on our own, is worthless.</p>
+      </div>
+      <div class="w-row">
+        <div class="w-col w-col-4 w-col-stack column">
+          <div class="tean-wrapper">
+            <img src="${pageContext.servletContext.contextPath}/resources/images/asim.png" width="111" alt="54211652dc9f75dd73ac6a35_asim.png">
+          </div>
+          <div class="team-div">
+            <div class="team-name">ASIm KHAJA</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim.</p>
+            <div class="team-social">
+              <a class="w-inline-block ico-soc facebook" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/facebook-footer.png" width="14" alt="53e6481b8300c9c1489b940b_facebook-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc twitter" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/twitter-footer.png" width="14" alt="53e6485e8300c9c1489b9411_twitter-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc gplus" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/google-footer.png" width="14" alt="53e64871edc43d5932f07f4d_google-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc rss" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/rss-footer.png" width="14" alt="53e6487d8fe341c348ee7489_rss-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc dribbble" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/dribble-footer.png" width="14" alt="53e648898fe341c348ee748b_dribble-footer.png">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4 w-col-stack column">
+          <div class="tean-wrapper">
+            <img src="${pageContext.servletContext.contextPath}/resources/images/harish.png" width="125" alt="5421169f5cfdafa12a5c0b88_harish.png">
+          </div>
+          <div class="team-div">
+            <div class="team-name">HARISH&nbsp;RAGHAVENDRA</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim.</p>
+            <div class="team-social">
+              <a class="w-inline-block ico-soc facebook" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/facebook-footer.png" width="14" alt="53e6481b8300c9c1489b940b_facebook-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc twitter" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/twitter-footer.png" width="14" alt="53e6485e8300c9c1489b9411_twitter-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc dribbble" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/dribble-footer.png" width="14" alt="53e648898fe341c348ee748b_dribble-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc gplus" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/google-footer.png" width="14" alt="53e64871edc43d5932f07f4d_google-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc rss" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/rss-footer.png" width="14" alt="53e6487d8fe341c348ee7489_rss-footer.png">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4 w-col-stack">
+          <div class="tean-wrapper">
+            <img src="${pageContext.servletContext.contextPath}/resources/images/mario.jpeg" width="111" alt="542116b982027adc73b7acb9_mario.jpeg">
+          </div>
+          <div class="team-div">
+            <div class="team-name">MARIO&nbsp;ABUNDIS</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim.</p>
+            <div class="team-social">
+              <a class="w-inline-block ico-soc facebook" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/facebook-footer.png" width="14" alt="53e6481b8300c9c1489b940b_facebook-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc twitter" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/twitter-footer.png" width="14" alt="53e6485e8300c9c1489b9411_twitter-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc gplus" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/google-footer.png" width="14" alt="53e64871edc43d5932f07f4d_google-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc dribbble" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/dribble-footer.png" width="14" alt="53e648898fe341c348ee748b_dribble-footer.png">
+              </a>
+              <a class="w-inline-block ico-soc rss" href="#">
+                <img src="${pageContext.servletContext.contextPath}/resources/images/rss-footer.png" width="14" alt="53e6487d8fe341c348ee7489_rss-footer.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="process-section">
+    <div class="w-container">
+      <div class="block-fun">
+        <div class="funt-nr">569</div>
+        <div class="fun-sub">Lessons taken</div>
+      </div>
+      <div class="block-fun">
+        <div class="funt-nr"><span>1316</span>
+        </div>
+        <div class="fun-sub">lines of code</div>
+      </div>
+      <div class="block-fun">
+        <div class="funt-nr">32</div>
+        <div class="fun-sub">CUPS of coffeE</div>
+      </div>
+      <div class="block-fun">
+        <div class="funt-nr">98%</div>
+        <div class="fun-sub">great feedback</div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-6 clm">
+          <div class="copyright">© 2014 SparkLessons by Intuit</div>
+        </div>
+        <div class="w-col w-col-6 top-column">
+          <a class="w-inline-block top" href="#top"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/webflow.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
