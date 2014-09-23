@@ -79,20 +79,21 @@
       </div>
     </div>
     <div class="w-form">
-      <form class="w-clearfix form-style" action="create-profile" method="post" id="email-form" name="email-form" data-name="Email Form">
-        <label class="project-tittle" for="name">NAME</label>
-        <input class="w-input btn-style" id="name" type="text" placeholder="Enter your name" name="name" data-name="Name">
+      <form class="w-clearfix form-style" modelAttribute="user"  enctype="multipart/form-data" action="updateprofile" method="post" id="email-form" name="email-form" data-name="Email Form">
+        <label class="project-tittle" for="firstname">NAME</label>
+        <input class="w-input btn-style" id=firstname type="text" placeholder="Enter your name" name="name" data-name="Name">
         <label class="project-tittle" for="email">EMAIL ADDRESS</label>
-        <input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="Email" required="required">
+        <input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="email" required="required">
         <label class="project-tittle" for="Lesson-Name">NAME YOUR LESSON</label>
         <input class="w-input btn-style" id="Lesson-Name" type="text" placeholder="Piano Lessons" name="Lesson-Name" required="required" data-name="Lesson Name">
         <label class="project-tittle" for="Description-of-Lesson">DESCRIBE ABOUT YOUR LESSON</label>
-        <textarea class="w-input btn-style" id="Description-of-Lesson" placeholder="Describe about the lesson you want to give" name="Description-of-Lesson" data-name="Description of Lesson" required="required"></textarea>
+        <textarea class="w-input btn-style" id="Description-of-Lesson" placeholder="Describe about the lesson you want to give" name="description" data-name="Description of Lesson" required="required"></textarea>
         <label class="project-tittle" for="Price-of-lesson">RATE</label>
-        <input class="w-input btn-style" id="Price-of-lesson" type="text" placeholder="$25.00" name="Price-of-lesson" required="required" data-name="Price of lesson">
+        <input class="w-input btn-style" id="Price-of-lesson" type="text" placeholder="$25.00" name="rate" required="required" data-name="rate">
         <label class="project-tittle" for="Category-of-lesson">CATEGORIES</label>
-        <textarea class="w-input btn-style" id="Category-of-lesson" placeholder="Categorize your lesson so that your prospective student can find it easily" name="Category-of-lesson" data-name="Category of lesson"></textarea>
+        <textarea class="w-input btn-style" id="Category-of-lesson" placeholder="Categorize your lesson so that your prospective student can find it easily" name="category" data-name="category"></textarea>
         <label class="project-tittle">UPLOAD YOUR IMAGE HERE</label>
+	    <input type="file" name="file" class="input-block-level"/>
         <input class="w-button submit-btn" type="submit" value="CREATE YOUR PROFILE" data-wait="Please wait...">
       </form>
     </div>
