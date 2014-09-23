@@ -38,8 +38,9 @@
     <div class="w-nav w-hidden-medium w-hidden-small w-hidden-tiny navbar-scroll" data-collapse="medium" data-animation="over-right" data-duration="400" data-contain="1" data-ix="display-none">
       <div class="w-container">
         <a class="w-nav-brand w-clearfix logo sc" href="${pageContext.servletContext.contextPath}">
-          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="5420a24882027adc73b7a86d_SL_Logo4.png">
-          <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
+          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="${pageContext.servletContext.contextPath}/resources/images/5420a24882027adc73b7a86d_SL_Logo4.png">
+          <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a>
+          <a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
             <a
             class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/contact"><span>contact</span>
         </a>
@@ -53,7 +54,7 @@
     <div class="w-nav navbar" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
       <div class="w-container">
         <a class="w-nav-brand logo" href="${pageContext.servletContext.contextPath}">
-          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="5420a24882027adc73b7a86d_SL_Logo4.png">
+          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="${pageContext.servletContext.contextPath}/resources/images/5420a24882027adc73b7a86d_SL_Logo4.png">
         </a>
         <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
           <a
@@ -77,10 +78,10 @@
       <div class="w-slider slider-project" data-animation="slide" data-duration="500" data-infinite="1">
         <div class="w-slider-mask">
           <div class="w-slide">
-            <img src="${pageContext.servletContext.contextPath}/resources/images/piano-lessons.jpg" alt="5421ad3a7fed5ca22a8ad8c6_piano-lessons.jpg">
+            <img src="${pageContext.servletContext.contextPath}/resources/images/piano-lessons.jpg" alt="${pageContext.servletContext.contextPath}/resources/images/5421ad3a7fed5ca22a8ad8c6_piano-lessons.jpg">
           </div>
           <div class="w-slide">
-            <img src="${pageContext.servletContext.contextPath}/resources/images/PianoLessons2.jpg" alt="5421adb982027adc73b7b980_PianoLessons2.jpg">
+            <img src="${pageContext.servletContext.contextPath}/resources/images/PianoLessons2.jpg" alt="${pageContext.servletContext.contextPath}/resources/images/5421adb982027adc73b7b980_PianoLessons2.jpg">
           </div>
         </div>
         <div class="w-slider-arrow-left">
@@ -168,10 +169,10 @@
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b03c8c9212bd60b999e4_ico4b.png">
               <script type="application/json" class="w-json">
                 {
                   "items": [
@@ -196,23 +197,23 @@
             </a>
           </div>
         </div>
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work5.jpg" alt="53eb8193cf6ba7c144ec594f_work5.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/work5.jpg" alt="${pageContext.servletContext.contextPath}/resources/images/53eb8193cf6ba7c144ec594f_work5.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #5</a>
         </div>
         <div class="catergory">print, photography</div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work6.jpg" alt="53eb81a2cf6ba7c144ec5952_work6.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/work6.jpg" alt="${pageContext.servletContext.contextPath}/resources/images/53eb81a2cf6ba7c144ec5952_work6.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #6</a>
         </div>
         <div class="catergory">print, photography</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b03c8c9212bd60b999e4_ico4b.png">
               <script type="application/json" class="w-json">
                 {
                   "items": [
@@ -267,17 +268,17 @@
         </div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work7.jpg" alt="53eb821ba6f42a2f6a36702e_work7.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/work7.jpg" alt="${pageContext.servletContext.contextPath}/resources/images/53eb821ba6f42a2f6a36702e_work7.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #8</a>
         </div>
         <div class="catergory">print, photography</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b03c8c9212bd60b999e4_ico4b.png">
               <script type="application/json" class="w-json">
                 {
                   "mode": "video",
