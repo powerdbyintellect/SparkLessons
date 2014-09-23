@@ -23,8 +23,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
 
-import facebook4j.Facebook;
-
 @Controller
 public class ProfileController extends BaseCustomerController{
 
@@ -93,7 +91,7 @@ public class ProfileController extends BaseCustomerController{
 		
 		userEntityDAO.saveUser(savedUser);
 		model.addAttribute("user", savedUser);
-		return "viewprofile";
+		return "project-page";
 		
 	}
 	
@@ -107,7 +105,7 @@ public class ProfileController extends BaseCustomerController{
 			user = getUserAndCreate(request);
 		}
 		model.addAttribute("user", user);
-		return "viewprofile";
+		return "project-page";
 		
 	}
 }
