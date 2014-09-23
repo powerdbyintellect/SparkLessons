@@ -89,10 +89,10 @@ public class ProfileController extends BaseCustomerController{
 	
 	@Transactional
 	@RequestMapping(value = "/viewprofile/{id}", method = RequestMethod.GET)
-	public String viewProfile(Model model, HttpServletRequest request, @PathVariable("id") String userId ) throws Exception{
+	public String viewProfile(Model model, HttpServletRequest request, @PathVariable("id") Long userId ) throws Exception{
 		UserEntity user = null;
 		if(userId != null) {
-			user = userEntityDAO.getUserByLoginId(userId);
+			user = userEntityDAO.getById(userId);
 		} else {
 			user = getUserAndCreate(request);
 		}
