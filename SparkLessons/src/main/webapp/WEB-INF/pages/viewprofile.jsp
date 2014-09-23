@@ -1,8 +1,8 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Arrays"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
@@ -97,21 +97,30 @@ h1, .credit{
  </tag:loggedin> --%>
 
 
-<form name="couponForm" action="addCustomer" method="post"  class="form-signin">
-    <h4 align="center">Activate Payments Account </h4>
-    <input type="text" size="20" name="firstname"  value="${customer.firstname}" class="input-block-level" placeholder="Firstname"/>
-    <input type="text" size="20" name="lastname"  value="${customer.lastname}" class="input-block-level" placeholder="Lastname"/>
-    <input type="text" size="20" name="username"  value="${customer.dbaName}" class="input-block-level" placeholder="username"/>
-    <input type="text" size="20" name="email"  value="${customer.email}" class="input-block-level" placeholder="email"/>
-    <input type="text" size="20" name="ssn"  value="${customer.ssn}" class="input-block-level" placeholder="Social Security"/>
-    <input type="text" size="20" name="dob"  value="${customer.dob}" class="input-block-level" placeholder="Date Of Birth"/>
-    <input type="text" size="20" name="streetAddress1"  value="${address.streetAddress1}" class="input-block-level" placeholder="Address 1"/>
-   <%--  <input type="text" size="20" name="streetAddress2"  value="${address.streetAddress2}" class="input-block-level" placeholder="Address 2"/> --%>
-    <input type="text" size="20" name="city"  value="${address.city}" class="input-block-level" placeholder="City"/>
-    <input type="text" size="20" name="state"  value="${address.state}" class="input-block-level" placeholder="State"/>
-    <input type="text" size="20" name="zipCode"  value="${address.zipCode}" class="input-block-level" placeholder="Zipcode"/>
-    <div align="center"><input type="submit" class="btn btn-primary btn-large" style="" align="middle" value="Activate Now"/></div>
-</form>
+    <div class="page-header">
+        <h1>Profile</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+              ${user.description}
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">First Name</h3>
+            </div>
+            <div class="panel-body">
+              ${user.firstname}
+            </div>
+            <img src="${pageContext.servletContext.contextPath}/profileimages/${user.id}"/>
+          </div>
+        </div>
+    
 
 
     </div> <!-- /container -->

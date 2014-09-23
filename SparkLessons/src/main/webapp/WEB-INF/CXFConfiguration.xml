@@ -13,12 +13,12 @@
 
 
     <jaxrs:client id="paymentRESTProxy"
-                  address="https://merchantaccount.ptc.quickbooks.com"
+                  address="https://accounts-e2e.platform.intuit.net"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.payments.sdk_test,intuit_app_secret=PaymentsSDKTestApp"/>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.smallbusiness.sparklessons.sparklessons,intuit_app_secret=preprdMI5Hrm02EG4kVyEP5QqBHY25lBx40NBlsR"/>
         </jaxrs:headers>
         <jaxrs:inInterceptors>
         	<ref bean="logInbound"/>
@@ -34,7 +34,7 @@
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.sbg.payments.onboarding.test,intuit_app_secret=6M50GN0AHsITfe6fkSYAtE,x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.smallbusiness.sparklessons.sparklessons,intuit_app_secret=preprdMI5Hrm02EG4kVyEP5QqBHY25lBx40NBlsR,x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
         </jaxrs:headers>
         <jaxrs:inInterceptors>
         	<ref bean="logInbound"/>
@@ -64,7 +64,7 @@
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.cto.iam.ius.tests,intuit_app_secret=F3MVISrnOmHsz7Y1Fzwvb7"/>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.smallbusiness.sparklessons.sparklessons,intuit_app_secret=preprdMI5Hrm02EG4kVyEP5QqBHY25lBx40NBlsR"/>
             <entry key="intuit_offeringId" value="Intuit.cto.iam.ius.tests"/>
             <entry key="intuit_originatingip" value="123.45.67.89" />
         </jaxrs:headers>

@@ -38,6 +38,13 @@ public class UserEntity {
 	private String accountnumber;
 	@Column
 	private String loginid;
+	@Column
+	private String description;
+	@Column
+	private String logoLocation;
+	@Column
+	private Double rate;
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -97,6 +104,24 @@ public class UserEntity {
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getLogoLocation() {
+		return logoLocation;
+	}
+	public void setLogoLocation(String logoLocation) {
+		this.logoLocation = logoLocation;
+	}
+	public Double getRate() {
+		return rate;
+	}
+	public void setRate(Double rate) {
+		this.rate = rate;
 	}
 	
 	

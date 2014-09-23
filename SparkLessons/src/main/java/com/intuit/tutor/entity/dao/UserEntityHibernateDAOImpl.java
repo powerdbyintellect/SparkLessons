@@ -82,5 +82,10 @@ public class UserEntityHibernateDAOImpl implements UserEntityDAO {
 			return null;
 		}
 	}
+	
+	@Override
+	public UserEntity getById(Long id) {
+		return (UserEntity) getSession().get(UserEntity.class, id);
+	}
 
 }
