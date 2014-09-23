@@ -41,6 +41,8 @@ public class BaseCustomerController {
 					//userEntity.setLoginid();
 					user.setLoginid(loginId);
 					user.setEmail(emailAddress);
+					user.setFirstname(me.getFirstName());
+					user.setLastname(me.getLastName());
 					user = userEntityDAO.saveUser(user);
 					return user;
 				}

@@ -13,7 +13,7 @@
 
 
     <jaxrs:client id="paymentRESTProxy"
-                  address="https://accounts-e2e.platform.intuit.net"
+                  address="https://accounts-e2e.platform.intuit.com"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
@@ -29,7 +29,7 @@
     </jaxrs:client>
 
     <jaxrs:client id="onboardingServiceRestClient"
-                  address="https://onboarding-qa.payments.intuit.net"
+                  address="https://merchant-e2e.payments.intuit.com"
                   serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
@@ -59,7 +59,7 @@
 	</bean>
     <!-- accounts-e2e.platform.intuit.net -->
    <jaxrs:client id="iamRESTProxy"
-				address="https://accounts-e2e.platform.intuit.net"
+				address="https://accounts-e2e.platform.intuit.com"
                   serviceClass="com.intuit.tutor.IamRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
