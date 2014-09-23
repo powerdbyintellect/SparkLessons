@@ -9,9 +9,9 @@
   <meta name="keywords" content="create class, tutor, teacher, student">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
-  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/webflow.css">
-  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/sparklessons.webflow.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/sparklessons.webflow.css">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
