@@ -44,7 +44,7 @@ public class LoginController {
 			}
 			model.addAttribute("user", userEntity);
 		}
-		return "profile";
+		return "create-profile";
 	}
 	
 	@RequestMapping(value="/sign-in", method = RequestMethod.GET) 

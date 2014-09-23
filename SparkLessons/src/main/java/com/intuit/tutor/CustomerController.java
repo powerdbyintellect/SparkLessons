@@ -164,7 +164,7 @@ public class CustomerController {
 			
 	}
 	
-	@RequestMapping(value = "/sign-in", method = RequestMethod.GET)
+	//@RequestMapping(value = "/sign-in", method = RequestMethod.GET)
 	public String getSignInPage(ModelMap model, HttpServletRequest request) {
 		try {
 			Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
@@ -177,7 +177,7 @@ public class CustomerController {
 			
 	}
 	
-	@RequestMapping(value = "/sign-in", method = RequestMethod.POST)
+	//@RequestMapping(value = "/sign-in", method = RequestMethod.POST)
 	public String postSignInPage(ModelMap model, HttpServletRequest request) {
 		String returnPage = null;
 		try {
