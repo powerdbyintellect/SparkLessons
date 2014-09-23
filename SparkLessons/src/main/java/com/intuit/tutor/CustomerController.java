@@ -151,6 +151,64 @@ public class CustomerController {
 		return returnPage;
 	}
 	
+	@RequestMapping(value = "/portfolio", method = RequestMethod.GET)
+	public String getPortfolio(ModelMap model, HttpServletRequest request) {
+		try {
+			Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+			UserEntity user = userEntityDAO.getUser(facebook.getMe().getEmail());
+			model.put("realmId", user.getRealmid());
+		} catch (Exception e) {
+			return "portfolio"; 
+		}
+		return "portfolio";
+			
+	}
+	
+	@RequestMapping(value = "/sign-in", method = RequestMethod.GET)
+	public String getSignInPage(ModelMap model, HttpServletRequest request) {
+		try {
+			Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+			UserEntity user = userEntityDAO.getUser(facebook.getMe().getEmail());
+			model.put("realmId", user.getRealmid());
+		} catch (Exception e) {
+			return "sign-in"; 
+		}
+		return "sign-in";
+			
+	}
+	
+	@RequestMapping(value = "/sign-in", method = RequestMethod.POST)
+	public String postSignInPage(ModelMap model, HttpServletRequest request) {
+		String returnPage = null;
+		try {
+			Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+			UserEntity user = new UserEntity();
+			String email = (String) request.getParameter("email");
+			String pwd = (String) request.getParameter("password");
+			if(email!=null) {
+				user =  userEntityDAO.getUser(email);
+				if(user==null) {
+					user = new UserEntity();
+					user.setEmail(email);
+					user.setRealmid("1234555");
+				}
+				returnPage = "create-profile";
+			} else if(facebook!=null ){
+				user = userEntityDAO.getUser(facebook.getMe().getEmail());
+				returnPage = "create-profile";
+			} else {
+				returnPage = "error"; 
+			}
+			model.put("user", user);
+			model.put("realmId", user.getRealmid());
+		} catch (Exception e) {
+			returnPage = "error"; 
+		}
+		return returnPage;
+			
+	}
+	
+	
 	@RequestMapping(value = "/makepayment", method = RequestMethod.GET)
 	public String makepaymentPage(ModelMap model, HttpServletRequest request) {
 		try {

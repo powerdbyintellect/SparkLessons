@@ -42,8 +42,18 @@ public class ProfileController extends BaseCustomerController{
 	
 		UserEntity user = getUserAndCreate(request);
 		model.addAttribute("user", user);
-		return "profile";
+		return "project-page";
 	}
+	
+	@Transactional
+	@RequestMapping(value = "/create-profile", method = RequestMethod.GET)
+	public String createProfilePage(Model model, HttpServletRequest request) throws Exception {
+	
+		UserEntity user = getUserAndCreate(request);
+		model.addAttribute("user", user);
+		return "create-profile";
+	}
+
 
 	@Transactional
 	@RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
