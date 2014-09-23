@@ -84,19 +84,15 @@
     <div class="w-row">
       <div class="w-col w-col-6">
         <div class="w-form">
-          <form:form class="w-clearfix form-style" id="email-form" name="email-form" data-name="Email Form" action="sign-in"  >
+
+          <form action="sign-in" method="post" class="w-clearfix form-style" id="email-form" name="email-form" data-name="Email Form">
             <label class="project-tittle" for="email">EMAIL ADDRESS</label>
-            <input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="Email" required="required">
-            <label class="project-tittle" for="password">PASSWORD</label>
-            <input class="w-input btn-style" id="password" type="password" placeholder="password" name="password" required="required" data-name="password">
+            <input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="email" required="required">
+            <label class="project-tittle" for="Lesson-Name">PASSWORD</label>
+            <input class="w-input btn-style" id="Lesson-Name" type="password" placeholder="Password" name="password" required="required" data-name="password">
             <input class="w-button submit-btn" type="submit" value="SIGN IN" data-wait="Please wait...">
-          </form:form>
-          <div class="w-form-done">
-            <p>Thank you! Your submission has been received!</p>
-          </div>
-          <div class="w-form-fail">
-            <p>Oops! Something went wrong while submitting the form :(</p>
-          </div>
+          </form>
+
         </div>
       </div>
       <div class="w-col w-col-1">
