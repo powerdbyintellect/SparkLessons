@@ -116,10 +116,10 @@
               <p>$ ${user.rate} / hour</p>
             </li>
             <li style="margin-top: -60px; ">
-            	<c:if test="${user.paymentaccountpresent}">
+            	<c:if test="${!user.paymentaccountpresent}">
 		        	<a class="button" href="${pageContext.servletContext.contextPath}/submit-payment-information">ADD PAYMENT ACCOUNT</a>
 		        </c:if>
-		        <c:if test="${!user.paymentaccountpresent}">
+		        <c:if test="${user.paymentaccountpresent}">
 		        	<a class="button" href="${pageContext.servletContext.contextPath}/makepayment">GET PAID NOW</a>
 		        </c:if>
             </li>

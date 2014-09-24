@@ -365,8 +365,10 @@ public class CustomerController extends BaseCustomerController {
 			token.setAuthId(existingUserTicket.getUserId());
 			token.setTokenId(existingUserTicket.getTicket());
 			 applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
-			 user.setPaymentaccountpresent(new Boolean(false));
-			 userEntityDAO.saveUser(user);
+			 if(user!=null) {
+				 user.setPaymentaccountpresent(new Boolean(false));
+				 userEntityDAO.saveUser(user);
+			 }
 			 if(applicationResult.getMasterAccountId() !=null)	{
 					CreditCard cc = new CreditCard();
 					cc.setRealmId(applicationResult.getRealmId());
@@ -399,6 +401,15 @@ public class CustomerController extends BaseCustomerController {
 		String ticket = iamticket.getTicket();//iamToken.getTicket();
 		String authId = iamticket.getUserId();//iamToken.getUserId();
 
+		customer.setPhone("8188188818");
+		customer.setEmail(user.getEmail());
+		customer.setFirstname(user.getFirstname());
+		customer.setLastname(user.getLastname());
+		customer.setDbaName(user.getFirstname()+" "+user.getLastname());
+		bankAccount.setAccountNumber(customer.getDda());
+		bankAccount.setRoutingNumber(customer.getRouting());
+		bankAccount.setBankName("Unknown");
+		
 		Token token = new Token();
 		token.setAuthId(authId);
 		token.setTokenId(ticket);
@@ -424,7 +435,7 @@ public class CustomerController extends BaseCustomerController {
 			user.setPaymentaccountpresent(new Boolean(true));
 			userEntityDAO.saveUser(user);
 		}
-		
+		model.addAttribute("user", user);
 		return "project-page";
 	}
 	

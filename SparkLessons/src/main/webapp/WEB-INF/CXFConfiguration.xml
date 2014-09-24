@@ -13,12 +13,12 @@
 
 
     <jaxrs:client id="paymentRESTProxy"
-                  address="https://accounts-e2e.platform.intuit.net"
+                  address="https://merchantaccount.ptc.quickbooks.com"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.smallbusiness.sparklessons.sparklessons,intuit_app_secret=preprdMI5Hrm02EG4kVyEP5QqBHY25lBx40NBlsR"/>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.payments.sdk_test,intuit_app_secret=PaymentsSDKTestApp"/>
         </jaxrs:headers>
         <jaxrs:inInterceptors>
         	<ref bean="logInbound"/>

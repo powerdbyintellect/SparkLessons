@@ -81,12 +81,12 @@
     <div class="w-form">
       <form class="form-style" id="email-form"  modelAttribute="customer" name="email-form" data-name="Email Form" action="submit-payment-information" method="post">
         <label class="project-tittle" for="SSN">SOCIAL SECURITY NUMBER</label>
-        <input class="w-input btn-style" id="SSN" type="text" placeholder="123456789" name="SSN" data-name="SSN" required="required">
+        <input class="w-input btn-style" id="SSN" type="text" placeholder="123456789" name="ssn" data-name="SSN" required="required">
         <label class="project-tittle" for="Date-of-Birth">DATE OF BIRTH</label>
         <input class="w-input btn-style" id="dob" type="text" placeholder="01/01/1971" name="dob" data-name="Date of Birth" required="required">
         <label class="project-tittle" for="Enter-Street-Address">ADDRESS</label>
         <input class="w-input btn-style" id="Enter-Street-Address" type="text" placeholder="Street Address" value="${address.streetAddress1}" name="streetAddress1" required="required" data-name="Enter Street Address">
-        <input class="w-input btn-style" id="Enter-City" type="text" placeholder="Enter your City" name="Enter-City" value="${address.city}" required="required" data-name="Enter City">
+        <input class="w-input btn-style" id="city" type="text" placeholder="Enter your City" name="city" value="${address.city}" required="required" data-name="Enter City">
         <select class="w-select select-style" id="State" name="State" data-name="State" value="${address.state}" required="required">
           	<option value="">Select a State</option>
           	<option value="AL">Alabama</option>
@@ -140,7 +140,7 @@
 			<option value="WI">Wisconsin</option>
 			<option value="WY">Wyoming</option>
         </select>
-        <input class="w-input zip-style btn-style" style="size: 20px;" id="Enter-your-Zipcode" value="${address.zipCode}" type="text" placeholder="Enter you Zipcode" name="Enter-your-Zipcode" required="required" data-name="Enter your Zipcode">
+        <input class="w-input zip-style btn-style" style="size: 20px;" id="zipCode" value="${address.zipCode}" type="text" placeholder="Enter you Zipcode" name="zipCode" required="required" data-name="Enter your Zipcode">
         <label class="project-tittle" for="Routing-Number">DEPOSIT&nbsp;ACCOUNT&nbsp;INFORMATION</label>
         <input class="w-input btn-style" id="routing" type="text" placeholder="Routing Number"  name="routing" required="required" data-name="Routing Number">
         <input class="w-input btn-style" id="dda" type="text" placeholder="Account Number" name="dda" required="required" data-name="Account Number">
