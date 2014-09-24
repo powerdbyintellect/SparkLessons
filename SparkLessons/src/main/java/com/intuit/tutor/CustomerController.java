@@ -246,7 +246,6 @@ public class CustomerController extends BaseCustomerController {
 		userEntity.setLastname(customer.getLastname());
 		//userEntity.setLoginid();
 		userEntity.setMasteraccount(applicationResult.getMasterAccountId());
-		userEntity.setPassword(customer.getPassword());
 		userEntity.setRealmid(applicationResult.getRealmId());
 		userEntity.setUserid(authId);
 		if(facebook != null) {

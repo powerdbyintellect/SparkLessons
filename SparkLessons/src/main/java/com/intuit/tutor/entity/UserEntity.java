@@ -21,8 +21,6 @@ public class UserEntity {
 	@Column
 	private String userid;
 	@Column
-	private String password;
-	@Column
 	private String email;
 	@Column
 	private String firstname;
@@ -57,12 +55,6 @@ public class UserEntity {
 	}
 	public void setUserid(String userid) {
 		this.userid = userid;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
 	}
 	public String getEmail() {
 		return email;
