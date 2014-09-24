@@ -54,8 +54,8 @@ public class ProfileController extends BaseCustomerController{
 		model.addAttribute("user", user);
 		return "create-profile";
 	}
-	
-	
+
+
 	@Transactional
 	@RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
 	public String savePage(@ModelAttribute UserEntity user, Model model, @RequestParam("file") MultipartFile file, HttpServletRequest request) throws Exception{

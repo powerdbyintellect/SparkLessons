@@ -24,7 +24,7 @@
     });
   </script>
   <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="${pageContext.servletContext.contextPath}/resources/images/fav.png">
+  <link rel="shortcut icon" type="image/x-icon" href="${pageContext.servletContext.contextPath}/resources/img/favicon.ico">
   <link rel="apple-touch-icon" href="${pageContext.servletContext.contextPath}/resources/images/ico-phone.png">
   <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -42,7 +42,7 @@
       <div class="w-container">
         <a class="w-nav-brand w-clearfix logo sc" href="${pageContext.servletContext.contextPath}">
           <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="${pageContext.servletContext.contextPath}/resources/images/5420a24882027adc73b7a86d_SL_Logo4.png">
-          <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
+          <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
             <a
             class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/contact"><span>contact</span>
         </a>
@@ -58,7 +58,7 @@
         <a class="w-nav-brand logo" href="${pageContext.servletContext.contextPath}">
           <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="${pageContext.servletContext.contextPath}/resources/images/5420a24882027adc73b7a86d_SL_Logo4.png">
         </a>
-        <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
+        <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
           <a
           class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/contact"><span>contact</span>
             </a>

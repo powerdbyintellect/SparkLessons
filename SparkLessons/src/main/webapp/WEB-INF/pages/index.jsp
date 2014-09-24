@@ -21,8 +21,8 @@
     });
   </script>
   <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/modernizr.js"></script>
-  <link rel="shortcut icon" type="image/x-icon" href="${pageContext.servletContext.contextPath}/resources/images/fav.png">
-  <link rel="apple-touch-icon" href="${pageContext.servletContext.contextPath}/resources/images/ico-phone.png">
+  <link rel="shortcut icon" type="image/x-icon" href="${pageContext.servletContext.contextPath}/resources/img/favicon.ico">
+  <link rel="apple-touch-icon" href="${pageContext.servletContext.contextPath}/resources/img/favicon.ico">
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-53838527-5'], ['_trackPageview']);
