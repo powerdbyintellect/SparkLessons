@@ -70,16 +70,16 @@
       <div class="w-slider-mask">
         <div class="w-slide slide">
           <div class="w-container sl-con">
-            <h1 class="is" data-ix="from-top-on-load">WElcome to Spark lessons<span class="light"></span></h1>
+            <h1 class="is" data-ix="from-top-on-load">Welcome to Spark lessons<span class="light"></span></h1>
             <div class="subtx" data-ix="from-top-on-load-2">connecting teachers with students</div>
             <div class="btn" data-ix="from-top-on-load-3">
               <div class="w-row row-class">
-                <div class="w-col w-col-4"><a class="button" href="${pageContext.servletContext.contextPath}/signin">Connect with facebook</a>
+                <div class="w-col w-col-4" style="margin-top: -30px;"><a class="button" href="${pageContext.servletContext.contextPath}/signin">Connect with facebook</a>
                 </div>
                 <div class="w-col w-col-4">
                   <img src="${pageContext.servletContext.contextPath}/resources/images/Img_Or.png" width="53" alt="54208ecadc9f75dd73ac645e_Img_Or.png">
                 </div>
-                <div class="w-col w-col-4">
+                <div class="w-col w-col-4">		
                   <div class="w-form w-clearfix">
                     <form class="w-clearfix div-submitclass" method="post" action="create-profile" id="email-form" name="email-form" data-name="Email Form" method="post">
                       <input class="w-input email-signup" id="Email-Address" type="email" placeholder="Email Address" name="Email-Address" data-name="Email Address" required="required">
@@ -95,7 +95,13 @@
           <div class="w-container sl-con">
             <h1 class="is">Follow your passion</h1>
             <div class="subtx">focus only on learning and leave rest to us&nbsp;</div>
-            <div class="btn"><a class="button" href="#">browse now</a>
+            <div class="w-row row-class">
+            	 <div class="w-col w-col-4"></div>
+            	  <div class="w-col w-col-4">
+            		<div align="center" style="margin-left: 100px;"><a class="button" href="${pageContext.servletContext.contextPath}/portfolio">browse now</a></div>
+            	  </div>
+            	   <div class="w-col w-col-4">	
+            	   </div>	
             </div>
           </div>
         </div>

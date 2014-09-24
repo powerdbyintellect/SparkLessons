@@ -13,7 +13,7 @@
 
 
     <jaxrs:client id="paymentRESTProxy"
-                  address="https://accounts-e2e.platform.intuit.com"
+                  address="https://accounts-e2e.platform.intuit.net"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
