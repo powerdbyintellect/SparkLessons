@@ -72,7 +72,7 @@
     </div>
     <div class="div-banner">
       <div class="w-container sl-con pg">
-        <h1 class="is pg">PIANO&nbsp;<span class="light">LESSON&nbsp;Page</span><span class="light"></span></h1>
+        <h1 class="is pg">${user.lessonname}&nbsp;<span class="light">LESSON&nbsp;Page</span><span class="light"></span></h1>
         <div class="subtx pg">here is more information about the lesson</div>
       </div>
     </div>
@@ -115,7 +115,7 @@
               <div class="project-tittle">RATE</div>
               <p>$ ${user.rate} / hour</p>
             </li>
-            <li class="list bt">
+            <li style="margin-top: -60px; ">
             	<c:if test="${user.paymentaccountpresent}">
 		        	<a class="button" href="${pageContext.servletContext.contextPath}/submit-payment-information">ADD PAYMENT ACCOUNT</a>
 		        </c:if>
@@ -128,7 +128,7 @@
       </div>
     </div>
     <div>
-      <h2 class="sp customer-reviews">CUSTOMER&nbsp;<span class="light">REVIEWS<br></span></h2>
+      <h2 class="sp customer-reviews" style="padding-top: 50px;">CUSTOMER&nbsp;<span class="light">REVIEWS<br></span></h2>
       <div class="customer-review">
         <div class="w-container">
           <div class="w-slider" data-animation="slide" data-duration="400" data-infinite="1">
