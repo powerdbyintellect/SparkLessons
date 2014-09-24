@@ -1,7 +1,5 @@
 package com.intuit.tutor;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.intuit.platform.integration.consumer.JSONMarshaller;
-import com.intuit.platform.integration.iface.IMarshaller;
-import com.intuit.platform.integration.iface.IntuitHeader;
 import com.intuit.platform.integration.ius.common.types.ChallengeQuestionAnswer;
 import com.intuit.platform.integration.ius.common.types.Email;
 import com.intuit.platform.integration.ius.common.types.FullName;
@@ -55,19 +50,6 @@ public class CustomerController extends BaseCustomerController {
 	
 	@Autowired
 	private OnboardingServiceClient onboardingServiceClient;
-	
-	@SuppressWarnings("serial")
-	protected static final Map<IntuitHeader, String> headers = new HashMap<IntuitHeader, String>() {{
-	    put(IntuitHeader.APPID, "Intuit.cto.iam.ius.tests");
-	    put(IntuitHeader.APPSECRET, "F3MVISrnOmHsz7Y1Fzwvb7");
-	    put(IntuitHeader.OFFERINGID, "Intuit.cto.iam.ius.tests");
-	    put(IntuitHeader.ORIGINATINGIP, "172.18.33.10");   // 123.45.67.89
-	}};
-
-	protected static final String baseUrl = "https://accounts-e2e.platform.intuit.com/";
-//	private static final IMarshaller marshaller = new GSONMarshaller();
-//	private static final IMarshaller marshaller = new JAXBXMLMarshaller();
-	private static final IMarshaller marshaller = new JSONMarshaller();
 	
 	private ObjectFactory objectFactory = new ObjectFactory();
 	
