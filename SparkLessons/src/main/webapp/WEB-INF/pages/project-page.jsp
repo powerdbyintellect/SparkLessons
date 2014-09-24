@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Tue Sep 23 2014 17:41:04 GMT+0000 (UTC) -->
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="tag" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html data-wf-site="5420869c24ed7cd271a3ef44" data-wf-page="5420869c24ed7cd271a3ef48">
 <head>
   <meta charset="utf-8">
@@ -111,7 +115,13 @@
               <div class="project-tittle">RATE</div>
               <p>$ ${user.rate} / hour</p>
             </li>
-            <li class="list bt"><a class="button" href="${pageContext.servletContext.contextPath}/submit-payment-information">ADD PAYMENT ACCOUNT</a>
+            <li class="list bt">
+            	<c:if test="${user.paymentaccountpresent}">
+		        	<a class="button" href="${pageContext.servletContext.contextPath}/submit-payment-information">ADD PAYMENT ACCOUNT</a>
+		        </c:if>
+		        <c:if test="${!user.paymentaccountpresent}">
+		        	<a class="button" href="${pageContext.servletContext.contextPath}/makepayment">GET PAID NOW</a>
+		        </c:if>
             </li>
           </ul>
         </div>

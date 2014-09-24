@@ -81,16 +81,10 @@
                 </div>
                 <div class="w-col w-col-4">
                   <div class="w-form w-clearfix">
-                    <form class="w-clearfix div-submitclass" id="email-form" name="email-form" data-name="Email Form" method="post">
+                    <form class="w-clearfix div-submitclass" method="post" action="create-profile" id="email-form" name="email-form" data-name="Email Form" method="post">
                       <input class="w-input email-signup" id="Email-Address" type="email" placeholder="Email Address" name="Email-Address" data-name="Email Address" required="required">
                       <input class="w-button submit-btn" type="submit" value="SIGN UP" data-wait="Please wait...">
                     </form>
-                    <div class="w-form-done">
-                      <p>Thank you! Your submission has been received!</p>
-                    </div>
-                    <div class="w-form-fail">
-                      <p>Oops! Something went wrong while submitting the form :(</p>
-                    </div>
                   </div>
                 </div>
               </div>

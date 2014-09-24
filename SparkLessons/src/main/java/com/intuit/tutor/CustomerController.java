@@ -353,13 +353,15 @@ public class CustomerController extends BaseCustomerController {
 		UserEntity user = getUserAndCreate(request);
 		IAMTicket existingUserTicket = getTicket(request);
 		String returnPage = null;
+		
 		ModelAndView mav = new ModelAndView("customer");
 		if(existingUserTicket !=null) {
 			Token token = new Token();
 			token.setAuthId(existingUserTicket.getUserId());
 			token.setTokenId(existingUserTicket.getTicket());
 			 applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
-			 
+			 user.setPaymentaccountpresent(new Boolean(false));
+			 userEntityDAO.saveUser(user);
 			 if(applicationResult.getMasterAccountId() !=null)	{
 					CreditCard cc = new CreditCard();
 					cc.setRealmId(applicationResult.getRealmId());
@@ -368,7 +370,11 @@ public class CustomerController extends BaseCustomerController {
 					mav.addObject("realmId", applicationResult.getRealmId());
 					model.put("type", user.getLessonname());
 					mav.addObject("type", user.getLessonname());
-					returnPage = "makepayment";
+					//returnPage = "makepayment";
+					
+					//Test Only
+					returnPage = "submit-payment-information";
+					
 				}	//end result
 			 else {	//Create new Payment Account in OBS
 				 returnPage = "submit-payment-information";
@@ -381,15 +387,13 @@ public class CustomerController extends BaseCustomerController {
 	
 	@Transactional
 	@RequestMapping(value = "/submit-payment-information", method = RequestMethod.POST)
-	public String createNewPaymentAccount(ModelMap model, HttpServletRequest request) throws Exception {
+	public String createNewPaymentAccount(ModelMap model, Customer customer, Address address, HttpServletRequest request) throws Exception {
 		MerchantApplicationResponse applicationResult = null;
 		
-		Customer customer = new Customer();
-		Address address = new Address();
 		BankAccount bankAccount = new BankAccount();
-		
-		
-		IAMTicket iamticket = createIAMUser(customer, address);
+		UserEntity user = getUserAndCreate(request);
+		user.setPaymentaccountpresent(new Boolean(false));
+		IAMTicket iamticket =  getTicket(request);
 		String ticket = iamticket.getTicket();//iamToken.getTicket();
 		String authId = iamticket.getUserId();//iamToken.getUserId();
 
@@ -405,10 +409,21 @@ public class CustomerController extends BaseCustomerController {
 			MerchantApplicationRequest merchantApplicationRequest = MerchantApplicationRequest.createFromMerchantApplication(customer, address, bankAccount);
 			applicationResult = onboardingServiceClient.submitMerchantApplication(merchantApplicationRequest, 
 					token, TEST_IP_ADDRESS, TEST_REQUEST_ID, customer.getEmail());
+			
+			if(null!=applicationResult && applicationResult.getMasterAccountId() !=null){
+				user.setPaymentaccountpresent(new Boolean(true));
+				userEntityDAO.saveUser(user);
+			} else {
+				user.setPaymentaccountpresent(new Boolean(false));
+				userEntityDAO.saveUser(user);
+			}
+			
+		} else {
+			user.setPaymentaccountpresent(new Boolean(true));
+			userEntityDAO.saveUser(user);
 		}
 		
-		
-		return "submit-payment-information";
+		return "project-page";
 	}
 	
 	

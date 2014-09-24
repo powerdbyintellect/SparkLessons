@@ -48,6 +48,9 @@ public class UserEntity {
 	private String lessoncategory;
 	@Column
 	private Double rate;
+	@Column
+	private Boolean paymentaccountpresent;
+	
 	
 	public String getUserid() {
 		return userid;
@@ -144,6 +147,12 @@ public class UserEntity {
 	}
 	public void setCreatedate(Date date) {
 		this.createdate = date;
+	}
+	public Boolean getPaymentaccountpresent() {
+		return paymentaccountpresent;
+	}
+	public void setPaymentaccountpresent(Boolean paymentaccountpresent) {
+		this.paymentaccountpresent = paymentaccountpresent;
 	}
 	
 	

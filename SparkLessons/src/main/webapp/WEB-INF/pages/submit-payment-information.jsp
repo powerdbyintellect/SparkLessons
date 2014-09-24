@@ -81,7 +81,7 @@
     <div class="w-form">
       <form class="form-style" id="email-form"  modelAttribute="customer" name="email-form" data-name="Email Form" action="submit-payment-information" method="post">
         <label class="project-tittle" for="SSN">SOCIAL SECURITY NUMBER</label>
-        <input class="w-input btn-style" id="SSN" type="text" value="ssn" placeholder="123456789" name="SSN" data-name="SSN" required="required">
+        <input class="w-input btn-style" id="SSN" type="text" placeholder="123456789" name="SSN" data-name="SSN" required="required">
         <label class="project-tittle" for="Date-of-Birth">DATE OF BIRTH</label>
         <input class="w-input btn-style" id="dob" type="text" placeholder="01/01/1971" name="dob" data-name="Date of Birth" required="required">
         <label class="project-tittle" for="Enter-Street-Address">ADDRESS</label>
@@ -146,7 +146,7 @@
         <input class="w-input btn-style" id="dda" type="text" placeholder="Account Number" name="dda" required="required" data-name="Account Number">
         <div class="w-row">
           <div class="w-col w-col-5 w-clearfix">
-            <input class="w-button submit-btn" type="submit" value="GET PAYMENT ACCOUNT" data-wait="Please wait...">
+            <input class="w-button submit-btn" type="submit" value="GET PAY	MENT ACCOUNT" data-wait="Please wait...">
           </div>
           <div class="w-col w-col-2">
             <label class="text-fieldstyle">
