@@ -66,13 +66,16 @@ public class ProfileController extends BaseCustomerController{
 
 	@Transactional
 	@RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
-	public String savePage(@ModelAttribute UserEntity user, Model model, @RequestParam MultipartFile file, @RequestParam String password, HttpServletRequest request) throws Exception{
+	public String savePage(@ModelAttribute UserEntity user, Model model, @RequestParam MultipartFile file, @RequestParam(required = false) String password, HttpServletRequest request) throws Exception{
 		
 		UserEntity savedUser = getUserAndCreate(request);
 		if(savedUser == null) {
 			savedUser = new UserEntity();
 			IAMTicket ticket = createIAMUser(user, password);
+			savedUser.setRealmid(ticket.getRealmId());
 			request.getSession().setAttribute("ticket", ticket); //Sign them in
+			savedUser.setUserid(ticket.getUserId());
+			
 		}
 		savedUser.setFirstname(user.getFirstname());
 		savedUser.setLastname(user.getLastname());
@@ -80,6 +83,8 @@ public class ProfileController extends BaseCustomerController{
 		savedUser.setRate(user.getRate());
 		savedUser.setLessoncategory(user.getLessoncategory());
 		savedUser.setLessonname(user.getLessonname());
+		savedUser.setEmail(user.getEmail());
+		
 		java.sql.Date date = new java.sql.Date((new GregorianCalendar()).getTimeInMillis());
 		savedUser.setCreatedate(date);
 		if (!file.isEmpty()) {

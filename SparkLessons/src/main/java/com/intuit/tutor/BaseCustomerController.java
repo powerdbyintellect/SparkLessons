@@ -38,7 +38,7 @@ public class BaseCustomerController {
 		
 		UserEntity user = null;
 		if(ticket != null) {
-			user = userEntityDAO.getUserByRealmId(ticket.getRealmId());
+			user = userEntityDAO.getUserByUserId(ticket.getUserId());
 		}
 	
 		return user;

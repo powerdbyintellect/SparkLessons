@@ -34,7 +34,7 @@ public class LoginController extends BaseCustomerController {
 		if(existingUserTicket!=null) {
 			IAMTicket ticket = existingUserTicket.getValue();
 			request.getSession().setAttribute("ticket", ticket);
-			UserEntity userEntity = userEntityDAO.getUserByRealmId(ticket.getRealmId());
+			UserEntity userEntity = userEntityDAO.getUserByUserId(ticket.getUserId());
 			if(userEntity == null) {
 				userEntity = new UserEntity();
 				userEntity.setEmail(email);
@@ -42,9 +42,8 @@ public class LoginController extends BaseCustomerController {
 				userEntity.setUserid(ticket.getUserId());
 				userEntityDAO.saveUser(userEntity);
 			}
-			model.addAttribute("user", userEntity);
 		}
-		return "create-profile";
+		return "redirect:create-profile";
 	}
 	
 	@RequestMapping(value="/sign-in", method = RequestMethod.GET) 
