@@ -78,7 +78,7 @@
       <div class="w-slider slider-project" data-animation="slide" data-duration="500" data-infinite="1">
         <div class="w-slider-mask">
           <div class="w-slide">
-            <img src="${pageContext.servletContext.contextPath}/resources/images/piano-lessons.jpg" alt="${pageContext.servletContext.contextPath}/resources/images/5421ad3a7fed5ca22a8ad8c6_piano-lessons.jpg">
+            <img src="${pageContext.servletContext.contextPath}/profileimages/${user.id}"/>
           </div>
           <div class="w-slide">
             <img src="${pageContext.servletContext.contextPath}/resources/images/PianoLessons2.jpg" alt="${pageContext.servletContext.contextPath}/resources/images/5421adb982027adc73b7b980_PianoLessons2.jpg">
@@ -94,25 +94,24 @@
       </div>
       <div class="w-row page-content">
         <div class="w-col w-col-8">
-          <div class="project-tittle">PIANO&nbsp;LESSONS BY&nbsp;&lt;Fname&gt; &lt;Lname&gt;</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus
-            id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+          <div class="project-tittle">${user.firstname}&nbsp;${user.lastname} will be offering ${user.lessonname} Lesson </div>
+          <p>${user.description}</p>
         </div>
         <div class="w-col w-col-4">
           <ul class="w-list-unstyled">
             <li class="list">
               <div class="project-tittle">DATE</div>
-              <p>09 March 2014</p>
+              <p>${user.createdate}</p>
             </li>
             <li>
               <div class="project-tittle">
                 <div class="project-tittle">CATEGORIES</div>
               </div>
-              <p>music</p>
+              <p> ${user.lessoncategory}</p>
               <div class="project-tittle">RATE</div>
-              <p>$25 / hour</p>
+              <p>$ ${user.rate} / hour</p>
             </li>
-            <li class="list bt"><a class="button" href="#">SCHEDULE LESSON</a>
+            <li class="list bt"><a class="button" href="${pageContext.servletContext.contextPath}/submit-payment-information">ADD PAYMENT ACCOUNT</a>
             </li>
           </ul>
         </div>
@@ -127,7 +126,7 @@
               <div class="w-slide div-slide1">
                 <div class="w-row">
                   <div class="w-col w-col-3"></div>
-                  <div class="w-col w-col-6">
+                  <div class="w-col w-col-6">`
                     <p>I liked very much this lesson and he's very patient and is a very good teacher, when I will be in the university I will have others take this lesson with him because I need many help and he's the right person for teaching me piano</p>
                   </div>
                   <div class="w-col w-col-3"></div>

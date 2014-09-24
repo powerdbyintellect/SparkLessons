@@ -3,12 +3,15 @@ package com.intuit.tutor.entity;
 public class Customer {
 	private String firstname;
 	private String lastname;
+	private String name;
 	private String ssn;
 	private String dob;
 	private String phone;
 	private String dbaName;
 	private String email;
 	private String password;
+	private String dda;
+	private String routing;
 	
 	public String getFirstname() {
 		return firstname;
@@ -57,5 +60,23 @@ public class Customer {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDda() {
+		return dda;
+	}
+	public void setDda(String dda) {
+		this.dda = dda;
+	}
+	public String getRouting() {
+		return routing;
+	}
+	public void setRouting(String routing) {
+		this.routing = routing;
 	}
 }

@@ -29,4 +29,9 @@ public class BaseCustomerController {
 	
 		return user;
 	}
+	
+	public IAMTicket getTicket(HttpServletRequest request) {
+		IAMTicket ticket = (IAMTicket) request.getSession().getAttribute("ticket");
+		return ticket;
+	}
 }

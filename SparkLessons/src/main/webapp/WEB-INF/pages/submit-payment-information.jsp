@@ -79,24 +79,71 @@
       </div>
     </div>
     <div class="w-form">
-      <form class="form-style" id="email-form" name="email-form" data-name="Email Form">
+      <form class="form-style" id="email-form"  modelAttribute="customer" name="email-form" data-name="Email Form" action="submit-payment-information" method="post">
         <label class="project-tittle" for="SSN">SOCIAL SECURITY NUMBER</label>
-        <input class="w-input btn-style" id="SSN" type="text" placeholder="Enter your SSN" name="SSN" data-name="SSN" required="required">
+        <input class="w-input btn-style" id="SSN" type="text" value="ssn" placeholder="123456789" name="SSN" data-name="SSN" required="required">
         <label class="project-tittle" for="Date-of-Birth">DATE OF BIRTH</label>
-        <input class="w-input btn-style" id="Date-of-Birth" type="text" placeholder="Enter your Date of Birth" name="Date-of-Birth" data-name="Date of Birth" required="required">
+        <input class="w-input btn-style" id="dob" type="text" placeholder="01/01/1971" name="dob" data-name="Date of Birth" required="required">
         <label class="project-tittle" for="Enter-Street-Address">ADDRESS</label>
-        <input class="w-input btn-style" id="Enter-Street-Address" type="text" placeholder="Street Address" name="Enter-Street-Address" required="required" data-name="Enter Street Address">
-        <input class="w-input btn-style" id="Enter-City" type="text" placeholder="Enter your City" name="Enter-City" required="required" data-name="Enter City">
-        <select class="w-select select-style" id="State" name="State" data-name="State" required="required">
-          <option value="CA">California</option>
-          <option value="NY">New York</option>
-          <option value="OH">Ohio</option>
-          <option value="NV">Nevada</option>
+        <input class="w-input btn-style" id="Enter-Street-Address" type="text" placeholder="Street Address" value="${address.streetAddress1}" name="streetAddress1" required="required" data-name="Enter Street Address">
+        <input class="w-input btn-style" id="Enter-City" type="text" placeholder="Enter your City" name="Enter-City" value="${address.city}" required="required" data-name="Enter City">
+        <select class="w-select select-style" id="State" name="State" data-name="State" value="${address.state}" required="required">
+          	<option value="">Select a State</option>
+          	<option value="AL">Alabama</option>
+			<option value="AK">Alaska</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
         </select>
-        <input class="w-input zip-style btn-style" id="Enter-your-Zipcode" type="text" placeholder="Enter you Zipcode" name="Enter-your-Zipcode" required="required" data-name="Enter your Zipcode">
+        <input class="w-input zip-style btn-style" style="size: 20px;" id="Enter-your-Zipcode" value="${address.zipCode}" type="text" placeholder="Enter you Zipcode" name="Enter-your-Zipcode" required="required" data-name="Enter your Zipcode">
         <label class="project-tittle" for="Routing-Number">DEPOSIT&nbsp;ACCOUNT&nbsp;INFORMATION</label>
-        <input class="w-input btn-style" id="Routing-Number" type="text" placeholder="Routing Number" name="Routing-Number" required="required" data-name="Routing Number">
-        <input class="w-input btn-style" id="Account-Number" type="text" placeholder="Account Number" name="Account-Number" required="required" data-name="Account Number">
+        <input class="w-input btn-style" id="routing" type="text" placeholder="Routing Number"  name="routing" required="required" data-name="Routing Number">
+        <input class="w-input btn-style" id="dda" type="text" placeholder="Account Number" name="dda" required="required" data-name="Account Number">
         <div class="w-row">
           <div class="w-col w-col-5 w-clearfix">
             <input class="w-button submit-btn" type="submit" value="GET PAYMENT ACCOUNT" data-wait="Please wait...">

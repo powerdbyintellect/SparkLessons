@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,7 +40,7 @@ import com.intuit.tutor.security.Token;
 import facebook4j.Facebook;
 
 @Controller
-public class CustomerController {
+public class CustomerController extends BaseCustomerController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);;
 	
@@ -221,6 +222,8 @@ public class CustomerController {
 		return "makepayment";
 			
 	}
+	
+	
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
 	public String addCustomer(ModelMap model, Customer customer, Address address, HttpServletRequest request)
@@ -376,5 +379,72 @@ public class CustomerController {
 			throws Exception {
 		return "index";
 	}
+
+	@Transactional
+	@RequestMapping(value = "/submit-payment-information", method = RequestMethod.GET)
+	public String returnPaymentPage(ModelMap model, HttpServletRequest request) throws Exception {
+		MerchantApplicationResponse applicationResult = null;
+		UserEntity user = getUserAndCreate(request);
+		IAMTicket existingUserTicket = getTicket(request);
+		String returnPage = null;
+		ModelAndView mav = new ModelAndView("customer");
+		if(existingUserTicket !=null) {
+			Token token = new Token();
+			token.setAuthId(existingUserTicket.getUserId());
+			token.setTokenId(existingUserTicket.getTicket());
+			 applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
+			 
+			 if(applicationResult.getMasterAccountId() !=null)	{
+					CreditCard cc = new CreditCard();
+					cc.setRealmId(applicationResult.getRealmId());
+					//cc.setCreditCardNumber("5174554122715233");
+					model.put("realmId", applicationResult.getRealmId());
+					mav.addObject("realmId", applicationResult.getRealmId());
+					model.put("type", user.getLessonname());
+					mav.addObject("type", user.getLessonname());
+					returnPage = "makepayment";
+				}	//end result
+			 else {	//Create new Payment Account in OBS
+				 returnPage = "submit-payment-information";
+			 }
+			 
+		}
+		model.addAttribute("user", user);
+		return returnPage;
+	}
+	
+	@Transactional
+	@RequestMapping(value = "/submit-payment-information", method = RequestMethod.POST)
+	public String createNewPaymentAccount(ModelMap model, HttpServletRequest request) throws Exception {
+		MerchantApplicationResponse applicationResult = null;
+		
+		Customer customer = new Customer();
+		Address address = new Address();
+		BankAccount bankAccount = new BankAccount();
+		
+		
+		IAMTicket iamticket = createIAMUser(customer, address);
+		String ticket = iamticket.getTicket();//iamToken.getTicket();
+		String authId = iamticket.getUserId();//iamToken.getUserId();
+
+		Token token = new Token();
+		token.setAuthId(authId);
+		token.setTokenId(ticket);
+		
+		
+		//Call to get list of master accounts based on IUS id token
+		applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
+		
+		if( null == applicationResult || (applicationResult.getMasterAccountId() == null && applicationResult.getRealmId() == null && applicationResult.getMID() == null)) {
+			MerchantApplicationRequest merchantApplicationRequest = MerchantApplicationRequest.createFromMerchantApplication(customer, address, bankAccount);
+			applicationResult = onboardingServiceClient.submitMerchantApplication(merchantApplicationRequest, 
+					token, TEST_IP_ADDRESS, TEST_REQUEST_ID, customer.getEmail());
+		}
+		
+		
+		return "submit-payment-information";
+	}
+	
+	
 
 }

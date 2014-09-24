@@ -1,5 +1,7 @@
 package com.intuit.tutor.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,16 +18,12 @@ public class UserEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
 	private long id;
-	
 	@Column
 	private String userid;
-	
 	@Column
 	private String password;
-	
 	@Column
 	private String email;
-	
 	@Column
 	private String firstname;
 	@Column
@@ -42,6 +40,12 @@ public class UserEntity {
 	private String description;
 	@Column
 	private String logoLocation;
+	@Column
+	private String lessonname;
+	@Column
+	private Date createdate;
+	@Column
+	private String lessoncategory;
 	@Column
 	private Double rate;
 	
@@ -122,6 +126,24 @@ public class UserEntity {
 	}
 	public void setRate(Double rate) {
 		this.rate = rate;
+	}
+	public String getLessonname() {
+		return lessonname;
+	}
+	public void setLessonname(String lessonname) {
+		this.lessonname = lessonname;
+	}
+	public String getLessoncategory() {
+		return lessoncategory;
+	}
+	public void setLessoncategory(String lessoncategory) {
+		this.lessoncategory = lessoncategory;
+	}
+	public Date getCreatedate() {
+		return createdate;
+	}
+	public void setCreatedate(Date date) {
+		this.createdate = date;
 	}
 	
 	
