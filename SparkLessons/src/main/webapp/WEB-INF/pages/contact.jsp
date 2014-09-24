@@ -96,24 +96,24 @@
           <ul class="w-list-unstyled">
             <li class="list">
               <div class="project-tittle">ADDRESS DETAILS</div>
-              <p>Wenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+              <p>Our team is located in Woodland hills, CA. Intuit headquarters is in Moutain view, CA</p>
             </li>
             <li class="list">
               <div class="contact-info">
                 <img class="ico" src="${pageContext.servletContext.contextPath}/resources/images/info1.png" width="18" alt="53ecc634dd508e967e8ba968_info1.png">
-                <p class="info">350 Fourth Avenue, 34th floor</p>
+                <p class="info">2675 Coast Ave, Mountain View, CA</p>
               </div>
               <div class="contact-info">
                 <img class="ico" src="${pageContext.servletContext.contextPath}/resources/images/info4.png" width="18" alt="53ecc644dd508e967e8ba96d_info4.png">
-                <p class="info">+1 046 244 3912</p>
+                <p class="info">+1 (650) 944-6000</p>
               </div>
-              <div class="contact-info">
+             <%--  <div class="contact-info">
                 <img class="ico" src="${pageContext.servletContext.contextPath}/resources/images/info3.png" width="18" alt="53ecc651dd508e967e8ba96f_info3.png">
                 <p class="info">+1 345 244 5696</p>
-              </div>
+              </div> --%>
               <div class="contact-info">
                 <img class="ico" src="${pageContext.servletContext.contextPath}/resources/images/info2.png" width="18" alt="53ecc668e595b1977ecbf6f4_info2.png">
-                <p class="info"><a class="email" target="_blank" href="mailto:">youremail@milano.com</a>
+                <p class="info"><a class="email" target="_blank" href="mailto:">info@sparklessons.com</a>
                 </p>
               </div>
             </li>

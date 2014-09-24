@@ -94,7 +94,7 @@
         <div class="w-slide">
           <div class="w-container sl-con">
             <h1 class="is">Follow your passion</h1>
-            <div class="subtx">focus only on learning and leave rest to us&nbsp;</div>
+            <div class="subtx">focus on pursuing your hobbies and leave rest to us&nbsp;</div>
             <div class="w-row row-class">
             	 <div class="w-col w-col-4"></div>
             	  <div class="w-col w-col-4">
@@ -295,7 +295,7 @@
           </div>
           <div class="team-div">
             <div class="team-name">ASIm KHAJA</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim.</p>
+            <p>Integration expert! Able to effortlessy use Intuit services to deliver delight.</p>
             <div class="team-social">
               <a class="w-inline-block ico-soc facebook" href="#">
                 <img src="${pageContext.servletContext.contextPath}/resources/images/facebook-footer.png" width="14" alt="53e6481b8300c9c1489b940b_facebook-footer.png">
@@ -321,7 +321,7 @@
           </div>
           <div class="team-div">
             <div class="team-name">HARISH&nbsp;RAGHAVENDRA</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim.</p>
+            <p>Innovator &amp; Designer! Came up with Original idea &amp; identified customer workflows.</p>
             <div class="team-social">
               <a class="w-inline-block ico-soc facebook" href="#">
                 <img src="${pageContext.servletContext.contextPath}/resources/images/facebook-footer.png" width="14" alt="53e6481b8300c9c1489b940b_facebook-footer.png">
@@ -347,7 +347,7 @@
           </div>
           <div class="team-div">
             <div class="team-name">MARIO&nbsp;ABUNDIS</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim.</p>
+            <p>Social Guru! Identified the customer and trying to run experiments to collect relevant data</p>
             <div class="team-social">
               <a class="w-inline-block ico-soc facebook" href="#">
                 <img src="${pageContext.servletContext.contextPath}/resources/images/facebook-footer.png" width="14" alt="53e6481b8300c9c1489b940b_facebook-footer.png">
