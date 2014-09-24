@@ -86,17 +86,17 @@
                 {
                   "items": [
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61958b195c15b32bf7841_light1.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/piano111.jpg",
                       "caption": "This is a caption!",
                       "type": "image"
                     },
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e619718fe341c348ee72d2_light2.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/piano112.jpg",
                       "caption": "",
                       "type": "image"
                     },
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e6197ab195c15b32bf7845_light3.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/piano113.jpg",
                       "caption": "",
                       "type": "image"
                     }
@@ -106,13 +106,13 @@
             </a>
           </div>
         </div>
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work1.jpg" alt="53e4f19c60845bcd45af2cc3_work1.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/piano-lessons.jpg" width="260" height="280" alt="piano-lessons.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #1</a>
         </div>
         <div class="catergory">print, photography</div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work2.jpg" alt="53e4f18ab867b3402d274781_work2.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/baseball.jpg" width="260" height="280" alt="baseball.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #2</a>
         </div>
         <div class="catergory">print, photography</div>
@@ -127,12 +127,12 @@
                 {
                   "items": [
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61a828fe341c348ee72dc_light4.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/baseball1.jpg",
                       "caption": "",
                       "type": "image"
                     },
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61a8cb195c15b32bf7857_light5.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/baseball2.jpg",
                       "caption": "",
                       "type": "image"
                     }
@@ -144,7 +144,7 @@
         </div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work3.jpg" alt="53e4f100a4bf49cb45b7582a_work3.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/tennis.jpg" width="260" height="280" alt="tennis.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #3</a>
         </div>
         <div class="catergory">print, photography</div>
@@ -159,12 +159,12 @@
                 {
                   "items": [
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61b1fb195c15b32bf7860_light7.png",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/tennis1.jpg",
                       "caption": "This is a logo!",
                       "type": "image"
                     },
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61b0ab195c15b32bf785d_light6.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/tennis2.jpg",
                       "caption": "",
                       "type": "image"
                     }
@@ -176,7 +176,7 @@
         </div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work4.jpg" alt="53e4f1ada4bf49cb45b75836_work4.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/painting.jpg" width="260" height="280" alt="painting.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #4</a>
         </div>
         <div class="catergory">print, photography</div>
@@ -192,11 +192,9 @@
                   "mode": "video",
                   "items": [
                     {
-                      "url": "http://vimeo.com/21356824",
-                      "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F21356824&src_secure=1&url=http%3A%2F%2Fvimeo.com%2F21356824&image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F172763181_1280.jpg&key=c4e54deccf4d4ec997a64902e9a30300&type=text%2Fhtml&schema=vimeo\" scrolling=\"no\" frameborder=\"0\" allowfullscreen></iframe>",
-                      "width": 940,
-                      "height": 529,
-                      "type": "video"
+                        "url": "${pageContext.servletContext.contextPath}/resources/images/paintingbob.jpg",
+                        "caption": "",
+                        "type": "image"
                     }
                   ]
                 }
@@ -222,14 +220,14 @@
                   "items": [
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53eb89b2cf6ba7c144ec5a30_light10.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/rockclimbing1.jpg",
                       "caption": "",
                       "width": 1540,
                       "height": 962
                     },
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53eb89bfd056242e6a4c9520_light11.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/rockclimbing2.jpg",
                       "caption": "",
                       "width": 250,
                       "height": 250
@@ -241,13 +239,13 @@
             </a>
           </div>
         </div>
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work5.jpg" alt="53eb8193cf6ba7c144ec594f_work5.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/rockclimbing.jpg" width="260" height="280" alt="rockclimbing.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #5</a>
         </div>
         <div class="catergory">print, photography</div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work6.jpg" alt="53eb81a2cf6ba7c144ec5952_work6.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/gymnastics.jpg" width="260" height="280" alt="gymnastics.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #6</a>
         </div>
         <div class="catergory">print, photography</div>
@@ -263,14 +261,14 @@
                   "items": [
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53eb89d4cf6ba7c144ec5a38_light8.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/gymnastics1.jpg",
                       "caption": "",
                       "width": 755,
                       "height": 469
                     },
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53eb89decf6ba7c144ec5a3a_light9.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/gymnastics2.jpg",
                       "caption": "",
                       "width": 250,
                       "height": 250
@@ -283,7 +281,7 @@
         </div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work8.jpg" alt="53eb896dd056242e6a4c9517_work8.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/swimmer.jpg" width="260" height="280" alt="swimmer.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #7</a>
         </div>
         <div class="catergory">print, photography</div>
@@ -299,7 +297,7 @@
                   "items": [
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53eb89f1cf6ba7c144ec5a3b_light13.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/Swimming2.jpg",
                       "caption": "",
                       "width": 1540,
                       "height": 962
@@ -312,7 +310,7 @@
         </div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/work7.jpg" alt="53eb821ba6f42a2f6a36702e_work7.jpg">
+        <img src="${pageContext.servletContext.contextPath}/resources/images/aikido11.jpg" width="260" height="280" alt="aikido11.jpg">
         <div class="portfolio-tittle"><a class="tittle" href="#">project #8</a>
         </div>
         <div class="catergory">print, photography</div>
@@ -328,11 +326,9 @@
                   "mode": "video",
                   "items": [
                     {
-                      "url": "http://vimeo.com/21356824",
-                      "html": "<iframe class=\"embedly-embed\" src=\"//cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F21356824&src_secure=1&url=http%3A%2F%2Fvimeo.com%2F21356824&image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F172763181_1280.jpg&key=c4e54deccf4d4ec997a64902e9a30300&type=text%2Fhtml&schema=vimeo\" scrolling=\"no\" frameborder=\"0\" allowfullscreen></iframe>",
-                      "width": 940,
-                      "height": 529,
-                      "type": "video"
+                        "url": "${pageContext.servletContext.contextPath}/resources/images/aikido2.jpg",
+                        "caption": "",
+                        "type": "image"
                     }
                   ]
                 }
@@ -343,7 +339,7 @@
       </div>
     </div>
   </div>
-  <div class="logo-section">
+  <%--<div class="logo-section">
     <div class="w-slider logo-slider" data-animation="cross" data-duration="500" data-infinite="1" data-delay="2000" data-autoplay="1" data-easing="ease-in-cubic">
       <div class="w-slider-mask slider-mask">
         <div class="w-slide">
@@ -399,7 +395,7 @@
       </div>
       <div class="w-slider-nav w-round hide"></div>
     </div>
-  </div>
+  </div>--%>
   <footer class="footer">
     <div class="w-container">
       <div class="w-row">
