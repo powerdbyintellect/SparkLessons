@@ -389,7 +389,7 @@
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-6 clm">
-          <div class="copyright">© 2014 SparkLessons by Intuit</div>
+          <div class="copyright">&copy; 2014 SparkLessons by Intuit</div>
         </div>
         <div class="w-col w-col-6 top-column">
           <a class="w-inline-block top" href="#top"></a>
