@@ -42,7 +42,7 @@
       <div class="w-container">
         <a class="w-nav-brand w-clearfix logo sc" href="${pageContext.servletContext.contextPath}">
           <img src="${pageContext.servletContext.contextPath}/resoures/images/SL_Logo4.png" alt="${pageContext.servletContext.contextPath}/5420a24882027adc73b7a86d_SL_Logo4.png">
-          <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/project-page"><span>SIGN IN</span></a>
+          <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/project-page"><span>SIGN IN</span></a>
             <a
             class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/contact"><span>contact</span>
         </a>
@@ -58,7 +58,7 @@
         <a class="w-nav-brand logo" href="${pageContext.servletContext.contextPath}">
           <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="5420a24882027adc73b7a86d_SL_Logo4.png">
         </a>
-        <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
+        <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
           <a
           class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/contact"><span>contact</span>
             </a>
@@ -257,7 +257,7 @@
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-6 clm">
-          <div class="copyright">© 2014 SparkLessons by Intuit</div>
+          <div class="copyright">ï¿½ 2014 SparkLessons by Intuit</div>
         </div>
         <div class="w-col w-col-6 top-column">
           <a class="w-inline-block top" href="#top"></a>
