@@ -72,6 +72,7 @@
       </div>
     </div>
   </div>
+  <br><br>
   <div class="portolio-section">
     <div class="w-row">
       <div class="w-col w-col-3 w-col-stack portfolio-image">
@@ -107,15 +108,15 @@
           </div>
         </div>
         <img src="${pageContext.servletContext.contextPath}/resources/images/piano-lessons.jpg" width="260" height="280" alt="piano-lessons.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #1</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Piano Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">Learn music that will touch your soul.</div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/baseball.jpg" width="260" height="280" alt="baseball.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #2</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Baseball Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">Learn how to make ever swing a home run.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
@@ -145,9 +146,9 @@
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/tennis.jpg" width="260" height="280" alt="tennis.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #3</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Tennis Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">Even Roger Federer will get nervous of you learning this.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
@@ -177,9 +178,9 @@
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/painting.jpg" width="260" height="280" alt="painting.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #4</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Painting Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">Learn how to allow you being to express himself thru painting.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
@@ -240,15 +241,15 @@
           </div>
         </div>
         <img src="${pageContext.servletContext.contextPath}/resources/images/rockclimbing.jpg" width="260" height="280" alt="rockclimbing.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #5</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Rock Climbing Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">Rock climbing for adventurous people.</div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/gymnastics.jpg" width="260" height="280" alt="gymnastics.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #6</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Gymnastics Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">Learn what it takes to win the Olympics.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
@@ -282,9 +283,9 @@
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/swimmer.jpg" width="260" height="280" alt="swimmer.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #7</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Swimming Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">Swim like a pro today!</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
@@ -311,9 +312,9 @@
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/aikido11.jpg" width="260" height="280" alt="aikido11.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #8</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Aikido Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">True Victory is Victory over Oneself.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">

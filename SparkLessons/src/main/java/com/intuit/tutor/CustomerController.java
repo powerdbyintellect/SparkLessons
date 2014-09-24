@@ -137,6 +137,12 @@ public class CustomerController extends BaseCustomerController {
 		return "portfolio";
 			
 	}
+
+    @RequestMapping(value = "/error", method = RequestMethod.GET)
+    public String getErrorPage(ModelMap model, HttpServletRequest request) {
+        return "error";
+
+    }
 	
 	//@RequestMapping(value = "/sign-in", method = RequestMethod.GET)
 	public String getSignInPage(ModelMap model, HttpServletRequest request) {

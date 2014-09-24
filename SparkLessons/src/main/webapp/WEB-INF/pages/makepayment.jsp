@@ -282,7 +282,7 @@
                       </div>
                       <div align="center" style="padding-left: 125px;">
                           <br/>
-                          <input type="submit" class="w-button submit-btn" value="Submit Payment"/>
+                          <input type="submit" class="w-button submit-btn" value="SUBMIT PAYMENT"/>
                           <br><br>
                           <br><br>
                       </div>
