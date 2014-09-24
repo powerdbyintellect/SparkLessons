@@ -198,7 +198,7 @@ public class CustomerController extends BaseCustomerController {
 	
 	
 
-	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
+	//@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
 	public String addCustomer(ModelMap model, Customer customer, Address address, HttpServletRequest request)
 			throws Exception {
 		System.out.println("F: " + customer.getFirstname() + "\nL: "

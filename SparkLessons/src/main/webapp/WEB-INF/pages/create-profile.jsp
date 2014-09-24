@@ -88,8 +88,10 @@
         <form:input class="w-input btn-style" id="lastname" type="text" placeholder="Enter your lastname" name="lastname" data-name="LastName" path="lastname"/>
         <label class="project-tittle" for="email">EMAIL ADDRESS</label>
         <form:input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="email" required="required" path="email"/>
-         <label class="project-tittle" for="email">PASSWORD</label>
-        <form:input class="w-input btn-style" id="password" type="password" placeholder="Enter password" name="password" data-name="password" required="required" path="password"/>
+        <c:if test="${newuser}">
+         	<label class="project-tittle" for="email">PASSWORD</label>
+        	<form:input class="w-input btn-style" id="password" type="password" placeholder="Enter password" name="password" data-name="password" required="required" path="password"/>
+        </c:if>
         <label class="project-tittle" for="Lesson-Name">NAME YOUR LESSON</label>
         <input class="w-input btn-style" id="Lesson-Name" type="text" placeholder="Piano Lessons" name="lessonname" required="required" data-name="lessonname">
         <label class="project-tittle" for="Description-of-Lesson">DESCRIBE ABOUT YOUR LESSON</label>

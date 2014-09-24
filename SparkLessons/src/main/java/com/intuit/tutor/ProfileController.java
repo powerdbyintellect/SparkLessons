@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.intuit.platform.integration.ius.common.types.IAMTicket;
 import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
 
@@ -55,14 +56,23 @@ public class ProfileController extends BaseCustomerController{
 		return "create-profile";
 	}
 
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signUpPage(Model model, HttpServletRequest request) throws Exception {
+		UserEntity user = new UserEntity();
+		model.addAttribute("user", user);
+		model.addAttribute("newuser", true);
+		return "create-profile";
+	}
 
 	@Transactional
 	@RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
-	public String savePage(@ModelAttribute UserEntity user, Model model, @RequestParam("file") MultipartFile file, HttpServletRequest request) throws Exception{
+	public String savePage(@ModelAttribute UserEntity user, Model model, @RequestParam MultipartFile file, @RequestParam String password, HttpServletRequest request) throws Exception{
 		
 		UserEntity savedUser = getUserAndCreate(request);
 		if(savedUser == null) {
-			return "home";
+			savedUser = new UserEntity();
+			IAMTicket ticket = createIAMUser(user, password);
+			request.getSession().setAttribute("ticket", ticket); //Sign them in
 		}
 		savedUser.setFirstname(user.getFirstname());
 		savedUser.setLastname(user.getLastname());
