@@ -90,7 +90,7 @@
         <form:input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="email" required="required" path="email"/>
         <c:if test="${newuser}">
          	<label class="project-tittle" for="email">PASSWORD</label>
-        	<form:input class="w-input btn-style" id="password" type="password" placeholder="Enter password" name="password" data-name="password" required="required" path="password"/>
+        	<input class="w-input btn-style" id="password" type="password" placeholder="Enter password" name="password" data-name="password" required="required"/>
         </c:if>
         <label class="project-tittle" for="Lesson-Name">NAME YOUR LESSON</label>
         <input class="w-input btn-style" id="Lesson-Name" type="text" placeholder="Piano Lessons" name="lessonname" required="required" data-name="lessonname">
