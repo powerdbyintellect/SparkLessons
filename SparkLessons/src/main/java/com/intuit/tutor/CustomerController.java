@@ -375,10 +375,7 @@ public class CustomerController extends BaseCustomerController {
 					mav.addObject("realmId", applicationResult.getRealmId());
 					model.put("type", user.getLessonname());
 					mav.addObject("type", user.getLessonname());
-					//returnPage = "makepayment";
-					
-					//Test Only
-					returnPage = "submit-payment-information";
+					returnPage = "makepayment";
 					
 				}	//end result
 			 else {	//Create new Payment Account in OBS
