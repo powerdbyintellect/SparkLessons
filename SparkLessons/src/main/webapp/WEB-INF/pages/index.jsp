@@ -81,8 +81,8 @@
                 </div>
                 <div class="w-col w-col-4">		
                   <div class="w-form w-clearfix">
-                    <form class="w-clearfix div-submitclass" method="post" action="create-profile" id="email-form" name="email-form" data-name="Email Form" method="post">
-                      <input class="w-input email-signup" id="Email-Address" type="email" placeholder="Email Address" name="Email-Address" data-name="Email Address" required="required">
+                    <form class="w-clearfix div-submitclass" method="post" action="signup" id="email-form" name="email-form" data-name="Email Form" method="get">
+                      <input class="w-input email-signup" id="email" type="email" placeholder="Email Address" name="email" data-name="Email Address" required="required">
                       <input class="w-button submit-btn" type="submit" value="SIGN UP" data-wait="Please wait...">
                     </form>
                   </div>
@@ -147,7 +147,7 @@
         <img src="${pageContext.servletContext.contextPath}/resources/images/piano.jpg" width="260" height="280" alt="5420aa48dc9f75dd73ac65bd_piano.jpg">
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
               <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
@@ -157,21 +157,21 @@
                   "items": [
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61958b195c15b32bf7841_light1.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/piano111.jpg",
                       "caption": "This is a caption!",
                       "width": 755,
                       "height": 943
                     },
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e619718fe341c348ee72d2_light2.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/piano112.jpg",
                       "caption": "",
                       "width": 755,
                       "height": 471
                     },
                     {
                       "type": "image",
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e6197ab195c15b32bf7845_light3.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/piano113.jpg",
                       "caption": "",
                       "width": 755,
                       "height": 471
@@ -182,18 +182,18 @@
             </a>
           </div>
         </div>
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #1</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Piano Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">music, instruments, keyed</div>
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/baseball.jpg" width="260" height="280" alt="5420ac8d82027adc73b7a95b_baseball.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #2</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">BASEBALL LESSONS</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">sports, active, team sports</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
               <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
@@ -202,12 +202,12 @@
                 {
                   "items": [
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61a828fe341c348ee72dc_light4.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/baseball1.jpg",
                       "caption": "",
                       "type": "image"
                     },
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61a8cb195c15b32bf7857_light5.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/baseball2.jpg",
                       "caption": "",
                       "type": "image"
                     }
@@ -220,12 +220,12 @@
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/tennis.jpg" width="260" height="280" alt="5420ab207fed5ca22a8ac6f5_tennis.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #3</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Tennis Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">sports, individual sports, active</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
               <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
@@ -234,12 +234,12 @@
                 {
                   "items": [
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61b1fb195c15b32bf7860_light7.png",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/tennis1.jpg",
                       "caption": "This is a logo!",
                       "type": "image"
                     },
                     {
-                      "url": "https://daks2k3a4ib2z.cloudfront.net/5420869c24ed7cd271a3ef44/53e61b0ab195c15b32bf785d_light6.jpg",
+                      "url": "${pageContext.servletContext.contextPath}/resources/images/tennis2.jpg",
                       "caption": "",
                       "type": "image"
                     }
@@ -252,9 +252,9 @@
       </div>
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <img src="${pageContext.servletContext.contextPath}/resources/images/painting.jpg" width="260" height="280" alt="5420ab7182027adc73b7a953_painting.jpg">
-        <div class="portfolio-tittle"><a class="tittle" href="#">project #4</a>
+        <div class="portfolio-tittle"><a class="tittle" href="#">Painting Lessons</a>
         </div>
-        <div class="catergory">print, photography</div>
+        <div class="catergory">print, art, paint</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
             <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">

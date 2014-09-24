@@ -63,6 +63,15 @@ public class ProfileController extends BaseCustomerController{
 		model.addAttribute("newuser", true);
 		return "create-profile";
 	}
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public String signUpFromHomePage(Model model, @RequestParam(required = false) String email, HttpServletRequest request) throws Exception {
+		UserEntity user = new UserEntity();
+		user.setEmail(email!=null?email:"");
+		model.addAttribute("user", user);
+		model.addAttribute("newuser", true);
+		return "create-profile";
+	}
 
 	@Transactional
 	@RequestMapping(value = "/updateprofile", method = RequestMethod.POST)

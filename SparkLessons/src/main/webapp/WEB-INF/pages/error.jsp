@@ -76,7 +76,7 @@
 
 <%--START code here to display error message.--%>
   <div class="checkout" style="padding-top: 80px;">
-      <h3 align="center">You can try again or go to our <a href="${pageContext.servletContext.contextPath}"><span>home page.</span></a>.</h3>
+      <h4 align="center">Oops! Something went wrong here. You can try again or go to our <a style="text-decoration:none;" href="${pageContext.servletContext.contextPath}"><div style="text-decoration: none;">HOME PAGE</div></a></h4>
       <br><br><br><br>
   </div>
 <%--END of code to display error message.--%>

@@ -53,7 +53,7 @@
     <div class="w-nav navbar" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
       <div class="w-container">
         <a class="w-nav-brand logo" href="${pageContext.servletContext.contextPath}">
-          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="5420a24882027adc73b7a86d_SL_Logo4.png">
+          <img src="${pageContext.servletContext.contextPath}/resources/images/SL_Logo4.png" alt="${pageContext.servletContext.contextPath}/resources/images/5420a24882027adc73b7a86d_SL_Logo4.png">
         </a>
         <nav class="w-nav-menu menu" role="navigation"><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}"><span>Home</span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/#howit">HOW IT WORKS</a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/portfolio"><span>EXPLORE<br></span></a><a class="w-nav-link navlink" href="${pageContext.servletContext.contextPath}/sign-in"><span>SIGN IN</span></a>
           <a
@@ -78,11 +78,11 @@
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b03c8c9212bd60b999e4_ico4b.png">
               <script type="application/json" class="w-json">
                 {
                   "items": [
@@ -119,11 +119,11 @@
         <div class="catergory">Learn how to make ever swing a home run.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b03c8c9212bd60b999e4_ico4b.png">
               <script type="application/json" class="w-json">
                 {
                   "items": [
@@ -151,11 +151,11 @@
         <div class="catergory">Even Roger Federer will get nervous of you learning this.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b03c8c9212bd60b999e4_ico4b.png">
               <script type="application/json" class="w-json">
                 {
                   "items": [
@@ -183,11 +183,11 @@
         <div class="catergory">Learn how to allow you being to express himself thru painting.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
-              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="53e8b03c8c9212bd60b999e4_ico4b.png">
+              <img src="${pageContext.servletContext.contextPath}/resources/images/ico4b.png" width="50" alt="${pageContext.servletContext.contextPath}/resources/images/53e8b03c8c9212bd60b999e4_ico4b.png">
               <script type="application/json" class="w-json">
                 {
                   "mode": "video",
@@ -211,7 +211,7 @@
       <div class="w-col w-col-3 w-col-stack portfolio-image">
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
               <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
@@ -252,7 +252,7 @@
         <div class="catergory">Learn what it takes to win the Olympics.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
               <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
@@ -288,7 +288,7 @@
         <div class="catergory">Swim like a pro today!</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
               <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
@@ -317,7 +317,7 @@
         <div class="catergory">True Victory is Victory over Oneself.</div>
         <div class="portfolio-overlay">
           <div class="ico-wrapper">
-            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/project-page">
+            <a class="w-inline-block ico-portfolio" href="${pageContext.servletContext.contextPath}/portfolio">
               <img src="${pageContext.servletContext.contextPath}/resources/images/ico5b.png" width="50" alt="53e8b02aa758fb4f3644f741_ico5b.png">
             </a>
             <a class="w-lightbox w-inline-block" href="#">
