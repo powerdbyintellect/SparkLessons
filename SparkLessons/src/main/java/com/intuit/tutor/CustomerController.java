@@ -39,7 +39,7 @@ import com.intuit.tutor.security.Token;
 import facebook4j.Facebook;
 
 @Controller
-public class CustomerController {
+public class CustomerController extends BaseCustomerController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);;
 	
@@ -49,20 +49,11 @@ public class CustomerController {
 	@Autowired
 	private UserEntityDAO userEntityDAO;
 
-	private static final String XML_FILE_PATH = "/";
-	private String authHeader;
-	private String offeringId = "Intuit.payments.pcsactivation.sparklessons";
 	private static final UUID TEST_REQUEST_ID = UUID.randomUUID();
 	private static final String TEST_IP_ADDRESS = "199.16.140.27";
-	private static final String TEST_PASSWORD = "123test";
-	private static final String TEST_GLOBAL_NAMESPACE = "50000003";
 	
 	@Autowired
 	private OnboardingServiceClient onboardingServiceClient;
-
-	public void setAuthHeader(String authHeader) {
-		this.authHeader = authHeader;
-	}
 	
 	@SuppressWarnings("serial")
 	protected static final Map<IntuitHeader, String> headers = new HashMap<IntuitHeader, String>() {{
@@ -238,14 +229,7 @@ public class CustomerController {
 		bankAccount.setAccountNumber("9876543210");
 		bankAccount.setRoutingNumber("122000661");
 		bankAccount.setBankName("Bank of America");
-		
-		if(customer.getEmail() == null) {
-			String guuid = UUID.randomUUID().toString().replace("-", "");
-			//customer.setEmail("tester60af3c9852b94db6a6cc1e4b7f73e3e1@test.intuit.com");
-			customer.setEmail("tester" + guuid + "@test.intuit.com");
-		}
 
-		
 		IAMTicket iamticket = createIAMUser(customer, address);
 		String ticket = iamticket.getTicket();//iamToken.getTicket();
 		String authId = iamticket.getUserId();//iamToken.getUserId();

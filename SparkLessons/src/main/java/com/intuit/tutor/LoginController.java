@@ -18,7 +18,7 @@ import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
 
 @Controller
-public class LoginController {
+public class LoginController extends BaseCustomerController {
 
 	@Autowired
 	private IamRESTInterface iamRESTClient;
@@ -48,7 +48,11 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/sign-in", method = RequestMethod.GET) 
-	public String sign() {
+	public String sign(HttpServletRequest request, Model model) {
+		UserEntity user = getUserAndCreate(request);
+		if(user != null) {
+			return "redirect:profile";
+		}
 		return "sign-in";
 	}
 }
