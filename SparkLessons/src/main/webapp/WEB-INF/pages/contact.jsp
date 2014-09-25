@@ -96,7 +96,7 @@
           <ul class="w-list-unstyled">
             <li class="list">
               <div class="project-tittle">ADDRESS DETAILS</div>
-              <p>Our team is located in Woodland hills, CA. Intuit headquarters is in Moutain view, CA</p>
+              <p>Our team is located in Woodland Hills, CA. Intuit headquarters is in Mountain view, CA</p>
             </li>
             <li class="list">
               <div class="contact-info">
@@ -142,7 +142,7 @@
       </div>
     </div>
   </div>
-  <div class="w-widget w-widget-map map-contact" data-widget-latlng="37.386052,-122.083851" data-widget-style="roadmap" data-widget-zoom="13" data-disable-scroll="1" data-widget-tooltip="Spark Lessons HQ"></div>
+  <div class="w-widget w-widget-map map-contact" data-widget-latlng="37.4312189,-122.0979909" data-widget-style="roadmap" data-widget-zoom="13" data-disable-scroll="1" data-widget-tooltip="Spark Lessons HQ"></div>
   <div class="logo-section">
     <div class="w-slider logo-slider" data-animation="cross" data-duration="500" data-infinite="1" data-delay="2000" data-autoplay="1" data-easing="ease-in-cubic">
       <div class="w-slider-mask slider-mask">
