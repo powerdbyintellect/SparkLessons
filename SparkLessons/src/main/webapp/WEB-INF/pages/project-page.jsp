@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/webflow.css">
   <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/resources/css/sparklessons.webflow.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
       google: {
@@ -75,7 +75,7 @@
       </div>
     </div>
   </div>
-  <div class="project-section">
+  <%-- <div class="project-section">
     <div class="w-container">
       <div class="w-slider slider-project" data-animation="slide" data-duration="500" data-infinite="1">
         <div class="w-slider-mask">
@@ -135,6 +135,62 @@
         </div>
       </div>
     </div>
+  </div>  --%>
+  
+  
+   <div class="project-section">
+    <div>
+      <div class="w-row">
+        <div class="w-col w-col-1"></div>
+        <div class="w-col w-col-6">
+          <div class="project-tittle">${user.lessonname}&nbsp;LESSONS BY&nbsp;${user.firstname}&nbsp;${user.lastname} </div>
+          <p>here is more information about the lesson</p>
+          <div class="w-row">
+            <div class="w-col w-col-4">
+            	<c:if test="${user.facebookToken == null}">
+                	<a href="${pageContext.servletContext.contextPath}/facebooksignin"><img src="${pageContext.servletContext.contextPath}/resources/images/fb_Medium_127x37.png"></img></a>
+            	</c:if>
+            </div>
+            <div class="w-col w-col-4">
+            	 <c:if test="${user.twitterToken == null}">
+                	<a href="${pageContext.servletContext.contextPath}/twittersignin"><img style="max-height: 39px; min-height:37px; min-width:129px; max-width: 154px;" src="${pageContext.servletContext.contextPath}/resources/images/twitter.jpg"></a>
+            	</c:if>
+            </div>	
+            <div class="w-col w-col-4">
+              <div style="max-height: 42px;">
+              	<c:if test="${!user.paymentaccountpresent}">
+		        	<a  class="w-button submit-btn" style="text-decoration: none;max-height: 37px; min-height: 37px;" href="${pageContext.servletContext.contextPath}/submit-payment-information">ADD PAYMENT</a>
+		        </c:if>
+		        <c:if test="${user.paymentaccountpresent}">
+		        	<a class="w-button submit-btn" style="text-decoration: none;max-height: 37px; min-height: 37px;" href="${pageContext.servletContext.contextPath}/makepayment">GET PAID</a>
+		        </c:if>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-4">
+          <ul class="w-list-unstyled">
+            <li class="list">
+              <img src="${pageContext.servletContext.contextPath}/profileimages/${user.id}" width="300" height="300" alt="5421ad3a7fed5ca22a8ad8c6_piano-lessons.jpg">
+              </li>
+            <li>
+              <div class="project-tittle">DATE</div>
+              <p>${user.createdate}</p>
+            </li>
+            <li>
+                <div class="project-tittle">CATEGORIES</div>
+              <p>${user.lessoncategory}</p>
+              </li><li>
+             	 <div class="project-tittle">RATE</div>
+              	<p>$ ${user.rate} / hour</p>
+            </li>
+          </ul>
+        </div>
+        <div class="w-col w-col-1"></div>
+      </div>
+  	</div>
+  </div>
+  
     <!--<div>
       <h2 class="sp customer-reviews" style="padding-top: 50px;">CUSTOMER&nbsp;<span class="light">REVIEWS<br></span></h2>
        <div class="customer-review">
@@ -173,7 +229,7 @@
         </div>
       </div>
     </div>-->
-  </div> 
+ 
   <div class="related-section">
     <div class="w-container">
       <div class="text-hero">

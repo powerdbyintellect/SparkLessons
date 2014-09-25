@@ -81,10 +81,11 @@
         <div class="w-slider-mask"></div>
       </div>
     </div>
+   
     <div class="w-row">
-      <div class="w-col w-col-6">
+      <div class="w-col w-col-3"></div>
+      <div class="w-col w-col-6" style="padding-left:30px;">
         <div class="w-form">
-
           <form action="sign-in" method="post" class="w-clearfix form-style" id="email-form" name="email-form" data-name="Email Form">
             <label class="project-tittle" for="email">EMAIL ADDRESS</label>
             <input class="w-input btn-style" id="email" type="email" placeholder="Enter your email address" name="email" data-name="email" required="required">
@@ -92,17 +93,13 @@
             <input class="w-input btn-style" id="Lesson-Name" type="password" placeholder="Password" name="password" required="required" data-name="password">
             <input class="w-button submit-btn" type="submit" value="SIGN IN" data-wait="Please wait...">
           </form>
-
+         
         </div>
       </div>
-      <div class="w-col w-col-1">
-        <img src="${pageContext.servletContext.contextPath}/resources/images/Img_Or_blue.png" width="53" height="162" alt="5421a30adc9f75dd73ac749f_Img_Or_blue.png">
-      </div>
-      <div class="w-col w-col-5 w-clearfix"><a class="button" href="#">SIGN IN with FACEBOOK</a>
-      </div>
+      <div class="w-col w-col-3"></div>
     </div>
   </div>
-  <div class="related-section">
+ <%--  <div class="related-section">
     <div class="w-container">
       <div class="text-hero">
         <h2 class="sp">RELATED&nbsp;<span class="light">PROJECT</span></h2>
@@ -253,7 +250,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --%>
   <footer class="footer">
     <div class="w-container">
       <div class="w-row">
