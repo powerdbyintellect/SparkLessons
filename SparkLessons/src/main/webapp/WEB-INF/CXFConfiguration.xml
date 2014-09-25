@@ -13,12 +13,12 @@
 
 
     <jaxrs:client id="paymentRESTProxy"
-                  address="https://merchantaccount.ptc.quickbooks.com"
+                  address="${payments.url}"
                   serviceClass="com.intuit.tutor.PaymentsRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.payments.sdk_test,intuit_app_secret=PaymentsSDKTestApp"/>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=${payments.appid},intuit_app_secret=${payments.secret}"/>
         </jaxrs:headers>
         <jaxrs:inInterceptors>
         	<ref bean="logInbound"/>
@@ -29,12 +29,12 @@
     </jaxrs:client>
 
     <jaxrs:client id="onboardingServiceRestClient"
-                  address="https://merchant-e2e.payments.intuit.com"
+                  address="${obs.url}"
                   serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.smallbusiness.sparklessons.sparklessons,intuit_app_secret=preprdMI5Hrm02EG4kVyEP5QqBHY25lBx40NBlsR,x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=${sparklessons.appid},intuit_app_secret=${sparklessons.secret},x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
         </jaxrs:headers>
         <jaxrs:inInterceptors>
         	<ref bean="logInbound"/>
@@ -59,13 +59,13 @@
 	</bean>
     <!-- accounts-e2e.platform.intuit.net -->
    <jaxrs:client id="iamRESTProxy"
-				address="https://accounts-e2e.platform.intuit.com"
+				address="${ius.url}"
                   serviceClass="com.intuit.tutor.IamRESTInterface"
                   inheritHeaders="true" threadSafe="true">
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=Intuit.smallbusiness.sparklessons.sparklessons,intuit_app_secret=preprdMI5Hrm02EG4kVyEP5QqBHY25lBx40NBlsR"/>
-            <entry key="intuit_offeringId" value="Intuit.cto.iam.ius.tests"/>
+            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=${sparklessons.appid},intuit_app_secret=${sparklessons.secret}"></entry>
+        	<entry key="intuit_offeringId" value="Intuit.cto.iam.ius.tests"/>
             <entry key="intuit_originatingip" value="123.45.67.89" />
         </jaxrs:headers>
         <jaxrs:inInterceptors>

@@ -18,6 +18,7 @@
 			<list>
                 <!-- This is the default developer configuration location -->
 				<value>classpath*:Default.properties</value>
+				<value>/var/sparklessons/properties/SparkLessons.properties</value>
 			</list>
 		</property>
 	</bean>
