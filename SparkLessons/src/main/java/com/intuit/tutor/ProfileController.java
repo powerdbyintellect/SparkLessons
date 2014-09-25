@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.codehaus.jackson.map.ser.StdSerializers.UtilDateSerializer;
 import org.slf4j.Logger;
@@ -26,6 +27,15 @@ import org.springframework.web.multipart.MultipartFile;
 import com.intuit.platform.integration.ius.common.types.IAMTicket;
 import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
+
+import facebook4j.Account;
+import facebook4j.Facebook;
+import facebook4j.FacebookFactory;
+import facebook4j.PostUpdate;
+import facebook4j.ResponseList;
+import facebook4j.User;
+import facebook4j.auth.AccessToken;
+import facebook4j.auth.Authorization;
 
 @Controller
 public class ProfileController extends BaseCustomerController{
@@ -137,5 +147,15 @@ public class ProfileController extends BaseCustomerController{
 		model.addAttribute("user", user);
 		return "project-page";
 		
+	}
+	
+	@Transactional
+	@RequestMapping(value = "/facebook", method = RequestMethod.GET) 
+	public String connectFacebook(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		UserEntity user = getUserAndCreate(request);
+		if(user.getFacebookid())
+        userEntityDAO.saveUser(user);
+		model.addAttribute("user", user);
+		return "project-page";
 	}
 }

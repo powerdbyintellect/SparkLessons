@@ -47,8 +47,13 @@ public class UserEntity {
 	@Column
 	private Double rate;
 	@Column
-	private Boolean paymentaccountpresent;
-	
+	private Boolean paymentaccountpresent = Boolean.FALSE;
+	@Column
+	private String facebookid;
+	@Column
+	private String facebookusername;
+	@Column
+	private String facebookTokenId;
 	
 	public String getUserid() {
 		return userid;
@@ -145,6 +150,18 @@ public class UserEntity {
 	}
 	public void setPaymentaccountpresent(Boolean paymentaccountpresent) {
 		this.paymentaccountpresent = paymentaccountpresent;
+	}
+	public String getFacebookid() {
+		return facebookid;
+	}
+	public void setFacebookid(String facebookid) {
+		this.facebookid = facebookid;
+	}
+	public String getFacebookusername() {
+		return facebookusername;
+	}
+	public void setFacebookusername(String facebookusername) {
+		this.facebookusername = facebookusername;
 	}
 	
 	
