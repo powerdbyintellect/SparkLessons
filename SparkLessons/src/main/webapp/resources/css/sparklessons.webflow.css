@@ -83,8 +83,8 @@ p {
   position: relative;
   background-color: rgba(0, 0, 0, 0.76);
   background-image: url('../images/homebanner.png');
-  background-position: 100% 0px;
-  background-size: contain;
+  background-position: 0% 0px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
@@ -98,11 +98,15 @@ p {
 }
 .navbar {
   position: relative;
+  top: auto;
+  bottom: 0px;
   z-index: 999;
   display: block;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 0px solid rgba(255, 255, 255, 0.21);
+  min-width: 0px;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px solid transparent;
   background-color: transparent;
 }
 .navlink {
@@ -127,7 +131,16 @@ p {
 .logo {
   padding-top: 0px;
 }
+.logo.w--current {
+  padding-top: 0px;
+}
+.logo.w--current {
+  padding-top: 0px;
+}
 .logo.sc {
+  padding-top: 0px;
+}
+.logo.sc.w--current {
   padding-top: 0px;
 }
 .arrow-drop {
@@ -345,6 +358,10 @@ p {
   background-attachment: fixed;
   color: transparent;
 }
+.menu {
+  padding-top: 15px;
+  padding-bottom: 0px;
+}
 .fun-section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -480,7 +497,10 @@ p {
   text-align: right;
 }
 .slider {
+  display: block;
   height: 100%;
+  margin: auto;
+  padding-top: 1px;
   background-color: transparent;
 }
 .nav-dots {
