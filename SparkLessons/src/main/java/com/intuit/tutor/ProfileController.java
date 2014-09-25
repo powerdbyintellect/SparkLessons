@@ -153,8 +153,7 @@ public class ProfileController extends BaseCustomerController{
 	@RequestMapping(value = "/facebook", method = RequestMethod.GET) 
 	public String connectFacebook(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		UserEntity user = getUserAndCreate(request);
-		if(user.getFacebookid())
-        userEntityDAO.saveUser(user);
+		userEntityDAO.saveUser(user);
 		model.addAttribute("user", user);
 		return "project-page";
 	}
