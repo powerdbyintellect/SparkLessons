@@ -1471,6 +1471,7 @@ textarea.w-select {
 }
 .w-nav-menu {
   position: relative;
+  padding-top: 15px;
   float: right;
 }
 .w--nav-menu-open {
