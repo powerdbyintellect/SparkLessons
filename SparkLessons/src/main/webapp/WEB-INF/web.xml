@@ -10,6 +10,10 @@
         <servlet-class>com.intuit.Facebook4j.SignInServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>twittersignin</servlet-name>
+        <servlet-class>com.intuit.Facebook4j.TwitterSignInServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>callback</servlet-name>
         <servlet-class>com.intuit.Facebook4j.CallbackServlet</servlet-class>
     </servlet>
@@ -24,7 +28,11 @@
 
     <servlet-mapping>
         <servlet-name>signin</servlet-name>
-        <url-pattern>/signin</url-pattern>
+        <url-pattern>/facebooksignin</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>twittersignin</servlet-name>
+        <url-pattern>/twittersignin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>callback</servlet-name>

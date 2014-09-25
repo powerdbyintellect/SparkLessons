@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import twitter4j.auth.RequestToken;
+
 import com.intuit.platform.integration.ius.common.types.IAMTicket;
 import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
@@ -153,8 +155,27 @@ public class ProfileController extends BaseCustomerController{
 	@RequestMapping(value = "/facebook", method = RequestMethod.GET) 
 	public String connectFacebook(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		UserEntity user = getUserAndCreate(request);
-		userEntityDAO.saveUser(user);
+		//Facebook facebook = getFacebook(request);
+		String oauthCode = request.getParameter("code");
+        user.setFacebookToken(oauthCode);
+        //facebook.getOAuthAccessToken(oauthCode);
+        //facebook.postStatusMessage("I signed up with spark lessons !!! ");
+        userEntityDAO.saveUser(user);
 		model.addAttribute("user", user);
 		return "project-page";
 	}
+	
+	@Transactional
+	@RequestMapping(value = "/twitter", method = RequestMethod.GET) 
+	public String connectTwitter(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		UserEntity user = getUserAndCreate(request);
+		
+		String verifier = request.getParameter("oauth_verifier");
+		user.setTwitterToken(verifier);
+	    
+        userEntityDAO.saveUser(user);
+		model.addAttribute("user", user);
+		return "project-page";
+	}
+				
 }

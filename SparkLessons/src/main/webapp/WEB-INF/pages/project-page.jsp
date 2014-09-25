@@ -121,6 +121,16 @@
 		        	<a class="button" href="${pageContext.servletContext.contextPath}/makepayment">GET PAID NOW</a>
 		        </c:if>
             </li>
+            <c:if test="${user.facebookToken == null}">
+            	<li style="margin-top: -60px; ">
+                	<a class="button" href="${pageContext.servletContext.contextPath}/facebooksignin">CONNECT TO FACEBOOK</a>
+		    	</li>
+            </c:if>
+		    <c:if test="${user.twitterToken == null}">
+            	<li style="margin-top: -60px; ">
+                	<a class="button" href="${pageContext.servletContext.contextPath}/twittersignin">CONNECT TO TWITTER</a>
+		    	</li>
+            </c:if>
           </ul>
         </div>
       </div>

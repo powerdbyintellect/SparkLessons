@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import twitter4j.Twitter;
+import twitter4j.TwitterFactory;
+
 import com.intuit.platform.integration.ius.common.types.Address;
 import com.intuit.platform.integration.ius.common.types.ChallengeQuestionAnswer;
 import com.intuit.platform.integration.ius.common.types.Email;
@@ -19,6 +22,9 @@ import com.intuit.platform.integration.ius.common.types.ObjectFactory;
 import com.intuit.platform.integration.ius.common.types.User;
 import com.intuit.tutor.entity.UserEntity;
 import com.intuit.tutor.entity.dao.UserEntityDAO;
+
+import facebook4j.Facebook;
+import facebook4j.FacebookFactory;
 
 
 @Controller
@@ -50,6 +56,23 @@ public class BaseCustomerController {
 		return ticket;
 	}
 	
+	public Facebook getFacebook(HttpServletRequest request) {
+		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
+		if(facebook == null) {
+			facebook = new FacebookFactory().getInstance();
+			request.getSession().setAttribute("facebook", facebook);
+		}
+		return facebook;
+	}
+	
+	public Twitter getTwitter(HttpServletRequest request) {
+		Twitter twitter = (Twitter) request.getSession().getAttribute("twitter");
+		if(twitter == null) {
+			twitter = new TwitterFactory().getInstance();
+			request.getSession().setAttribute("twitter", twitter);
+		}
+		return twitter;
+	}
 	protected IAMTicket createIAMUser(UserEntity sparkRentUser, String password)
 			throws Exception {
 		

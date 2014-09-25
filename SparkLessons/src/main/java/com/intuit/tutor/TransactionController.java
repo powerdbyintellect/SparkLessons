@@ -26,12 +26,14 @@ import com.intuit.payments.sdk.jaxb.types.CreditCard;
 import com.intuit.payments.sdk.jaxb.types.CreditCardCharge;
 import com.intuit.payments.sdk.jaxb.types.CreditCardResponse;
 import com.intuit.payments.sdk.jaxb.types.ObjectFactory;
+import com.intuit.tutor.entity.UserEntity;
 
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
+import facebook4j.FacebookFactory;
 
 @Controller
-public class TransactionController {
+public class TransactionController extends BaseCustomerController {
 	
 	private static Logger log = Logger.getLogger(TransactionController.class);
 	
@@ -82,25 +84,33 @@ public class TransactionController {
 		mav.addObject("creditCardResponse", response.getValue());
 		mav.addObject("amount", charge.getAmount());
 		String lessonType = "";
-		Facebook facebook = (Facebook) request.getSession().getAttribute("facebook");
-		if(null!=facebook) {
-			lessonType = request.getAttribute("type") == null?"": (String) request.getAttribute("type");
-			String ref = response!=null&& response.getValue()!=null && response.getValue().getClientTransID()!=null?"Ref: "+response.getValue().getClientTransID() : "";
+		
+		UserEntity user = getUserAndCreate(request);
+		
+		if(user.getFacebookToken() != null) {
+			Facebook facebook = getFacebook(request);
+			
 			try {
+				facebook.getOAuthAccessToken(user.getFacebookToken());
+				lessonType = request.getAttribute("type") == null?"": (String) request.getAttribute("type");
+				String ref = response!=null&& response.getValue()!=null && response.getValue().getClientTransID()!=null?"Ref: "+response.getValue().getClientTransID() : "";
 				facebook.postStatusMessage("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
-			} catch (FacebookException e) {
-				e.printStackTrace();
+			} catch (FacebookException e1) {
+				log.error(e1);
 			}
 		}
 		
-		Twitter twitter = TwitterFactory.getSingleton();
-	    Status status;
-		try {
-			status = twitter.updateStatus("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
-    		log.debug("Got access token.");
-        	log.debug("Successfully updated the status to [" + status.getText() + "].");
-		} catch (TwitterException e) {
-			log.error(e);
+		if(user.getTwitterToken() != null) {
+			Twitter twitter = getTwitter(request);
+		    Status status;
+			try {
+				twitter.getOAuthAccessToken(user.getTwitterToken());
+				status = twitter.updateStatus("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
+	    		log.debug("Got access token.");
+	        	log.debug("Successfully updated the status to [" + status.getText() + "].");
+			} catch (TwitterException e) {
+				log.error(e);
+			}
 		}
 	    
 		return mav; //new ModelAndView("charge", "creditCardResponse", response.getValue());

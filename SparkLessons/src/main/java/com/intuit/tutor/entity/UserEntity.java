@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 
@@ -48,12 +49,14 @@ public class UserEntity {
 	private Double rate;
 	@Column
 	private Boolean paymentaccountpresent = Boolean.FALSE;
-	@Column
-	private String facebookid;
-	@Column
-	private String facebookusername;
-	@Column
-	private String facebookTokenId;
+	
+	@Lob
+	@Column(length = 100000)
+	private String facebookToken;
+	
+	@Lob
+	@Column(length = 100000)
+	private String twitterToken;
 	
 	public String getUserid() {
 		return userid;
@@ -151,17 +154,17 @@ public class UserEntity {
 	public void setPaymentaccountpresent(Boolean paymentaccountpresent) {
 		this.paymentaccountpresent = paymentaccountpresent;
 	}
-	public String getFacebookid() {
-		return facebookid;
+	public String getFacebookToken() {
+		return facebookToken;
 	}
-	public void setFacebookid(String facebookid) {
-		this.facebookid = facebookid;
+	public void setFacebookToken(String facebookToken) {
+		this.facebookToken = facebookToken;
 	}
-	public String getFacebookusername() {
-		return facebookusername;
+	public String getTwitterToken() {
+		return twitterToken;
 	}
-	public void setFacebookusername(String facebookusername) {
-		this.facebookusername = facebookusername;
+	public void setTwitterToken(String twitterToken) {
+		this.twitterToken = twitterToken;
 	}
 	
 	
