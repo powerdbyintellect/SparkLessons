@@ -65,7 +65,7 @@
         <jaxrs:headers>
             <entry key="Accept" value="text/xml, application/xml"/>
             <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=${sparklessons.appid},intuit_app_secret=${sparklessons.secret}"></entry>
-        	<entry key="intuit_offeringId" value="Intuit.cto.iam.ius.tests"/>
+        	<entry key="intuit_offeringId" value="${sparklessons.appid}"/>
             <entry key="intuit_originatingip" value="123.45.67.89" />
         </jaxrs:headers>
         <jaxrs:inInterceptors>

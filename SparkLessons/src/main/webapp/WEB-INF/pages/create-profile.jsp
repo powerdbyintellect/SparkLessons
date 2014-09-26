@@ -140,7 +140,7 @@
 	        	<input class="w-input btn-style" id="password" type="password" placeholder="Enter password" name="password" data-name="password" required="required"/>
 	        </c:if>
 	        <label class="project-tittle" for="Lesson-Name">NAME YOUR LESSON</label>
-	        <input class="w-input btn-style" id="Lesson-Name" type="text" placeholder="Piano Lessons" name="lessonname" required="required" data-name="lessonname">
+	        <form:input class="w-input btn-style" id="Lesson-Name" type="text" placeholder="Piano Lessons" name="lessonname" required="required" data-name="lessonname" path="lessonname"/>
 	        <label class="project-tittle" for="Description-of-Lesson">DESCRIBE ABOUT YOUR LESSON</label>
 	        <form:textarea path="description" class="w-input btn-style" id="Description-of-Lesson" placeholder="Describe about the lesson you want to give" name="description" data-name="Description of Lesson" required="required"/>
 	        <label class="project-tittle" for="Price-of-lesson">RATE</label>

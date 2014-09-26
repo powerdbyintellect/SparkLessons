@@ -10,6 +10,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.xml.bind.JAXBElement;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.intuit.psd.cdm.v1.AccountNumber;
 import com.intuit.psd.cdm.v1.ApplicationChannelTypeEnum;
@@ -70,8 +71,11 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 	private static ApplicationSourceEnum applicationSourceEnum = DEFAULT_APPLICATION_SOURCE_ENUM;
 	
 	private OnboardingServiceRestClient onboardingServiceRestClient;
-	private String sparkrentServiceGatewaySecret = "6M50GN0AHsITfe6fkSYAtE";
-	private String sparkrentServiceGatewayAppId = "Intuit.sbg.payments.onboarding.test";
+	
+	@Value("${obs.secret}")
+	private String sparkrentServiceGatewaySecret;
+	@Value("${obs.appid}")
+	private String sparkrentServiceGatewayAppId;
 
 	private static String applicationChannel = "QBO_SPA";
 	private static String applicationSource = "SRT";
