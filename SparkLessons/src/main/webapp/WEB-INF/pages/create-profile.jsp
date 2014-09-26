@@ -146,7 +146,7 @@
 	        <label class="project-tittle" for="Price-of-lesson">RATE</label>
 	        <form:input path="rate" class="w-input btn-style" id="Price-of-lesson" type="text" placeholder="$25.00" name="rate" required="required" data-name="rate"/>
 	        <label class="project-tittle" for="Category-of-lesson">CATEGORIES</label>
-	        <textarea class="w-input btn-style" id="Category-of-lesson" placeholder="Categorize your lesson so that your prospective student can find it easily" name="lessoncategory" data-name="lessoncategory"></textarea>
+	        <form:textarea class="w-input btn-style" id="Category-of-lesson" placeholder="Categorize your lesson so that your prospective student can find it easily" name="lessoncategory" data-name="lessoncategory" path="lessoncategory"/>
 	        <div style="padding-bottom: 20px;padding-top: 10px">
 		        <label class="project-tittle">UPLOAD LESSON IMAGE HERE</label> <br/>
 			    <input  type="file" name="file" class="project-tittle"/>
