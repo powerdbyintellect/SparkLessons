@@ -71,7 +71,7 @@
   <link rel="apple-touch-icon" href="${pageContext.servletContext.contextPath}/resources/images/ico-phone.png">
   <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-53838527-5'], ['_trackPageview']);
+    _gaq.push(['_setAccount', 'UA-55193915-1'], ['_trackPageview']);
     (function() {
       var ga = document.createElement('script');
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';

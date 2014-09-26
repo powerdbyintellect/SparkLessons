@@ -72,7 +72,7 @@
   <link rel="apple-touch-icon" href="${pageContext.servletContext.contextPath}/resources/images/ico-phone.png">
   <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-53838527-5'], ['_trackPageview']);
+    _gaq.push(['_setAccount', 'UA-55193915-1'], ['_trackPageview']);
     (function() {
       var ga = document.createElement('script');
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -187,7 +187,7 @@
         <div class="w-col w-col-1"></div>
         <div class="w-col w-col-6">
           <div class="project-tittle">${user.lessonname}&nbsp;LESSONS BY&nbsp;${user.firstname}&nbsp;${user.lastname} </div>
-          <p>here is more information about the lesson</p>
+          <p>${user.description}</p>
           <div class="w-row">
             <div class="w-col w-col-4">
             	<c:if test="${user.facebookToken == null}">
