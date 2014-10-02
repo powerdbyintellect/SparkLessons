@@ -27,6 +27,9 @@ import com.intuit.payments.sdk.jaxb.types.CreditCardCharge;
 import com.intuit.payments.sdk.jaxb.types.CreditCardResponse;
 import com.intuit.payments.sdk.jaxb.types.ObjectFactory;
 import com.intuit.tutor.entity.UserEntity;
+import com.intuit.tutor.paymentsv2.Address;
+import com.intuit.tutor.paymentsv2.Card;
+import com.intuit.tutor.paymentsv2.Charge;
 
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
@@ -60,28 +63,56 @@ public class TransactionController extends BaseCustomerController {
 		
 		
 		
-		CreditCardCharge charge = objectFactory.createCreditCardCharge();
-		CreditCard creditCard = new CreditCard();
-		creditCard.setCreditCardNumber(ccNumber);
-		//creditCard.setCreditCardPostalCode(userCreditCard.getPostalCode());
-		creditCard.setExpirationMonth(new Integer(expMonth));
-		creditCard.setExpirationYear(new BigInteger(expYear));
-		creditCard.setNameOnCard(ccName);
-		charge.setCreditCard(creditCard );
+//		CreditCardCharge charge = objectFactory.createCreditCardCharge();
+//		CreditCard creditCard = new CreditCard();
+//		creditCard.setCreditCardNumber(ccNumber);
+//		//creditCard.setCreditCardPostalCode(userCreditCard.getPostalCode());
+//		creditCard.setExpirationMonth(new Integer(expMonth));
+//		creditCard.setExpirationYear(new BigInteger(expYear));
+//		creditCard.setNameOnCard(ccName);
+//		charge.setCreditCard(creditCard );
+//		if(StringUtils.isEmpty(chargeAmount)) {
+//			charge.setAmount(new BigDecimal("25.00"));
+//		} else {
+//			charge.setAmount(new BigDecimal(chargeAmount));
+//		}
+//		charge.setCardSecurityCode(cvc);
+		Charge charge = new Charge();
+		Card card = new Card();
+		card.setNumber(ccNumber);
+		card.setExpMonth(expMonth);
+		card.setExpYear(expYear);
+		card.setName(ccName);
+		card.setCvc(cvc);
+		charge.setCard(card );
 		if(StringUtils.isEmpty(chargeAmount)) {
 			charge.setAmount(new BigDecimal("25.00"));
 		} else {
 			charge.setAmount(new BigDecimal(chargeAmount));
 		}
-		charge.setCardSecurityCode(cvc);
+		
+		Address address = new Address();
+		address.setCity("Sunnyvale");
+		address.setRegion("CA");
+		address.setPostalCode("94086");
+		address.setStreetAddress("1130 Kifer Rd");
+		address.setCountry("US");
+		card.setAddress(address );
+		charge.setCurrency("USD");
 		
 		if(StringUtils.isEmpty(realmId)) {
 			realmId = "1003729781";
 		}
-		JAXBElement<CreditCardResponse> response = restClient.chargeCreditCard(realmId, UUID.randomUUID().toString(), objectFactory.createCreditCardCharge(charge));
+		
+		
+		String requestId = UUID.randomUUID().toString();
+		
+		
+		
+		Charge response = restClient.chargeCreditCard(requestId, requestId, charge);
 		//model.put("creditCardResponse", response.getValue());
 		ModelAndView mav = new ModelAndView("charge");
-		mav.addObject("creditCardResponse", response.getValue());
+		mav.addObject("creditCardResponse", response);
 		mav.addObject("amount", charge.getAmount());
 		String lessonType = "";
 		
@@ -93,7 +124,6 @@ public class TransactionController extends BaseCustomerController {
 			try {
 				facebook.getOAuthAccessToken(user.getFacebookToken());
 				lessonType = request.getAttribute("type") == null?"": (String) request.getAttribute("type");
-				String ref = response!=null&& response.getValue()!=null && response.getValue().getClientTransID()!=null?"Ref: "+response.getValue().getClientTransID() : "";
 				facebook.postStatusMessage("I just got paid $"+charge.getAmount()+" for giving "+lessonType+" Lessons !!! ");
 			} catch (FacebookException e1) {
 				log.error(e1);

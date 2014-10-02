@@ -1,80 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:http-conf="http://cxf.apache.org/transports/http/configuration" xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:jaxrs-client="http://cxf.apache.org/jaxrs-client"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+	xmlns:jaxrs="http://cxf.apache.org/jaxrs" xmlns:jaxrs-client="http://cxf.apache.org/jaxrs-client"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd 
        http://cxf.apache.org/jaxrs-client http://cxf.apache.org/schemas/jaxrs-client.xsd"
-       default-lazy-init="false">
+	default-lazy-init="false">
 
-	<bean id="logInbound" class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
-	<bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
+	<bean id="logInbound" class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+	<bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
 
 
-    <jaxrs:client id="paymentRESTProxy"
-                  address="${payments.url}"
-                  serviceClass="com.intuit.tutor.PaymentsRESTInterface"
-                  inheritHeaders="true" threadSafe="true">
-        <jaxrs:headers>
-            <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=${payments.appid},intuit_app_secret=${payments.secret}"/>
-        </jaxrs:headers>
-        <jaxrs:inInterceptors>
-        	<ref bean="logInbound"/>
-         </jaxrs:inInterceptors>
-         <jaxrs:outInterceptors>
-             <ref bean="logOutbound"/>
-         </jaxrs:outInterceptors>
-    </jaxrs:client>
+	<jaxrs:client id="paymentRESTProxy" address="${payments.url}"
+		serviceClass="com.intuit.tutor.PaymentsRESTInterface" inheritHeaders="true"
+		threadSafe="true">
+		<jaxrs:headers>
+			<entry key="Accept" value="text/json, application/json" />
+			<entry key="Authorization"
+				value="Intuit_IAM_Authentication intuit_appid=${payments.appid},intuit_app_secret=${payments.secret}" />
+			<entry key="Company-Id" value="1019017762"/>
+		</jaxrs:headers>
+		<jaxrs:inInterceptors>
+			<ref bean="logInbound" />
+		</jaxrs:inInterceptors>
+		<jaxrs:outInterceptors>
+			<ref bean="logOutbound" />
+		</jaxrs:outInterceptors>
+		<jaxrs:providers>
+			<ref bean="jsonProvider"/>
+		</jaxrs:providers>
+	</jaxrs:client>
 
-    <jaxrs:client id="onboardingServiceRestClient"
-                  address="${obs.url}"
-                  serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
-                  inheritHeaders="true" threadSafe="true">
-        <jaxrs:headers>
-            <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=${sparklessons.appid},intuit_app_secret=${sparklessons.secret},x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
-        </jaxrs:headers>
-        <jaxrs:inInterceptors>
-        	<ref bean="logInbound"/>
-         </jaxrs:inInterceptors>
-         <jaxrs:outInterceptors>
-             <ref bean="logOutbound"/>
-         </jaxrs:outInterceptors>
-    </jaxrs:client>
-    
-    <bean id="onboardingServiceClient" class="com.intuit.tutor.obs.OnboardingServiceClientImpl" init-method="initialize">
+	<bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
+		<property name="serializationConfig.dateFormat">
+			<bean class="java.text.SimpleDateFormat">
+				<constructor-arg value="yyyy-MM-dd'T'HH:mm:ss.SZ" />
+			</bean>
+		</property>
+		<property name="serializationInclusion" >
+			<value type="org.codehaus.jackson.map.annotate.JsonSerialize$Inclusion">NON_NULL</value>
+		</property>
+	</bean>
+	
+	<bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider">
+		<property name="mapper" ref="jacksonMapper"/>
+	</bean>
+		
+		
+	<jaxrs:client id="onboardingServiceRestClient" address="${obs.url}"
+		serviceClass="com.intuit.tutor.obs.OnboardingServiceRestClient"
+		inheritHeaders="true" threadSafe="true">
+		<jaxrs:headers>
+			<entry key="Accept" value="text/xml, application/xml" />
+			<entry key="Authorization"
+				value="Intuit_IAM_Authentication intuit_appid=${sparklessons.appid},intuit_app_secret=${sparklessons.secret},x_intuit_authid={iamAuthId},x_intuit_ticket={iamTicket}"></entry>
+		</jaxrs:headers>
+		<jaxrs:inInterceptors>
+			<ref bean="logInbound" />
+		</jaxrs:inInterceptors>
+		<jaxrs:outInterceptors>
+			<ref bean="logOutbound" />
+		</jaxrs:outInterceptors>
+	</jaxrs:client>
+
+	<bean id="onboardingServiceClient" class="com.intuit.tutor.obs.OnboardingServiceClientImpl"
+		init-method="initialize">
 		<property name="onboardingServiceRestClient">
 			<ref bean="onboardingServiceRestClient" />
 		</property>
-<!-- 		<property name="applicationChannel" value="${sparkrent.application.channel}" />
-		<property name="applicationSource" value="${sparkrent.application.source}" />
-		<property name="countryCode" value="${sparkrent.application.countryCode}" />
-		<property name="offerId" value="${sparkrent.application.offerid}" />
-		<property name="brandId" value="${sparkrent.application.brandid}" />
-		<property name="sicCode" value="${sparkrent.application.siccode}" />
-		<property name="sparkrentServiceGatewayAppId" value="${sparkrent.servicegateway.appid}" />
-		<property name="sparkrentServiceGatewaySecret" value="${sparkrent.servicegateway.secret}" /> -->
+		<!-- <property name="applicationChannel" value="${sparkrent.application.channel}" 
+			/> <property name="applicationSource" value="${sparkrent.application.source}" 
+			/> <property name="countryCode" value="${sparkrent.application.countryCode}" 
+			/> <property name="offerId" value="${sparkrent.application.offerid}" /> <property 
+			name="brandId" value="${sparkrent.application.brandid}" /> <property name="sicCode" 
+			value="${sparkrent.application.siccode}" /> <property name="sparkrentServiceGatewayAppId" 
+			value="${sparkrent.servicegateway.appid}" /> <property name="sparkrentServiceGatewaySecret" 
+			value="${sparkrent.servicegateway.secret}" /> -->
 	</bean>
-    <!-- accounts-e2e.platform.intuit.net -->
-   <jaxrs:client id="iamRESTProxy"
-				address="${ius.url}"
-                  serviceClass="com.intuit.tutor.IamRESTInterface"
-                  inheritHeaders="true" threadSafe="true">
-        <jaxrs:headers>
-            <entry key="Accept" value="text/xml, application/xml"/>
-            <entry key="Authorization" value="Intuit_IAM_Authentication intuit_appid=${sparklessons.appid},intuit_app_secret=${sparklessons.secret}"></entry>
-        	<entry key="intuit_offeringId" value="${sparklessons.appid}"/>
-            <entry key="intuit_originatingip" value="123.45.67.89" />
-        </jaxrs:headers>
-        <jaxrs:inInterceptors>
-        	<ref bean="logInbound"/>
-         </jaxrs:inInterceptors>
-         <jaxrs:outInterceptors>
-             <ref bean="logOutbound"/>
-         </jaxrs:outInterceptors>
-    </jaxrs:client>
+	<!-- accounts-e2e.platform.intuit.net -->
+	<jaxrs:client id="iamRESTProxy" address="${ius.url}"
+		serviceClass="com.intuit.tutor.IamRESTInterface" inheritHeaders="true"
+		threadSafe="true">
+		<jaxrs:headers>
+			<entry key="Accept" value="text/xml, application/xml" />
+			<entry key="Authorization"
+				value="Intuit_IAM_Authentication intuit_appid=${sparklessons.appid},intuit_app_secret=${sparklessons.secret}"></entry>
+			<entry key="intuit_offeringId" value="${sparklessons.appid}" />
+			<entry key="intuit_originatingip" value="123.45.67.89" />
+		</jaxrs:headers>
+		<jaxrs:inInterceptors>
+			<ref bean="logInbound" />
+		</jaxrs:inInterceptors>
+		<jaxrs:outInterceptors>
+			<ref bean="logOutbound" />
+		</jaxrs:outInterceptors>
+	</jaxrs:client>
 
 
 </beans>

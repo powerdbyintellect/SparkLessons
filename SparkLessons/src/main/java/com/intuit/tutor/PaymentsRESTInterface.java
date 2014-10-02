@@ -11,13 +11,14 @@ import javax.xml.bind.JAXBElement;
 
 import com.intuit.payments.sdk.jaxb.types.CreditCardCharge;
 import com.intuit.payments.sdk.jaxb.types.CreditCardResponse;
+import com.intuit.tutor.paymentsv2.Charge;
 
-@Path("/sdk")
+@Path("")
 public interface PaymentsRESTInterface {
 
-	@Path("/v7/company/{realmid}/creditcard/charge")
+	@Path("/v2/charges")
 	@POST
-	@Consumes(MediaType.APPLICATION_XML)
-    @Produces(MediaType.APPLICATION_XML)
-	public JAXBElement<CreditCardResponse> chargeCreditCard(@PathParam("realmid") String realmId, @HeaderParam("intuit_tid") String intuit_tid, JAXBElement<CreditCardCharge> creditCardCharge);
+	@Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+	public Charge chargeCreditCard(@HeaderParam("Request-Id") String requestid, @HeaderParam("intuit_tid") String intuit_tid, Charge charge);
 }

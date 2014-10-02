@@ -234,11 +234,11 @@
       <div>
           <table cellspacing="0">
               <tr><th>Transaction Details</th><th>Summary</th></tr>
-              <tr><td>Merchant Account Number</td><td>${creditCardResponse.merchantAccountNumber}</td></tr>
-              <tr><td>Transaction Identifier</td><td>${creditCardResponse.creditCardTransID}</td></tr>
-              <tr><td>Payment Status</td><td>${creditCardResponse.paymentStatus}</td></tr>
-              <tr><td>Authorization Time </td><td>${creditCardResponse.transAuthorizationTime}</td></tr>
-              <tr><td>Authorization Code </td><td>${creditCardResponse.authorizationCode} </td></tr>
+<%--               <tr><td>Merchant Account Number</td><td>${creditCardResponse.merchantAccountNumber}</td></tr> --%>
+              <tr><td>Transaction Identifier</td><td>${creditCardResponse.id}</td></tr>
+              <tr><td>Payment Status</td><td>${creditCardResponse.status}</td></tr>
+              <tr><td>Authorization Time </td><td>${creditCardResponse.capture.created}</td></tr>
+              <tr><td>Authorization Code </td><td>${creditCardResponse.authCode} </td></tr>
               <tr><td>Authorization Amount </td><td>${amount}</td></tr>
           </table>
           <br><br>
