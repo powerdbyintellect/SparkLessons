@@ -486,12 +486,11 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 					 * have multiple master accounts and in that case we will augment the code below.
 					 */
 					MasterAccount masterAccount = masterAccounts.getMasterAccount().get(0);
-					String orderId = masterAccount.getMerchantOrderId();
 					masterAccount.getStatus();
 					result.setMasterAccountId(masterAccount.getId());
 					result.setRealmId(masterAccount.getRealmId());
 					//MasterAccountStatusEnum.
-					if(orderId!=null && !orderId.equalsIgnoreCase("")){
+					
 						if(MasterAccountStatusEnum.CLOSED == masterAccount.getStatus() || MasterAccountStatusEnum.SUSPENDED == masterAccount.getStatus()){
 							result.setOnboardingStatus(OnboardingStatus.DECLINED);
 							
@@ -546,11 +545,7 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 							}
 							
 						}
-					}
-					else{
-						logger.debug("No order ID returned for merchant application with auth id: " + token.getAuthId());
-						throw new OnBoardingException(OnBoardingException.UNEXPECTED_STATUS_CODE);
-					}
+					
 				}
 
 			}

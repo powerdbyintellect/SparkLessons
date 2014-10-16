@@ -61,7 +61,7 @@ public class TransactionController extends BaseCustomerController {
 			@RequestParam("cc_cvc") String cvc, @RequestParam("cc_name") String ccName, @RequestParam("realmId") String realmId, @RequestParam("chargeamount") String chargeAmount, 
 			HttpServletRequest request) {
 		
-		
+		UserEntity user = getUserAndCreate(request);
 		
 //		CreditCardCharge charge = objectFactory.createCreditCardCharge();
 //		CreditCard creditCard = new CreditCard();
@@ -91,13 +91,13 @@ public class TransactionController extends BaseCustomerController {
 			charge.setAmount(new BigDecimal(chargeAmount));
 		}
 		
-		Address address = new Address();
+		/*Address address = new Address();
 		address.setCity("Sunnyvale");
 		address.setRegion("CA");
 		address.setPostalCode("94086");
 		address.setStreetAddress("1130 Kifer Rd");
 		address.setCountry("US");
-		card.setAddress(address );
+		card.setAddress(address );*/
 		charge.setCurrency("USD");
 		
 		if(StringUtils.isEmpty(realmId)) {
@@ -109,14 +109,12 @@ public class TransactionController extends BaseCustomerController {
 		
 		
 		
-		Charge response = restClient.chargeCreditCard(requestId, requestId, charge);
+		Charge response = restClient.chargeCreditCard(requestId, requestId, user.getMasteraccount(), charge);
 		//model.put("creditCardResponse", response.getValue());
 		ModelAndView mav = new ModelAndView("charge");
 		mav.addObject("creditCardResponse", response);
 		mav.addObject("amount", charge.getAmount());
 		String lessonType = "";
-		
-		UserEntity user = getUserAndCreate(request);
 		
 		if(user.getFacebookToken() != null) {
 			Facebook facebook = getFacebook(request);

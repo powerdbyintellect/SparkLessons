@@ -19,7 +19,7 @@
 			<entry key="Accept" value="text/json, application/json" />
 			<entry key="Authorization"
 				value="Intuit_IAM_Authentication intuit_appid=${payments.appid},intuit_app_secret=${payments.secret}" />
-			<entry key="Company-Id" value="1019017762"/>
+<!-- 			<entry key="Company-Id" value="199637683"/> -->
 		</jaxrs:headers>
 		<jaxrs:inInterceptors>
 			<ref bean="logInbound" />

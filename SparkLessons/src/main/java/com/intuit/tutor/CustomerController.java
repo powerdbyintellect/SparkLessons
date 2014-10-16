@@ -254,6 +254,7 @@ public class CustomerController extends BaseCustomerController {
 		userEntity.setMasteraccount(applicationResult.getMasterAccountId());
 		userEntity.setRealmid(applicationResult.getRealmId());
 		userEntity.setUserid(authId);
+		userEntity.setMasteraccount(applicationResult.getMasterAccountId());
 		if(facebook != null) {
 			userEntity.setLoginid(facebook.getMe().getId());
 		}
@@ -367,6 +368,7 @@ public class CustomerController extends BaseCustomerController {
 			 applicationResult = onboardingServiceClient.getMerchantInformationByAuthId(token, UUID.randomUUID()) ;
 			 if(user!=null) {
 				 user.setPaymentaccountpresent(new Boolean(false));
+				 user.setMasteraccount(applicationResult.getMasterAccountId());
 				 userEntityDAO.saveUser(user);
 			 }
 			 if(applicationResult.getMasterAccountId() !=null)	{
@@ -425,7 +427,9 @@ public class CustomerController extends BaseCustomerController {
 			
 			if(null!=applicationResult && applicationResult.getMasterAccountId() !=null){
 				user.setPaymentaccountpresent(new Boolean(true));
+				user.setMasteraccount(applicationResult.getMasterAccountId());
 				userEntityDAO.saveUser(user);
+				
 			} else {
 				user.setPaymentaccountpresent(new Boolean(false));
 				userEntityDAO.saveUser(user);

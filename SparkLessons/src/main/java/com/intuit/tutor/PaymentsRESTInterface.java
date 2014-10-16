@@ -20,5 +20,5 @@ public interface PaymentsRESTInterface {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-	public Charge chargeCreditCard(@HeaderParam("Request-Id") String requestid, @HeaderParam("intuit_tid") String intuit_tid, Charge charge);
+	public Charge chargeCreditCard(@HeaderParam("Request-Id") String requestid, @HeaderParam("intuit_tid") String intuit_tid, @HeaderParam("Company-Id") String companyId, Charge charge);
 }

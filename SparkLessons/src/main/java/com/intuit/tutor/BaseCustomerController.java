@@ -42,7 +42,6 @@ public class BaseCustomerController {
 	
 	public UserEntity getUserAndCreate(HttpServletRequest request)  {
 		IAMTicket ticket = (IAMTicket) request.getSession().getAttribute("ticket");
-		
 		UserEntity user = null;
 		if(ticket != null) {
 			user = userEntityDAO.getUserByUserId(ticket.getUserId());
