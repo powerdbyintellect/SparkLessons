@@ -522,7 +522,8 @@ public class OnboardingServiceClientImpl implements OnboardingServiceClient {
 							if(ServiceTypeEnum.CREDIT_CARD == acct.getServiceType())	{ 	//get the credit card subscription
 								CreditCardSubAccount creditCardSubAccount = (CreditCardSubAccount) acct;
 								AccountNumber accountNumber = creditCardSubAccount.getAccountNumber();
-								result.setMID(accountNumber.getValue());
+								if(accountNumber != null)
+									result.setMID(accountNumber.getValue());
 								
 						        List<AccountNumber> additionalAccountNumberList = creditCardSubAccount.getAdditionalAccountNumber(); 
 						        if ((additionalAccountNumberList != null) && (additionalAccountNumberList.size() > 0)) {

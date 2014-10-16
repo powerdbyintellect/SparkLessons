@@ -97,7 +97,7 @@ public class CustomerController extends BaseCustomerController {
 					System.out.println(" MID "+ applicationResult.getMID());
 					
 
-					if(applicationResult.getMasterAccountId() !=null){
+					if(applicationResult.getMasterAccountId() !=null && applicationResult.getMID()!=null){
 						CreditCard cc = new CreditCard();
 						cc.setRealmId(applicationResult.getRealmId());
 						//cc.setCreditCardNumber("5174554122715233");
@@ -262,7 +262,7 @@ public class CustomerController extends BaseCustomerController {
 		userEntityDAO.saveUser(userEntity);
 
 
-		if(applicationResult.getMasterAccountId() !=null){
+		if(applicationResult.getMasterAccountId() !=null && applicationResult.getMID() !=null){
 			CreditCard cc = new CreditCard();
 			cc.setRealmId(applicationResult.getRealmId());
 			//cc.setCreditCardNumber("5174554122715233");
@@ -371,7 +371,7 @@ public class CustomerController extends BaseCustomerController {
 				 user.setMasteraccount(applicationResult.getMasterAccountId());
 				 userEntityDAO.saveUser(user);
 			 }
-			 if(applicationResult.getMasterAccountId() !=null)	{
+			 if(applicationResult.getMasterAccountId() !=null && applicationResult.getMID() != null)	{
 					CreditCard cc = new CreditCard();
 					cc.setRealmId(applicationResult.getRealmId());
 					//cc.setCreditCardNumber("5174554122715233");
@@ -425,7 +425,7 @@ public class CustomerController extends BaseCustomerController {
 			applicationResult = onboardingServiceClient.submitMerchantApplication(merchantApplicationRequest, 
 					token, TEST_IP_ADDRESS, TEST_REQUEST_ID, customer.getEmail());
 			
-			if(null!=applicationResult && applicationResult.getMasterAccountId() !=null){
+			if(null!=applicationResult && applicationResult.getMasterAccountId() !=null && applicationResult.getMID() !=null){
 				user.setPaymentaccountpresent(new Boolean(true));
 				user.setMasteraccount(applicationResult.getMasterAccountId());
 				userEntityDAO.saveUser(user);
